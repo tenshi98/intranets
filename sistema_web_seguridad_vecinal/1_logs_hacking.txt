@@ -1,0 +1,6 @@
+127.0.0.1 - 14-08-2021 - 21:09:15 - Plataforma de Seguridad Vecinal - Windows 10 - Mozilla Firefox - Ninguno - Ninguno - login 
+127.0.0.1 - 14-08-2021 - 21:09:22 - Plataforma de Seguridad Vecinal - Windows 10 - Mozilla Firefox - Ninguno - Ninguno - login 
+127.0.0.1 - 14-08-2021 - 21:10:30 - Plataforma de Seguridad Vecinal - Windows 10 - Mozilla Firefox - Ninguno - Ninguno - login 
+127.0.0.1 - 14-08-2021 - 21:11:21 - Plataforma de Seguridad Vecinal - Windows 10 - Mozilla Firefox - Ninguno - Ninguno - login 
+127.0.0.1 - 14-08-2021 - 21:12:20 - Plataforma de Seguridad Vecinal - Windows 10 - Mozilla Firefox - Ninguno - Ninguno - login 
+127.0.0.1 - 14-08-2021 - 21:12:29 - Plataforma de Seguridad Vecinal - Windows 10 - Mozilla Firefox - Ninguno - Ninguno - login 
