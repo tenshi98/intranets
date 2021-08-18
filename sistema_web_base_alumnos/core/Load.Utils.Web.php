@@ -32,11 +32,6 @@ require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Server.Client.php
 require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Server.Server.php';     //Funciones para entregar informacion del servidor
 require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Server.Web.php';        //Funciones para entregar informacion de la web
 
-//Carga de los componentes de los formularios
-require_once '../A2XRXS_gears/xrxs_funciones/Components.UI.FormInputs.php';
-require_once '../A2XRXS_gears/xrxs_funciones/Components.UI.Inputs.php';
-require_once '../A2XRXS_gears/xrxs_funciones/Components.UI.Widgets.php';
-
 //verificacion sesion usuario
 require_once '../A2XRXS_gears/xrxs_configuracion/Load.User.Session.php';
 
