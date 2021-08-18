@@ -92,13 +92,6 @@ $_SESSION['form_require'] = 'required';
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/css/my_corrections.css">
 		
 		<!-- Javascript -->
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/html5shiv/html5shiv.js"></script>
-			<script src="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/respond/respond.min.js"></script>
-		<![endif]-->
-		<!--Modulos de javascript-->
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/js/personel.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/form_functions.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/jquery-1.7.2.min.js"></script>
