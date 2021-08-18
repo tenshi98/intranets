@@ -26,11 +26,14 @@ mysqli_close($dbConn);
 ?>
 		<!-- Animacion carga pagina -->
 		<script>
+			//ocultar el loader
 			$(document).ready(function() {
 				setTimeout(function(){
 					$('body').addClass('loaded');
 				}, 1000);
 			});
+			//ajustar tamaño de todos los textarea
+			autosize(document.querySelectorAll('textarea'));
 		</script>
 		<!-- Librerias -->
 		<?php widget_tooltipster();?>
