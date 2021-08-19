@@ -725,7 +725,7 @@ echo '</div>';
 		/* ************************************************************************** */
 		// Sets the map on all markers in the array.
 		function setMapOnAll(mapClient) {
-			for (var i = 0; i < markersClient.length; i++) {
+			for (let i = 0; i < markersClient.length; i++) {
 				markersClient[i].setMap(mapClient);
 			}
 		}

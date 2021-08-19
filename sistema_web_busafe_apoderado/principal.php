@@ -570,9 +570,6 @@ if($dInscrito>60){
 						
 						<script>
 									
-							var idPlan;
-							var idCobro;
-							
 							//Variables
 							<?php 
 							$Mensual = '';
@@ -587,7 +584,7 @@ if($dInscrito>60){
 									
 							/**************************************************/
 							$("#idPlan").on("change", function(){ //se ejecuta al cambiar valor del select
-								idPlan = $(this).val(); //Asignamos el valor seleccionado
+								let idPlan = $(this).val(); //Asignamos el valor seleccionado
 								
 								//Individual
 								if(idPlan == 1){ 
@@ -609,7 +606,7 @@ if($dInscrito>60){
 							});
 							/**************************************************/
 							$("#idCobro").on("change", function(){ //se ejecuta al cambiar valor del select
-								idCobro = $(this).val(); //Asignamos el valor seleccionado
+								let idCobro = $(this).val(); //Asignamos el valor seleccionado
 								
 								//Mensual
 								if(idCobro == 1){ 

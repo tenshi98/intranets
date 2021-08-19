@@ -284,10 +284,8 @@ switch ($_SESSION['usuario']['basic_data']['TipoPlan_idCobro']) {
 						
 						<script>
 									
-							var idPlan;
-							var idCobro;
-							var idCobroOld  = <?php echo $_SESSION['usuario']['basic_data']['TipoPlan_idCobro'] ?>;
-							var idPlanOld   = <?php echo $_SESSION['usuario']['basic_data']['idPlan'] ?>;
+							let idCobroOld  = <?php echo $_SESSION['usuario']['basic_data']['TipoPlan_idCobro'] ?>;
+							let idPlanOld   = <?php echo $_SESSION['usuario']['basic_data']['idPlan'] ?>;
 							
 							document.getElementById('nuevoPlan').style.display = 'none';
 							
@@ -306,7 +304,7 @@ switch ($_SESSION['usuario']['basic_data']['TipoPlan_idCobro']) {
 									
 							/**************************************************/
 							$("#idPlan").on("change", function(){ //se ejecuta al cambiar valor del select
-								idPlan = $(this).val(); //Asignamos el valor seleccionado
+								let idPlan = $(this).val(); //Asignamos el valor seleccionado
 								
 								//Individual
 								if(idPlan == 1){ 
@@ -342,7 +340,7 @@ switch ($_SESSION['usuario']['basic_data']['TipoPlan_idCobro']) {
 							});
 							/**************************************************/
 							$("#idCobro").on("change", function(){ //se ejecuta al cambiar valor del select
-								idCobro = $(this).val(); //Asignamos el valor seleccionado
+								let idCobro = $(this).val(); //Asignamos el valor seleccionado
 								
 								//Mensual
 								if(idCobro == 1){ 

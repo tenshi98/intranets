@@ -127,7 +127,7 @@ $w .= " AND idProceso='2' ";
 				$cadena = '';			
 				$cadena .= '<script>';
 				foreach ($arrPlanes as $plan) {
-					$cadena .= 'var id_data_'.$plan['idPlan'].'= "'.valores($plan['Valor'], 0).'";';	
+					$cadena .= 'let id_data_'.$plan['idPlan'].'= "'.valores($plan['Valor'], 0).'";';	
 				}
 				$cadena .= '</script>';
 				
@@ -135,13 +135,10 @@ $w .= " AND idProceso='2' ";
 				<script>
 					//se ejecuta al cargar la página (OBLIGATORIO)
 					$(document).ready(function(){ 
-						var Sensores_val_1;
-						Sensores_val_1= $("#idPlan").val();
+						let Sensores_val_1= $("#idPlan").val();
 						if (Sensores_val_1 != "") {
-							id_data1=eval("id_data_" + Sensores_val_1)
 							//escribo dentro del input
-							var elem1 = document.getElementById("valor_plan");
-							elem1.value = id_data1;
+							document.getElementById("valor_plan").value = eval("id_data_" + Sensores_val_1);
 						}
 					});
 					
@@ -149,12 +146,10 @@ $w .= " AND idProceso='2' ";
 					document.getElementById("idPlan").onchange = function() {myFunction_idPlan()};
 
 					function myFunction_idPlan() {
-						var Componente = document.getElementById("idPlan").value;
+						let Componente = document.getElementById("idPlan").value;
 						if (Componente != "") {
-							id_data1=eval("id_data_" + Componente)
 							//escribo dentro del input
-							var elem1 = document.getElementById("valor_plan");
-							elem1.value = id_data1;
+							document.getElementById("valor_plan").value = eval("id_data_" + Componente);
 						}
 					}
 				</script>

@@ -230,7 +230,7 @@ $(document).ready(function () {
 
         $(".form-group").removeClass("has-error");
         $(".field").removeClass("bad");
-        for(var i=0; i<curInputs.length; i++){
+        for(let i=0; i<curInputs.length; i++){
             if (!curInputs[i].validity.valid){
                 isValid = false;
                 $(curInputs[i]).closest(".field").addClass("bad");
@@ -275,11 +275,11 @@ $(document).ready(function () {
 	</div>
 	<div class="clearfix"></div>
 	<script>
-	var gHours = 0;
-	var gMinutes = 0;
-	var gSeconds = 0;
-	var remainingTime;
-	var countdownHandle;
+	let gHours          = 0;
+	let gMinutes        = 0;
+	let gSeconds        = 0;
+	let remainingTime   = 0;
+	let countdownHandle = 0;
 
 	$(document).ready(function() {
 		onPomodoroTimer();
@@ -1067,7 +1067,7 @@ if (isset($row_data['idTipoQuiz'])&&$row_data['idTipoQuiz']==1){ ?>
 		/*****************************************************************/
 		$('#submitBtn').click(function() {
 			//variable que cuenta los vacios
-			var ninput = 0;
+			let ninput = 0;
 			
 			//Se verifica que todos los input tengan valores asignados
 			<?php for ($i = 1; $i <= $total_preg; $i++) {

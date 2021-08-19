@@ -225,7 +225,7 @@ if(isset($_SESSION['vecinos_peligros'])) {?>
 		/* ************************************************************************** */
 		// Sets the map on all markers in the array.
 		function setMapOnAll(mapPeligro) {
-			for (var i = 0; i < markersPeligro.length; i++) {
+			for (let i = 0; i < markersPeligro.length; i++) {
 				markersPeligro[i].setMap(mapPeligro);
 			}
 		}

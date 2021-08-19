@@ -232,7 +232,7 @@ if(isset($_SESSION['vecinos_camaras'])) {?>
 		/* ************************************************************************** */
 		// Sets the map on all markers in the array.
 		function setMapOnAll(mapCam) {
-			for (var i = 0; i < markersCam.length; i++) {
+			for (let i = 0; i < markersCam.length; i++) {
 				markersCam[i].setMap(mapCam);
 			}
 		}
