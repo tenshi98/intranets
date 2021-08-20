@@ -30,6 +30,7 @@ require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.DataBase.php';   
 require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Location.php';          //Funciones relacionadas a la geolozalizacion
 require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Server.Client.php';     //Funciones para entregar informacion del cliente
 require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Server.Server.php';     //Funciones para entregar informacion del servidor
+require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Server.Social.php';     //Funciones para el envio de mensajes a traves de redes sociales
 require_once '../A2XRXS_gears/xrxs_funciones/Helpers.Functions.Server.Web.php';        //Funciones para entregar informacion de la web
 
 //verificacion sesion usuario
