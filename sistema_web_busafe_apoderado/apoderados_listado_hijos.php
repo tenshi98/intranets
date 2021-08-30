@@ -60,7 +60,7 @@ if(isset($error)&&$error!=''){echo notifications_list($error);};
 ?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 if ( ! empty($_GET['edit']) ) { 
-//Obtengo los datos de una observacion
+// consulto los datos
 $query = "SELECT Nombre, ApellidoPat, ApellidoMat, idSexo, FNacimiento, Direccion_img,idColegio
 FROM `apoderados_listado_hijos`
 WHERE idHijos = ".$_GET['edit'];
@@ -175,7 +175,7 @@ $rowdata = mysqli_fetch_assoc ($resultado); 	?>
  
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
  } else  { 
-// Se trae un listado con todas las observaciones el cliente
+// consulto los datos
 $arrCargas = array();
 $query = "SELECT 
 apoderados_listado_hijos.idHijos,

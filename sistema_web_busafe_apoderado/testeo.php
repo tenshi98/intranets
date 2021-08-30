@@ -177,7 +177,7 @@ if(isset($_GET['confirmacion'])){ ?>
 //si no hay un plan asignado	
 }elseif(!isset($_GET['Respuesta'])){ 
 /**************************************************************/
-// Se trae un listado con todas las observaciones el cliente
+// consulto los datos
 $arrPlan = array();
 $query = "SELECT  idPlan, Nombre, Valor_Mensual, Valor_Anual, N_Hijos
 FROM `sistema_planes_transporte`";

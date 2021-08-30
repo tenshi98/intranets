@@ -45,7 +45,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Perfil borrado corr
 if(isset($error)&&$error!=''){echo notifications_list($error);};?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
  if ( ! empty($_GET['mod']) ) {  
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT GeoLatitud, GeoLongitud, Direccion
 FROM `seg_vecinal_clientes_listado`
 WHERE idCliente = '".$_SESSION['usuario']['basic_data']['idCliente']."'";
@@ -221,7 +221,7 @@ echo '</div>';
 	
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 }else{
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT  
 seg_vecinal_clientes_listado.email, 
 seg_vecinal_clientes_listado.Nombre, 

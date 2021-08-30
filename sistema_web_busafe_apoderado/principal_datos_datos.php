@@ -39,7 +39,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Perfil borrado corr
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// Se traen todos los datos del trabajador
+// consulto los datos
 $query = "SELECT Nombre,ApellidoPat,ApellidoMat,Rut,FNacimiento,Fono1,Fono2,idCiudad,idComuna,Direccion
 FROM `apoderados_listado`
 WHERE idApoderado = '".$_SESSION['usuario']['basic_data']['idApoderado']."'";

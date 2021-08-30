@@ -55,7 +55,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Vehiculo borrado co
 if(isset($error)&&$error!=''){echo notifications_list($error);};?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
  if ( ! empty($_GET['id']) ) { 
-// Se traen todos los datos del trabajador
+// consulto los datos
 $query = "SELECT 
 vehiculos_listado.Direccion_img,
 
@@ -608,7 +608,7 @@ $registros = mysqli_query($dbConn, $query);
 $cuenta_registros = mysqli_num_rows($registros);
 //Realizo la operacion para saber la cantidad de paginas que hay
 $total_paginas = ceil($cuenta_registros / $cant_reg);	
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrVehiculo = array();
 $query = "SELECT 
 vehiculos_listado.idVehiculo,

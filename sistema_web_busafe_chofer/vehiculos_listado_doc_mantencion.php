@@ -92,7 +92,7 @@ if ( ! empty($_GET['new_mant']) ) { ?>
 
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
  } else{
-// Se traen todos los datos del trabajador
+// consulto los datos
 $query = "SELECT Nombre,Patente, doc_mantencion, doc_fecha_mantencion
 FROM `vehiculos_listado`
 WHERE idVehiculo = ".$_GET['id'];

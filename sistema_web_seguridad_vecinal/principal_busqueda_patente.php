@@ -68,7 +68,7 @@ if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) ){
 //Conexiones
 $dbConn1 = conectarDB_EX($DB_Servidor, $DB_Usuario, $DB_Pass, $BaseDatos);
 
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT 
 pu_patentes_listado.PPU,
 pu_patentes_listado.DV_PPU,
@@ -236,7 +236,7 @@ if(!$resultado){
 $cuenta_registros = mysqli_num_rows($resultado);
 //Realizo la operacion para saber la cantidad de paginas que hay
 $total_paginas = ceil($cuenta_registros / $cant_reg);	
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrPatentes = array();
 $query = "SELECT idBusqueda, Fecha, Hora, Patente
 FROM `seg_vecinal_busqueda_patente`

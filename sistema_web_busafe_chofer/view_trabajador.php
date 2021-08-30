@@ -21,7 +21,7 @@ require_once 'core/Web.Header.Views.php';
 /**********************************************************************************************************************************/
 /*                                                   ejecucion de logica                                                          */
 /**********************************************************************************************************************************/
-// Se traen todos los datos del trabajador
+// consulto los datos
 $query = "SELECT 
 trabajadores_listado.Direccion_img,
 

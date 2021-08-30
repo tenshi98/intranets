@@ -54,7 +54,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Vehiculo borrado co
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT Nombre,Patente,Direccion_img
 FROM `vehiculos_listado`
 WHERE idVehiculo = ".$_GET['id'];

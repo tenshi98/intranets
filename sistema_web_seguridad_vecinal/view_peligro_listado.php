@@ -23,7 +23,7 @@ require_once 'core/Web.Header.Views.php';
 /**********************************************************************************************************************************/
 //identificador
 $Identif = simpleDecode($_GET['view'], fecha_actual());	
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT  
 seg_vecinal_peligros_listado.Direccion,
 seg_vecinal_peligros_listado.GeoLatitud,

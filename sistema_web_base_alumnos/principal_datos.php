@@ -29,7 +29,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Perfil borrado corr
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT 
 alumnos_cursos.Nombre AS Curso,
 alumnos_listado.Nombre, 

@@ -208,7 +208,7 @@ if(isset($_GET['idVehiculo'])&&$_GET['idVehiculo']!=''){
 	}
 	
 	/*********************************************/
-	// Se trae un listado con todos los usuarios
+	// Se trae un listado con todos los elementos
 	$arrEquipos = array();
 	$query = "SELECT 
 	vehiculos_listado.idVehiculo, 

@@ -454,7 +454,7 @@ $registros = mysqli_query($dbConn, $query);
 $cuenta_registros = mysqli_num_rows($registros);
 //Realizo la operacion para saber la cantidad de paginas que hay
 $total_paginas = ceil($cuenta_registros / $cant_reg);	
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrTrabajador = array();
 $query = "SELECT 
 trabajadores_listado.idTrabajador,

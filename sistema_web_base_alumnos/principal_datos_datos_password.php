@@ -36,7 +36,7 @@ require_once 'core/Web.Header.Main.php';
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT Nombre
 FROM `alumnos_listado`
 WHERE idAlumno = '".$_SESSION['usuario']['basic_data']['idAlumno']."'";

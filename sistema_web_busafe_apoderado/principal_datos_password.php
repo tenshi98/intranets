@@ -35,7 +35,7 @@ require_once 'core/Web.Header.Main.php';
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// Se traen todos los datos del trabajador
+// consulto los datos
 $query = "SELECT Nombre,ApellidoPat,ApellidoMat,Password
 FROM `apoderados_listado`
 WHERE idApoderado = '".$_SESSION['usuario']['basic_data']['idApoderado']."'";

@@ -62,7 +62,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Camara borrada corr
 if(isset($error)&&$error!=''){echo notifications_list($error);};?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 if ( ! empty($_GET['edit_camara']) ) {
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT idSubconfiguracion
 FROM `seg_vecinal_camaras_listado`
 WHERE idCamara = ".simpleDecode($_GET['id'], fecha_actual());
@@ -80,7 +80,7 @@ if(!$resultado){
 					
 }
 $rowConfig = mysqli_fetch_assoc ($resultado);	 
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT Nombre,idTipoCamara,Config_usuario,Config_Password,Config_IP,
 Config_Puerto,Config_Web,idEstado, Chanel
 FROM `seg_vecinal_camaras_listado_canales`
@@ -157,7 +157,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 </div> 
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
  } elseif ( ! empty($_GET['new']) ) { 
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT idSubconfiguracion
 FROM `seg_vecinal_camaras_listado`
 WHERE idCamara = ".simpleDecode($_GET['id'], fecha_actual());
@@ -230,7 +230,7 @@ $rowConfig = mysqli_fetch_assoc ($resultado);
 </div> 
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 } else  { 	 
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT Nombre, N_Camaras, idSubconfiguracion
 FROM `seg_vecinal_camaras_listado`
 WHERE idCamara = ".simpleDecode($_GET['id'], fecha_actual());

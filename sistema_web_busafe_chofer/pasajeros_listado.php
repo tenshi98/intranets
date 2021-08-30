@@ -47,7 +47,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Pasajero borrado co
 if(isset($error)&&$error!=''){echo notifications_list($error);};?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
  if ( ! empty($_GET['id']) ) { 
-//Obtengo los datos de una observacion
+// consulto los datos
 $query = "SELECT Nombre, ApellidoPat, idPlan, idDia_1, idDia_2, idDia_3, idDia_4,
 idDia_5, idDia_6, idDia_7, idVehiculo, idVehiculoVuelta
 FROM `apoderados_listado_hijos`
@@ -230,7 +230,7 @@ $registros = mysqli_query($dbConn, $query);
 $cuenta_registros = mysqli_num_rows($registros);
 //Realizo la operacion para saber la cantidad de paginas que hay
 $total_paginas = ceil($cuenta_registros / $cant_reg);	
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrTrabajador = array();
 $query = "SELECT 
 apoderados_listado_hijos.idHijos,

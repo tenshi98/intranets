@@ -21,7 +21,7 @@ require_once 'core/Web.Header.Views.php';
 /**********************************************************************************************************************************/
 /*                                                   ejecucion de logica                                                          */
 /**********************************************************************************************************************************/
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT 
 vehiculos_costos_tipo.Nombre AS Tipo,
 vehiculos_listado.Nombre AS VehiculoNombre,

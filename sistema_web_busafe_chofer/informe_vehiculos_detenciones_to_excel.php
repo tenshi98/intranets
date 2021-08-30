@@ -42,7 +42,7 @@ if($_GET['idTipoUsuario']==1){
 }	
 $z.=" AND vehiculos_listado.idTransporte=".$_SESSION['usuario']['basic_data']['idTransporte'];
 
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrErrores = array();
 $query = "SELECT 
 vehiculos_listado_error_detenciones.idDetencion,

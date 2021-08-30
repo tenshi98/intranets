@@ -72,7 +72,7 @@ if(isset($_GET['f_creacion_inicio'])&&$_GET['f_creacion_inicio']!=''&&isset($_GE
 }*/
 
 /*************************************************************************************/
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrTipo1 = array();
 $query = "SELECT 
 bodegas_arriendos_facturacion.idFacturacion,
@@ -107,7 +107,7 @@ while ( $row = mysqli_fetch_assoc ($resultado)) {
 array_push( $arrTipo1,$row );
 }
 /*************************************************************************************/
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrTipo2 = array();
 $query = "SELECT 
 bodegas_insumos_facturacion.idFacturacion,
@@ -142,7 +142,7 @@ while ( $row = mysqli_fetch_assoc ($resultado)) {
 array_push( $arrTipo2,$row );
 }
 /*************************************************************************************/
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrTipo3 = array();
 $query = "SELECT 
 bodegas_productos_facturacion.idFacturacion,
@@ -177,7 +177,7 @@ while ( $row = mysqli_fetch_assoc ($resultado)) {
 array_push( $arrTipo3,$row );
 }
 /*************************************************************************************/
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrTipo4 = array();
 $query = "SELECT 
 bodegas_servicios_facturacion.idFacturacion,

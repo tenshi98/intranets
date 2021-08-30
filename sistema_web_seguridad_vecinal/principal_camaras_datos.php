@@ -40,7 +40,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Camara borrada corr
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT Nombre, idSistema, N_Camaras, idSubconfiguracion, idTipoCamara, 
 Config_usuario, Config_Password, Config_IP, Config_Puerto, Config_Web
 FROM `seg_vecinal_camaras_listado`

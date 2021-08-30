@@ -95,7 +95,7 @@ $w = "idSistema=1 AND idEstado=1";
 	
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 }else{
-// Se traen todos los datos del trabajador
+// consulto los datos
 $query = "SELECT Nombre,Patente
 FROM `vehiculos_listado`
 WHERE idVehiculo = ".$_GET['id'];
@@ -114,7 +114,7 @@ if(!$resultado){
 }
 $rowdata = mysqli_fetch_assoc ($resultado);
 
-// Se trae un listado con todas las observaciones el cliente
+// consulto los datos
 $arrColegios = array();
 $query = "SELECT 
 vehiculos_listado_colegios.idColegioAsignado,

@@ -39,7 +39,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Cliente borrado cor
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT idTipo, Nombre, Rut, fNacimiento, idCiudad, idComuna, Direccion
 FROM `seg_vecinal_clientes_listado`
 WHERE idCliente = '".$_SESSION['usuario']['basic_data']['idCliente']."'";

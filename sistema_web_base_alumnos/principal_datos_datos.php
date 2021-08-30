@@ -39,7 +39,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Datos borrado corre
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT idCurso, Nombre, ApellidoPat, ApellidoMat, Rut 
 FROM `alumnos_listado`
 WHERE idAlumno = '".$_SESSION['usuario']['basic_data']['idAlumno']."'";

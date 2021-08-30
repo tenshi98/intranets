@@ -39,7 +39,7 @@ if (isset($_GET['deleted'])) {$error['usuario'] 	  = 'sucess/Transporte borrado 
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);};
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT idTipo, Nombre, fNacimiento, idCiudad, idComuna, Direccion, idSistema
 FROM `transportes_listado`
 WHERE idTransporte = '".$_SESSION['usuario']['basic_data']['idTransporte']."'";

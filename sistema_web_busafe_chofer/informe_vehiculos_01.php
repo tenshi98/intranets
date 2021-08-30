@@ -49,7 +49,7 @@ if (isset($_GET['fInicio'])&&$_GET['fInicio']!=''&&isset($_GET['fTermino'])&&$_G
 	$n_meses = diferencia_meses($_GET['fInicio'], $_GET['fTermino'] );	
 }
 /*******************************************************************************************/
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrCostos = array();
 $query = "SELECT idTipo, Nombre
 FROM `vehiculos_costos_tipo`
@@ -80,7 +80,7 @@ foreach ($arrCostos as $costo) {
 
 		
 
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrVehiculos = array();
 $query = "SELECT 
 vehiculos_listado.idVehiculo,

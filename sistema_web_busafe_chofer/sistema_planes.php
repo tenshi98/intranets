@@ -60,7 +60,7 @@ if(isset($error)&&$error!=''){echo notifications_list($error);};
 ?>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
  if ( ! empty($_GET['id']) ) { 
-// Se traen todos los datos de mi usuario
+// consulto los datos
 $query = "SELECT Nombre, Valor
 FROM `sistema_planes`
 WHERE idPlan = ".$_GET['id'];
@@ -219,7 +219,7 @@ if(!$resultado){
 $cuenta_registros = mysqli_num_rows($resultado);
 //Realizo la operacion para saber la cantidad de paginas que hay
 $total_paginas = ceil($cuenta_registros / $cant_reg);	
-// Se trae un listado con todos los usuarios
+// Se trae un listado con todos los elementos
 $arrPlan = array();
 $query = "SELECT idPlan, Nombre, Valor
 FROM `sistema_planes`

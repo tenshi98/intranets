@@ -85,7 +85,7 @@ if ( ! empty($_GET['new']) ) {  ?>
 </div>
 <?php ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 } else  { 	 
-// tomo los datos del usuario
+// consulto los datos
 $query = "SELECT 
 seg_vecinal_peligros_tipos.Nombre AS Tipo
 
