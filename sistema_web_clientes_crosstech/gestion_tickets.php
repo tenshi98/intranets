@@ -103,7 +103,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 				$Form_Inputs->form_select('Area Ticket','idArea', $x1, 2, 'idArea', 'Nombre', 'crosstech_gestion_tickets_area', 0, '', $dbConn);
 				$Form_Inputs->form_select('Prioridad Ticket','idPrioridad', $x2, 2, 'idPrioridad', 'Nombre', 'core_ot_prioridad', 0, '', $dbConn);
 				$Form_Inputs->form_input_text('Titulo', 'Titulo', $x3, 2);
-				$Form_Inputs->form_textarea('Descripcion','Descripcion', $x4, 2, 160);
+				$Form_Inputs->form_textarea('Descripcion','Descripcion', $x4, 2);
 				
 				$Form_Inputs->form_input_hidden('idSistema', $_SESSION['usuario']['basic_data']['idSistema'], 2);
 				$Form_Inputs->form_input_hidden('idCliente', $_SESSION['usuario']['basic_data']['idCliente'], 2);
@@ -146,7 +146,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 				$Form_Inputs->form_select('Area Ticket','idArea', $x1, 2, 'idArea', 'Nombre', 'crosstech_gestion_tickets_area', 0, '', $dbConn);
 				$Form_Inputs->form_select('Prioridad Ticket','idPrioridad', $x2, 2, 'idPrioridad', 'Nombre', 'core_ot_prioridad', 0, '', $dbConn);
 				$Form_Inputs->form_input_text('Titulo', 'Titulo', $x3, 2);
-				$Form_Inputs->form_textarea('Descripcion','Descripcion', $x4, 2, 160);
+				$Form_Inputs->form_textarea('Descripcion','Descripcion', $x4, 2);
 				
 				
 				$Form_Inputs->form_input_hidden('idSistema', $_SESSION['usuario']['basic_data']['idSistema'], 2);

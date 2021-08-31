@@ -290,7 +290,7 @@ echo '</div>';
 						$Form_Inputs->form_input_disabled('Direccion Encontrada', 'Direccion_fake', $x4);
 						//$Form_Inputs->form_input_disabled('Latitud', 'Latitud_fake', $nlat);
 						//$Form_Inputs->form_input_disabled('Longitud', 'Longitud_fake', $nlong);
-						$Form_Inputs->form_textarea('Descripcion', 'Descripcion', $x5, 2, 160);
+						$Form_Inputs->form_textarea('Descripcion', 'Descripcion', $x5, 2);
 						
 						$Form_Inputs->form_input_hidden('GeoLatitud', $nlat, 2);
 						$Form_Inputs->form_input_hidden('GeoLongitud', $nlong, 2);

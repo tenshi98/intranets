@@ -284,7 +284,7 @@ echo '</div>';
 						//se dibujan los inputs
 						$Form_Inputs = new Form_Inputs();
 						$Form_Inputs->form_select('Tipo de Evento','idTipo', $x1, 2, 'idTipo', 'Nombre', 'seg_vecinal_eventos_tipos', 0, '',$dbConn);
-						$Form_Inputs->form_textarea('Caracteristicas Agresor', 'DescripcionTipo', $x2, 2, 160);
+						$Form_Inputs->form_textarea('Caracteristicas Agresor', 'DescripcionTipo', $x2, 2);
 						$Form_Inputs->form_select_depend1('Ciudad','idCiudad', $x3, 2, 'idCiudad', 'Nombre', 'core_ubicacion_ciudad', 0, 0,
 														  'Comuna','idComuna', $x4, 2, 'idComuna', 'Nombre', 'core_ubicacion_comunas', 0, 0, 
 														  $dbConn, 'form1');
@@ -294,7 +294,7 @@ echo '</div>';
 						//$Form_Inputs->form_input_disabled('Longitud', 'Longitud_fake', $nlong);
 						$Form_Inputs->form_date('Fecha','Fecha', $x6, 2);
 						$Form_Inputs->form_time('Hora','Hora', $x7, 2, 1);
-						$Form_Inputs->form_textarea('Descripcion Situacion', 'DescripcionSituacion', $x8, 2, 160);
+						$Form_Inputs->form_textarea('Descripcion Situacion', 'DescripcionSituacion', $x8, 2);
 						
 						$Form_Inputs->form_input_hidden('GeoLatitud', $nlat, 2);
 						$Form_Inputs->form_input_hidden('GeoLongitud', $nlong, 2);

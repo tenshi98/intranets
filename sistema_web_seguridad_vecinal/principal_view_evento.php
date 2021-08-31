@@ -83,7 +83,7 @@ if ( ! empty($_GET['comment_report']) ) { ?>
 				//se dibujan los inputs
 				$Form_Inputs = new Form_Inputs();
 				$Form_Inputs->form_post_data(1, 'Reportar el comentario solo en caso de infrinjir las normas.');
-				$Form_Inputs->form_textarea('Reportar', 'Comentario', $x1, 2, 160);
+				$Form_Inputs->form_textarea('Reportar', 'Comentario', $x1, 2);
 					
 				$Form_Inputs->form_input_hidden('idSistema', simpleEncode($_SESSION['usuario']['basic_data']['idSistema'], fecha_actual()), 2);
 				$Form_Inputs->form_input_hidden('idEvento', $_GET['post_report'], 2);
@@ -123,7 +123,7 @@ if ( ! empty($_GET['comment_report']) ) { ?>
 				//se dibujan los inputs
 				$Form_Inputs = new Form_Inputs();
 				$Form_Inputs->form_post_data(1, 'Reportar el post solo en caso de infrinjir las normas.');
-				$Form_Inputs->form_textarea('Reportar', 'Comentario', $x1, 2, 160);
+				$Form_Inputs->form_textarea('Reportar', 'Comentario', $x1, 2);
 					
 				$Form_Inputs->form_input_hidden('idSistema', simpleEncode($_SESSION['usuario']['basic_data']['idSistema'], fecha_actual()), 2);
 				$Form_Inputs->form_input_hidden('idEvento', $_GET['post_report'], 2);

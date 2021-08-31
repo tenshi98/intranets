@@ -213,7 +213,7 @@ echo '</div>';
 						$Form_Inputs->form_input_disabled('Direccion Encontrada', 'Direccion_fake', $x4);
 						//$Form_Inputs->form_input_disabled('Latitud', 'Latitud_fake', $nlat);
 						//$Form_Inputs->form_input_disabled('Longitud', 'Longitud_fake', $nlong);
-						$Form_Inputs->form_textarea('Descripcion', 'Descripcion', $x5, 2, 160);
+						$Form_Inputs->form_textarea('Descripcion', 'Descripcion', $x5, 2);
 						$Form_Inputs->form_select('Estado','idEstado', $x6, 1, 'idEstado', 'Nombre', 'core_estados', 0, '',$dbConn);
 				
 						

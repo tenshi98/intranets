@@ -104,7 +104,7 @@ if ( ! empty($_GET['moddatos']) ) { ?>
 				//se dibujan los inputs
 				$Form_Inputs = new Form_Inputs();
 				$Form_Inputs->form_date('Fecha de Facturacion','Fecha', $x1, 2);
-				$Form_Inputs->form_textarea('Observaciones', 'Observaciones', $x2, 1, 160);
+				$Form_Inputs->form_textarea('Observaciones', 'Observaciones', $x2, 1);
 				if($_SESSION['usuario']['basic_data']['idTipoUsuario']==1){
 					$Form_Inputs->form_select('Sistema','idSistema', $x3, 2, 'idSistema', 'Nombre', 'core_sistemas', 0, '', $dbConn);
 				}else{
@@ -374,7 +374,7 @@ array_push( $arrHijos,$row );
 				//se dibujan los inputs
 				$Form_Inputs = new Form_Inputs();
 				$Form_Inputs->form_date('Fecha de Facturacion','Fecha', $x1, 2);
-				$Form_Inputs->form_textarea('Observaciones', 'Observaciones', $x2, 1, 160);
+				$Form_Inputs->form_textarea('Observaciones', 'Observaciones', $x2, 1);
 				
 				$Form_Inputs->form_input_hidden('idSistema', $_SESSION['usuario']['basic_data']['idSistema'], 2);
 				$Form_Inputs->form_input_hidden('idUsuario', 1, 2);
@@ -515,7 +515,7 @@ array_push( $arrDatos,$row );
 				//se dibujan los inputs
 				$Form_Inputs = new Form_Inputs();
 				$Form_Inputs->form_date('Fecha de Facturacion','Fecha', $x1, 1);
-				$Form_Inputs->form_textarea('Observaciones', 'Observaciones', $x2, 1, 160);
+				$Form_Inputs->form_textarea('Observaciones', 'Observaciones', $x2, 1);
 				
 				
 				$Form_Inputs->form_input_hidden('pagina', $_GET['pagina'], 1);

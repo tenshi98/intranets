@@ -106,7 +106,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);	?>
 				$Form_Inputs->form_select_filter('Vehiculo','idVehiculo', $x2, 2, 'idVehiculo', 'Nombre', 'vehiculos_listado', $w, '',$dbConn);
 				$Form_Inputs->form_date('Fecha','Creacion_fecha', $x3, 2);
 				$Form_Inputs->form_values('Valor', 'Valor', $x4, 2);
-				$Form_Inputs->form_textarea('Observaciones','Observaciones', $x5, 1, 160);
+				$Form_Inputs->form_textarea('Observaciones','Observaciones', $x5, 1);
 				
 				$Form_Inputs->form_input_hidden('idCosto', $_GET['id'], 2);
 				?>
@@ -151,7 +151,7 @@ $w="idSistema=".$_SESSION['usuario']['basic_data']['idSistema']." AND idEstado=1
 				$Form_Inputs->form_select_filter('Vehiculo','idVehiculo', $x2, 2, 'idVehiculo', 'Nombre', 'vehiculos_listado', $w, '',$dbConn);
 				$Form_Inputs->form_date('Fecha','Creacion_fecha', $x3, 2);
 				$Form_Inputs->form_values('Valor', 'Valor', $x4, 2);
-				$Form_Inputs->form_textarea('Observaciones','Observaciones', $x5, 1, 160);
+				$Form_Inputs->form_textarea('Observaciones','Observaciones', $x5, 1);
 				
 				$Form_Inputs->form_input_hidden('idUsuario', 1, 2);
 				?>
@@ -302,7 +302,7 @@ array_push( $arrCategorias,$row );
 				$Form_Inputs->form_select_filter('Vehiculo','idVehiculo', $x2, 1, 'idVehiculo', 'Nombre', 'vehiculos_listado', $w, '', $dbConn);
 				$Form_Inputs->form_date('Fecha','Creacion_fecha', $x3, 1);
 				$Form_Inputs->form_values('Valor', 'Valor', $x4, 1);
-				$Form_Inputs->form_textarea('Observaciones','Observaciones', $x5, 1, 160);
+				$Form_Inputs->form_textarea('Observaciones','Observaciones', $x5, 1);
 				
 				$Form_Inputs->form_input_hidden('pagina', $_GET['pagina'], 1);
 				?>
