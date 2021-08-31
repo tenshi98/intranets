@@ -220,9 +220,9 @@ if(isset($_SESSION['usuario']['basic_data']['idNuevo'])&&$_SESSION['usuario']['b
 						//se dibujan los inputs
 						$Form_Inputs = new Form_Inputs();
 						//$Form_Inputs->form_input_icon('Direccion', 'Direccion_fake', $rowdata['Direccion'], 1,'fa fa-map');
-						$Form_Inputs->form_input_disabled('Direccion', 'Direccion_fake', $rowdata['Direccion'], 1);
-						$Form_Inputs->form_input_disabled('Latitud', 'Latitud_fake', $rowdata['GeoLatitud'], 1);
-						$Form_Inputs->form_input_disabled('Longitud', 'Longitud_fake', $rowdata['GeoLongitud'], 1);
+						$Form_Inputs->form_input_disabled('Direccion', 'Direccion_fake', $rowdata['Direccion']);
+						$Form_Inputs->form_input_disabled('Latitud', 'Latitud_fake', $rowdata['GeoLatitud']);
+						$Form_Inputs->form_input_disabled('Longitud', 'Longitud_fake', $rowdata['GeoLongitud']);
 						
 						
 						$Form_Inputs->form_input_hidden('GeoLatitud', $rowdata['GeoLatitud'], 2);

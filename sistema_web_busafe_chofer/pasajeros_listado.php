@@ -108,7 +108,7 @@ $w .= " AND idProceso='2' ";
 				
 				echo '<h3>Plan</h3>';
 				$Form_Inputs->form_select('Plan Contratado','idPlan', $x3, 2, 'idPlan', 'Nombre', 'sistema_planes', $z, '', $dbConn);
-				$Form_Inputs->form_input_disabled('Valor Plan','valor_plan', 0, 1);
+				$Form_Inputs->form_input_disabled('Valor Plan','valor_plan', 0);
 				echo '<h3>Periodicidad</h3>';
 				$Form_Inputs->form_checkbox_active('Dias','idDia', $x4, 2, 'idDia', 'Nombre', 'core_tiempo_dias', 0, $dbConn);
 				

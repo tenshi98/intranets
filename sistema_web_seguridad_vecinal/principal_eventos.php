@@ -289,9 +289,9 @@ echo '</div>';
 														  'Comuna','idComuna', $x4, 2, 'idComuna', 'Nombre', 'core_ubicacion_comunas', 0, 0, 
 														  $dbConn, 'form1');
 						$Form_Inputs->form_input_icon('Direccion', 'Direccion', $x5, 2,'fa fa-map');
-						$Form_Inputs->form_input_disabled('Direccion Encontrada', 'Direccion_fake', $x5, 1);
-						//$Form_Inputs->form_input_disabled('Latitud', 'Latitud_fake', $nlat, 1);
-						//$Form_Inputs->form_input_disabled('Longitud', 'Longitud_fake', $nlong, 1);
+						$Form_Inputs->form_input_disabled('Direccion Encontrada', 'Direccion_fake', $x5);
+						//$Form_Inputs->form_input_disabled('Latitud', 'Latitud_fake', $nlat);
+						//$Form_Inputs->form_input_disabled('Longitud', 'Longitud_fake', $nlong);
 						$Form_Inputs->form_date('Fecha','Fecha', $x6, 2);
 						$Form_Inputs->form_time('Hora','Hora', $x7, 2, 1);
 						$Form_Inputs->form_textarea('Descripcion Situacion', 'DescripcionSituacion', $x8, 2, 160);
