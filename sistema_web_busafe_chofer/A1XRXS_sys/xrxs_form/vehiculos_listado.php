@@ -220,7 +220,7 @@ require_once '0_validate_user_1.php';
 					`idVehiculo` int(11) unsigned NOT NULL,
 					`FechaSistema` date NOT NULL,
 					`HoraSistema` time NOT NULL,
-					`TimeStamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+					`TimeStamp` datetime NOT NULL ,
 					`GeoLatitud` double NOT NULL,
 					`GeoLongitud` double NOT NULL,
 					`GeoVelocidad` decimal(20,6) NOT NULL,
