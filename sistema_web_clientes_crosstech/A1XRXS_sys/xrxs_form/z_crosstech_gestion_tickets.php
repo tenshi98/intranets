@@ -126,7 +126,8 @@ require_once '0_validate_user_1.php';
 						$arrUsuario = db_select_array (false, $SIS_query, 'crosstech_gestion_tickets_area_correos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 						
 						//datos empresa
-						$SIS_query = 'core_sistemas.Nombre AS EmpresaNombre, 
+						$SIS_query = '
+						core_sistemas.Nombre AS EmpresaNombre, 
 						core_sistemas.email_principal AS EmpresaEmail, 
 						core_sistemas.Config_Gmail_Usuario AS Gmail_Usuario, 
 						core_sistemas.Config_Gmail_Password AS Gmail_Password';
