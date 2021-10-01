@@ -74,7 +74,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 
 
 
-
+<?php widget_whatsappFloatBtn('+56943497697', 'Necesito un poco de informacion'); ?>
 
 
 <?php widget_modal(80, 95); ?>			
