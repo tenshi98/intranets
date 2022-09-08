@@ -459,8 +459,8 @@ if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                         
 					
 					//Generacion de nueva clave
 					$num_caracteres = "10"; //cantidad de caracteres de la clave
-					$clave = substr(md5(rand()),0,$num_caracteres); //generador aleatorio de claves 
-					$nueva_clave = md5($clave);//se codifica la clave 
+					$clave          = substr(md5(rand()),0,$num_caracteres); //generador aleatorio de claves 
+					$nueva_clave    = md5($clave);//se codifica la clave 
 						
 					//Actualizacion de la clave en la base de datos
 					$a = 'password="'.$nueva_clave.'"';

@@ -23,7 +23,7 @@ require_once 'core/Web.Header.Main.php';
 /*                                                   ejecucion de logica                                                          */
 /**********************************************************************************************************************************/
 //Manejador de errores
-if(isset($error)&&$error!=''){echo notifications_list($error);};
+if(isset($error)&&$error!=''){echo notifications_list($error);}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
 //Variable de busqueda
 $z1 = "WHERE bodegas_arriendos_facturacion.idEstado=1";
