@@ -3,7 +3,7 @@
 /*                                              Bloque de seguridTicketad                                                */
 /*******************************************************************************************************************/
 if( ! defined('XMBCXRXSKGC')) {
-    die('No tienes acceso a esta carpeta o archivo.');
+    die('No tienes acceso a esta carpeta o archivo (Access Code 1009-002).');
 }
 /*******************************************************************************************************************/
 /*                                          Verifica si la Sesion esta activa                                      */

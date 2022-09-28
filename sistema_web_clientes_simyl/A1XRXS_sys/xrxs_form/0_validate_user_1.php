@@ -110,7 +110,7 @@ if(isset($sesion_IP_Client)&&$sesion_IP_Client!=''){
 		log_response(4, $rmail, $sesion_texto);	
 		
 		//Se detiene la ejecucion										 
-		die('No tienes acceso a esta carpeta o archivo.');
+		die('No tienes acceso a esta carpeta o archivo (Access Code 1007-001).');
 	}
 //si no hay IP igual lo saco del sistema
 }else{
@@ -119,7 +119,7 @@ if(isset($sesion_IP_Client)&&$sesion_IP_Client!=''){
 	session_destroy();
 	
 	//Se detiene la ejecucion										 
-	die('No tienes acceso a esta carpeta o archivo.');
+	die('No tienes acceso a esta carpeta o archivo (Access Code 1007-002).');
 }
 
 ?>
