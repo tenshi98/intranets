@@ -151,8 +151,8 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 										
 							<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos de Contacto</h2>
 							<p class="text-muted">
-								<strong>Telefono Fijo : </strong><?php echo $rowdata['Fono1']; ?><br/>
-								<strong>Telefono Movil : </strong><?php echo $rowdata['Fono2']; ?><br/>
+								<strong>Telefono Fijo : </strong><?php echo formatPhone($rowdata['Fono1']); ?><br/>
+								<strong>Telefono Movil : </strong><?php echo formatPhone($rowdata['Fono2']); ?><br/>
 								<strong>Fax : </strong><?php echo $rowdata['Fax']; ?><br/>
 								<strong>Email : </strong><a href="mailto:<?php echo $rowdata['email']; ?>"><?php echo $rowdata['email']; ?></a><br/>
 								<strong>Web : </strong><a target="_blank" rel="noopener noreferrer" href="https://<?php echo $rowdata['Web']; ?>"><?php echo $rowdata['Web']; ?></a>
@@ -161,7 +161,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 							<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Persona de Contacto</h2>
 							<p class="text-muted">
 								<strong>Persona de Contacto : </strong><?php echo $rowdata['PersonaContacto']; ?><br/>
-								<strong>Telefono : </strong><?php echo $rowdata['PersonaContacto_Fono']; ?><br/>
+								<strong>Telefono : </strong><?php echo formatPhone($rowdata['PersonaContacto_Fono']); ?><br/>
 								<strong>Email : </strong><a href="mailto:<?php echo $rowdata['PersonaContacto_email']; ?>"><?php echo $rowdata['PersonaContacto_email']; ?></a><br/>
 							</p>
 						</div>
