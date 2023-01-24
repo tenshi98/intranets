@@ -34,7 +34,7 @@
 			//echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
 			
 		////////////////////////////////////////////////////////////////////////////////
-		//si estoy en ambiente de produccion	
+		//si estoy en ambiente de produccion
 		}else{
 			echo '<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
 			echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
@@ -89,7 +89,7 @@
 		<?php
 		//Favicon Personalizado
 		$nombre_fichero = 'img/mifavicon.png';
-		if (file_exists($nombre_fichero)) { ?>
+		if (file_exists($nombre_fichero)){ ?>
 			<link rel="icon"             type="image/png"                    href="img/mifavicon.png" >
 			<link rel="shortcut icon"    type="image/x-icon"                 href="img/mifavicon.png" >
 			<link rel="apple-touch-icon" type="image/x-icon"                 href="img/mifavicon-57x57.png">
@@ -97,7 +97,7 @@
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/mifavicon-114x114.png">
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/mifavicon-144x144.png">
 		<?php 
-		//Favicon predefinido	
+		//Favicon predefinido
 		}else{ ?>
 			<link rel="icon"             type="image/png"                    href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
 			<link rel="shortcut icon"    type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
@@ -127,13 +127,13 @@
 	//si estoy en ambiente de desarrollo
 	if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) ){
 
-	//si estoy en ambiente de produccion	
+	//si estoy en ambiente de produccion
 	}else{	
 		/*    Global Variables    */
 		//Tiempo Maximo de la consulta, 40 minutos por defecto
-		if(isset($_SESSION['usuario']['basic_data']['ConfigTime'])&&$_SESSION['usuario']['basic_data']['ConfigTime']!=0){$n_lim = $_SESSION['usuario']['basic_data']['ConfigTime']*60;set_time_limit($n_lim); }else{set_time_limit(2400);}             
+		if(isset($_SESSION['usuario']['basic_data']['ConfigTime'])&&$_SESSION['usuario']['basic_data']['ConfigTime']!=0){$n_lim = $_SESSION['usuario']['basic_data']['ConfigTime']*60;set_time_limit($n_lim);}else{set_time_limit(2400);}
 		//Memora RAM Maxima del servidor, 4GB por defecto
-		if(isset($_SESSION['usuario']['basic_data']['ConfigRam'])&&$_SESSION['usuario']['basic_data']['ConfigRam']!=0){$n_ram = $_SESSION['usuario']['basic_data']['ConfigRam']; ini_set('memory_limit', $n_ram.'M'); }else{ini_set('memory_limit', '4096M');}  
+		if(isset($_SESSION['usuario']['basic_data']['ConfigRam'])&&$_SESSION['usuario']['basic_data']['ConfigRam']!=0){$n_ram = $_SESSION['usuario']['basic_data']['ConfigRam']; ini_set('memory_limit', $n_ram.'M');}else{ini_set('memory_limit', '4096M');}
 	}
 	/***********************************************/
 	//Elimino los datos previos del form
@@ -146,10 +146,10 @@
 					<div class="container-fluid">
 						<header class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-								<span class="sr-only">Toggle navigation</span> 
-								<span class="icon-bar"></span> 
-								<span class="icon-bar"></span> 
-								<span class="icon-bar"></span> 
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
 							</button>
 							<a href="principal.php" class="navbar-brand">
 								<?php require_once 'Web.Body.Nav.Logo.php';?>

@@ -1,7 +1,7 @@
 <?php
 
 echo '<div class="wrapper">';
-	//Variables			
+	//Variables
 	$currentTime = strtotime(hora_actual());
 	$startTime = strtotime('21:00:00');
 	$endTime = strtotime('07:00:00');
@@ -20,7 +20,7 @@ echo '<div class="wrapper">';
 				<div class="train"></div>
 				<div class="crane">
 					<div class="logo"></div>
-				</div>		
+				</div>
 			</div>
 		</div>';
 	} else {

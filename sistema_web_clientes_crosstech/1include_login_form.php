@@ -19,9 +19,9 @@
 				<p class="text-muted text-center">Ingrese su Rut de usuario y contraseña para acceder</p>
 				<?php 
 				//Se verifican si existen los datos
-				if(isset($Rut)) {        $x1  = $Rut;       }else{$x1  = '';}
-				if(isset($password)) {   $x2  = $password;  }else{$x2  = '';}
-				
+				if(isset($Rut)){        $x1  = $Rut;       }else{$x1  = '';}
+				if(isset($password)){   $x2  = $password;  }else{$x2  = '';}
+
 				//se dibujan los inputs
 				$Form_Inputs = new Inputs();
 				$Form_Inputs->input_login_rut('Rut', 'Rut', $x1, 2);
@@ -39,12 +39,12 @@
 				<p class="text-muted text-center">Ingresa tu Email para recuperar tu contraseña.Revisa la bandeja de entrada o spam de tu correo.</p>
 				<?php 
 				//Se verifican si existen los datos
-				if(isset($email)) {    $x1  = $email;   }else{$x1  = '';}
-				
+				if(isset($email)){    $x1  = $email;   }else{$x1  = '';}
+
 				//se dibujan los inputs
 				$Form_Inputs->input_login_mail('mimail@midominio.cl', 'email', $x1);
 				
-				$Form_Inputs->input_hidden('fkinput2', '', 1);	  
+				$Form_Inputs->input_hidden('fkinput2', '', 1);
 				?>
 				<br>
 				

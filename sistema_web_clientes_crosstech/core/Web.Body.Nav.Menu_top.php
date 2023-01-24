@@ -10,6 +10,6 @@ echo '<ul class="nav navbar-nav" id="navbar_nav" >';
 	
 
 	                          
-echo '</ul>'; 
+echo '</ul>';
               
 ?>

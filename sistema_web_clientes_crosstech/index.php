@@ -28,18 +28,18 @@ mysqli_query($dbConn, "SET SESSION sql_mode = ''");
 /**********************************************************************************************************************************/
 /*                                          Modulo de identificacion del documento                                                */
 /**********************************************************************************************************************************/
-//Cargamos la ubicacion 
+//Cargamos la ubicacion original
 $original = "index.php";
 /**********************************************************************************************************************************/
 /*                                               Se cargan los formularios                                                        */
 /**********************************************************************************************************************************/
 //formulario para iniciar sesion
-if ( !empty($_POST['submit_login']) )  { 
+if (!empty($_POST['submit_login'])){
 	$form_trabajo= 'login';
 	require_once 'A1XRXS_sys/xrxs_form/clientes_listado.php';
 }
 //formulario para recuperar la contraseña
-if ( !empty($_POST['submit_pass']) )  { 
+if (!empty($_POST['submit_pass'])){
 	$form_trabajo= 'getpass';
 	require_once 'A1XRXS_sys/xrxs_form/clientes_listado.php';
 }
@@ -77,7 +77,7 @@ $_SESSION['form_require'] = 'required';
 			//echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
 			
 		////////////////////////////////////////////////////////////////////////////////
-		//si estoy en ambiente de produccion	
+		//si estoy en ambiente de produccion
 		}else{
 			echo '<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
 			echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
@@ -130,7 +130,7 @@ $_SESSION['form_require'] = 'required';
 		<?php
 		//Favicon Personalizado
 		$nombre_fichero = 'img/mifavicon.png';
-		if (file_exists($nombre_fichero)) { ?>
+		if (file_exists($nombre_fichero)){ ?>
 			<link rel="icon"             type="image/png"                    href="img/mifavicon.png" >
 			<link rel="shortcut icon"    type="image/x-icon"                 href="img/mifavicon.png" >
 			<link rel="apple-touch-icon" type="image/x-icon"                 href="img/mifavicon-57x57.png">
@@ -138,7 +138,7 @@ $_SESSION['form_require'] = 'required';
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/mifavicon-114x114.png">
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/mifavicon-144x144.png">
 		<?php 
-		//Favicon predefinido	
+		//Favicon predefinido
 		}else{ ?>
 			<link rel="icon"             type="image/png"                    href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
 			<link rel="shortcut icon"    type="image/x-icon"                 href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
@@ -173,7 +173,7 @@ $_SESSION['form_require'] = 'required';
 			.center-div {width:580px;height:374px;position:absolute;left:50%;top:50%;margin-left: -290px;margin-top:  -187px;}
 			#preloaderDiv{position:absolute;left:50%;top:50%;margin-left: -27px;margin-top:  -27px;}
 			#logo{opacity:0;filter: alpha(opacity=0);}
-			#date2014{position:absolute;padding-left: 210px;padding-top:15px;opacity:0;top:303px;left:0;filter: alpha(opacity=0);}				
+			#date2014{position:absolute;padding-left: 210px;padding-top:15px;opacity:0;top:303px;left:0;filter: alpha(opacity=0);}	
 		</style>
 	</head>
 	<body class="login">
@@ -210,7 +210,7 @@ $ip_bloqueada = db_select_nrows (false, 'idBloqueo', 'sistema_seguridad_bloqueo_
 if(strtotime($Mantenciones['Fecha'])>=strtotime(fecha_actual())&&strtotime($Mantenciones['Hora_ini'])<=strtotime(hora_actual())&&strtotime($Mantenciones['Hora_fin'])>=strtotime(hora_actual())&&$bloqueo==0){ $bloqueo=1;}
 if(isset($INT_Pais)&&$INT_Pais!=''&&$INT_Pais!='Chile'&&$INT_IP!='::1'&&$bloqueo==0){  $bloqueo = 2;}
 if(isset($ip_bloqueada)&&$ip_bloqueada!=0&&$bloqueo==0){ $bloqueo = 3;}
-	
+
 /**********************************************************************************************************************************/
 /*                                                        Despliegue                                                              */
 /**********************************************************************************************************************************/

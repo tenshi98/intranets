@@ -10,7 +10,7 @@ require_once 'core/Load.Utils.Web.php';
 /**********************************************************************************************************************************/
 /*                                          Modulo de identificacion del documento                                                */
 /**********************************************************************************************************************************/
-//Cargamos la ubicacion 
+//Cargamos la ubicacion original
 $original = "principal_datos.php";
 $location = $original;
 $new_location = "principal_datos_datos_password.php";
@@ -20,7 +20,7 @@ $t_dashboard = '<i class="fa fa-address-card-o" aria-hidden="true"></i> Mis Dato
 /*                                          Se llaman a las partes de los formularios                                             */
 /**********************************************************************************************************************************/
 //formulario para crear
-if ( !empty($_POST['submit_pass']) )  { 
+if (!empty($_POST['submit_pass'])){
 	//Llamamos al formulario
 	$form_trabajo= 'update';
 	require_once 'A1XRXS_sys/xrxs_form/clientes_listado.php';
@@ -34,9 +34,9 @@ require_once 'core/Web.Header.Main.php';
 /**********************************************************************************************************************************/
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // consulto los datos
-$query = "SELECT Nombre, idTipo
+$query = "SELECT Nombre,idTipo
 FROM `clientes_listado`
 WHERE idCliente = '".$_SESSION['usuario']['basic_data']['idCliente']."'";
 //Consulta
@@ -57,16 +57,16 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 
 ?>
 
-<div class="col-sm-12">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Cliente', $rowdata['Nombre'], 'Editar Password');?>
 </div>
-<div class="clearfix"></div>   
+<div class="clearfix"></div>
 
 <?php
 /****************************************************************************/
 //mensaje en caso de no haber cambiado la contraseña
 if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['basic_data']['password']=='81dc9bdb52d04dc20036dbd8313ed055'){
-	echo '<div class="col-sm-12">';
+	echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
 	$Alert_Text  = '<strong>Cambio de contraseña: </strong> ';
 	$Alert_Text .= 'Por motivos de seguridad, se recomienda <strong>cambiar</strong> la contraseña';
 	$Alert_Text .= '<a href="principal_datos_datos_password.php" title="Cambio de contraseña" class="btn btn-primary btn-sm pull-right margin_width" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cambio de contraseña</a>';
@@ -74,7 +74,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 	echo '</div>';
 } ?>
 
-<div class="col-sm-12">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="box">
 		<header>
 			<ul class="nav nav-tabs pull-right">
@@ -90,18 +90,18 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 						<?php } ?>
 						<li class="active"><a href="<?php echo 'principal_datos_datos_password.php';?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
 					</ul>
-                </li>           
-			</ul>	
+                </li>
+			</ul>
 		</header>
         <div class="table-responsive">
-			<div class="col-sm-8 fcenter" style="padding-top:40px;">
+			<div class="col-sm-10 col-md-9 col-lg-8 fcenter" style="padding-top:40px;">
 				<form class="form-horizontal" method="post" id="form1" name="form1" novalidate>
 				
 					<?php 
 					//Se verifican si existen los datos
-					if(isset($oldpassword)) {   $x1  = $oldpassword;  }else{$x1  = '';}
-					if(isset($password)) {      $x2  = $password;     }else{$x2  = '';}
-					if(isset($repassword)) {    $x3  = $repassword;   }else{$x3  = '';}
+					if(isset($oldpassword)){   $x1  = $oldpassword;  }else{$x1  = '';}
+					if(isset($password)){      $x2  = $password;     }else{$x2  = '';}
+					if(isset($repassword)){    $x3  = $repassword;   }else{$x3  = '';}
 					
 					//se dibujan los inputs
 					$Form_Inputs = new Form_Inputs();
@@ -113,13 +113,13 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 					$Form_Inputs->form_input_hidden('idCliente', simpleEncode($_SESSION['usuario']['basic_data']['idCliente'], fecha_actual()), 2);
 					?>
 
-					<div class="form-group">		
-						<input type="submit" class="btn btn-primary fright margin_width fa-input" value="&#xf0c7; Cambiar Clave" name="submit_pass">		
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary pull-right margin_form_btn fa-input" value="&#xf0c7; Cambiar Clave" name="submit_pass">
 					</div>
 				</form>
 				<?php widget_validator(); ?>
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>
 

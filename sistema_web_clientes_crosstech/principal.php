@@ -10,7 +10,7 @@ require_once 'core/Load.Utils.Web.php';
 /**********************************************************************************************************************************/
 /*                                          Modulo de identificacion del documento                                                */
 /**********************************************************************************************************************************/
-//Cargamos la ubicacion 
+//Cargamos la ubicacion original
 $original = "principal.php";
 $location = $original;
 //Titulo ventana
@@ -23,7 +23,7 @@ require_once 'core/Web.Header.Main.php';
 /****************************************************************************/
 //mensaje en caso de no haber cambiado la contraseña
 if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['basic_data']['password']=='81dc9bdb52d04dc20036dbd8313ed055'){
-	echo '<div class="col-sm-12">';
+	echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
 	$Alert_Text  = '<strong>Cambio de contraseña: </strong> ';
 	$Alert_Text .= 'Por motivos de seguridad, se recomienda <strong>cambiar</strong> la contraseña';
 	$Alert_Text .= '<a href="principal_datos_datos_password.php" title="Cambio de contraseña" class="btn btn-primary btn-sm pull-right margin_width" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cambio de contraseña</a>';
@@ -37,16 +37,16 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 </style>	
 
 
-<div class="col-sm-12">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	
 	<div class="row">
 		<div class="cover profile">
 			<?php //include '1include_principal_interfaz_portada.php'; ?>
-		</div>	
+		</div>
 		<div class="box profile_content" style="margin-top:0px;">
 			<?php include '1include_principal_interfaz_menu.php'; ?>
 			
-			<div id="div-3" class="tab-content">
+			<div class="tab-content">
 				
 				<?php
 				//contenido en tabs
@@ -55,7 +55,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 				
 				?>
 				
-			</div>	
+			</div>
 		</div>
 	</div>
 
@@ -77,7 +77,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 <?php widget_whatsappFloatBtn('+56943497697', 'Necesito un poco de informacion'); ?>
 
 
-<?php widget_modal(80, 95); ?>			
+<?php widget_modal(80, 95); ?>
 <?php
 /**********************************************************************************************************************************/
 /*                                             Se llama al pie del documento html                                                 */

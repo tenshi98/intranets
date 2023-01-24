@@ -10,7 +10,7 @@ require_once 'core/Load.Utils.Web.php';
 /**********************************************************************************************************************************/
 /*                                          Modulo de identificacion del documento                                                */
 /**********************************************************************************************************************************/
-//Cargamos la ubicacion 
+//Cargamos la ubicacion original
 $original = "gestion_tickets.php";
 $location = $original;
 //Titulo ventana
@@ -24,17 +24,17 @@ require_once 'core/Web.Header.Main.php';
 /**********************************************************************************************************************************/
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Variable de busqueda
 $z1 = "WHERE bodegas_arriendos_facturacion.idEstado=1";
 $z2 = "WHERE bodegas_insumos_facturacion.idEstado=1";
 $z3 = "WHERE bodegas_productos_facturacion.idEstado=1";
 $z4 = "WHERE bodegas_servicios_facturacion.idEstado=1";
 //Verifico el tipo de usuario que esta ingresando
-$z1.=" AND bodegas_arriendos_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
-$z2.=" AND bodegas_insumos_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
-$z3.=" AND bodegas_productos_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
-$z4.=" AND bodegas_servicios_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
+$z1.=" AND bodegas_arriendos_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
+$z2.=" AND bodegas_insumos_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
+$z3.=" AND bodegas_productos_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
+$z4.=" AND bodegas_servicios_facturacion.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //Verifico que sean solo compras
 $z1.=" AND (bodegas_arriendos_facturacion.idTipo=2 OR bodegas_arriendos_facturacion.idTipo=12)";
 $z2.=" AND (bodegas_insumos_facturacion.idTipo=2 OR bodegas_insumos_facturacion.idTipo=12)";
@@ -52,13 +52,13 @@ $z3.=" AND bodegas_productos_facturacion.Pago_fecha<='".fecha_actual()."'";
 $z4.=" AND bodegas_servicios_facturacion.Pago_fecha<='".fecha_actual()."'";
 
 
-/*if(isset($_GET['idDocumentos'])&&$_GET['idDocumentos']!=''){ 
+/*if(isset($_GET['idDocumentos'])&&$_GET['idDocumentos']!=''){
 	$z1.=" AND bodegas_arriendos_facturacion.idDocumentos=".$_GET['idDocumentos'];
 	$z2.=" AND bodegas_insumos_facturacion.idDocumentos=".$_GET['idDocumentos'];
 	$z3.=" AND bodegas_productos_facturacion.idDocumentos=".$_GET['idDocumentos'];
 	$z4.=" AND bodegas_servicios_facturacion.idDocumentos=".$_GET['idDocumentos'];
 }
-if(isset($_GET['N_Doc'])&&$_GET['N_Doc']!=''){               
+if(isset($_GET['N_Doc'])&&$_GET['N_Doc']!=''){       
 	$z1.=" AND bodegas_arriendos_facturacion.N_Doc=".$_GET['N_Doc'];
 	$z2.=" AND bodegas_insumos_facturacion.N_Doc=".$_GET['N_Doc'];
 	$z3.=" AND bodegas_productos_facturacion.N_Doc=".$_GET['N_Doc'];
@@ -103,7 +103,7 @@ if(!$resultado){
 	$_SESSION['ErrorListing'][$vardata]['query']        = $query;
 					
 }
-while ( $row = mysqli_fetch_assoc ($resultado)) {
+while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo1,$row );
 }
 /*************************************************************************************/
@@ -138,7 +138,7 @@ if(!$resultado){
 	$_SESSION['ErrorListing'][$vardata]['query']        = $query;
 					
 }
-while ( $row = mysqli_fetch_assoc ($resultado)) {
+while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo2,$row );
 }
 /*************************************************************************************/
@@ -173,7 +173,7 @@ if(!$resultado){
 	$_SESSION['ErrorListing'][$vardata]['query']        = $query;
 					
 }
-while ( $row = mysqli_fetch_assoc ($resultado)) {
+while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo3,$row );
 }
 /*************************************************************************************/
@@ -208,7 +208,7 @@ if(!$resultado){
 	$_SESSION['ErrorListing'][$vardata]['query']        = $query;
 					
 }
-while ( $row = mysqli_fetch_assoc ($resultado)) {
+while ( $row = mysqli_fetch_assoc ($resultado)){
 array_push( $arrTipo4,$row );
 }
 
@@ -216,12 +216,12 @@ array_push( $arrTipo4,$row );
 
 
 
-<div class="col-sm-12">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="box">
 		<header>
 			<div class="icons"><i class="fa fa-table" aria-hidden="true"></i></div><h5>Listado de Documentos</h5>
 		</header>
-		<div class="table-responsive">   
+		<div class="table-responsive">
 			<table id="dataTable" class="table table-bordered table-condensed table-hover table-striped dataTable">
 				<thead>
 					<tr role="row">
@@ -258,7 +258,7 @@ array_push( $arrTipo4,$row );
 								<td><?php echo Valores($tipo['ValorTotal'], 0); ?></td>
 								<td><?php echo Valores($tipo['MontoPagado'], 0); ?></td>
 							</tr>
-						<?php } ?> 
+						<?php } ?>
 					<?php } ?>
 					<?php if($arrTipo3){ ?>
 						<tr class="odd"><td style="background-color:#DDD" colspan="7">Productos</td></tr>
@@ -271,7 +271,7 @@ array_push( $arrTipo4,$row );
 								<td><?php echo Valores($tipo['ValorTotal'], 0); ?></td>
 								<td><?php echo Valores($tipo['MontoPagado'], 0); ?></td>
 							</tr>
-						<?php } ?> 
+						<?php } ?>
 					<?php } ?>
 					<?php if($arrTipo4){ ?>
 						<tr class="odd"><td style="background-color:#DDD" colspan="7">Servicios</td></tr>
@@ -284,8 +284,8 @@ array_push( $arrTipo4,$row );
 								<td><?php echo Valores($tipo['ValorTotal'], 0); ?></td>
 								<td><?php echo Valores($tipo['MontoPagado'], 0); ?></td>
 							</tr>
-						<?php } ?> 
-					<?php } ?>                 
+						<?php } ?>
+					<?php } ?>
 				</tbody>
 			</table>
 		</div>

@@ -1,27 +1,26 @@
 <?php
-					
-					
+
 /**************************************************************************/
 echo '
 <div class="tab-pane fade active in" id="Menu_tab_0">
 
 	<div class="col-sm-12 admin-grid">';
-			
+
 			/*************************************************************/
 			//Panel de notificaciones
 			echo '
 			<div class="sort-disable">
-				
+
 				<div class="panel-heading">
 					<span class="panel-title pull-left"  style="color: #666;font-weight: 700 !important;">Bienvenido '.$_SESSION['usuario']['basic_data']['Nombre'].'</span>
 				</div>
-								
+
 				<div class="panel-body mnw700 of-a">
 					<div class="row">';
 						/*************************************************************/
 						//Lado izquierdo
 						//echo '<div class="col-sm-9">';
-						echo '<div class="col-sm-12">';
+						echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
 							/******************************************************/
 							//Verifico que esten abiertas
 							$z1 = "idEstado=1";
@@ -29,10 +28,10 @@ echo '
 							$z3 = "idEstado=1";
 							$z4 = "idEstado=1";
 							//Verifico el sistema
-							$z1.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
-							$z2.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
-							$z3.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
-							$z4.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];	
+							$z1.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
+							$z2.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
+							$z3.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
+							$z4.=" AND idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 							//Verifico que sean solo compras
 							$z1.=" AND (idTipo=2 OR idTipo=12)";
 							$z2.=" AND (idTipo=2 OR idTipo=12)";
@@ -56,23 +55,23 @@ echo '
 							//se guardan los valores
 							$totalFactVenta   = $FactVenta_1 + $FactVenta_2 + $FactVenta_3 + $FactVenta_4;
 							$totalAsistencias = db_select_nrows (false, 'idTicket', 'crosstech_gestion_tickets', '', "idSistema='".$_SESSION['usuario']['basic_data']['idSistema']."' AND idCliente='".$_SESSION['usuario']['basic_data']['idCliente']."' AND idEstado='1'", $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], basename($_SERVER["REQUEST_URI"], ".php"), 'totalAsistencias');
-							
+
 							//se imprimen widgets
 							echo '<div class="row">';
 								echo widget_Ficha_1('bg-aqua', 'fa-address-card-o', 100, 'Mis Datos', 'Datos del perfil', 'principal_datos.php', 'Ver Mas', 1,1);
 								echo widget_Ficha_1('bg-yellow', 'fa-usd', 100, 'Documentos Vencidos', $totalFactVenta.' Pendientes', 'gestion_documentos_pendientes.php', 'Ver Pendientes', 1,1);
 								echo widget_Ficha_1('bg-purple', 'fa-handshake-o', 100, 'Tickets Abiertos', $totalAsistencias.' Pendientes', 'gestion_tickets.php?pagina=1', 'Ver Mas', 1,1);
 							echo '</div>';
-							
+
 						echo '</div>';
 						/*************************************************************/
 						//Lado Derecho
 						/*echo '<div class="col-sm-3">';
 							echo '<div class="row">';
-								
+
 								/*************************************************************/
 								//meteo
-								/*if(isset($_SESSION['usuario']['basic_data']['Pronostico'])&&$_SESSION['usuario']['basic_data']['Pronostico']!=''){		
+								/*if(isset($_SESSION['usuario']['basic_data']['Pronostico'])&&$_SESSION['usuario']['basic_data']['Pronostico']!=''){
 									echo '
 									<a class="weatherwidget-io" href="'.$_SESSION['usuario']['basic_data']['Pronostico'].'" data-label_1="'.$_SESSION['usuario']['basic_data']['Region'].'" data-label_2="Pronostico" data-theme="pure" >'.$_SESSION['usuario']['basic_data']['Region'].'</a>
 									<script>
@@ -82,36 +81,22 @@ echo '
 								}
 								/*************************************************************/
 								//Sismos
-								/*echo '<div class="clearfix" ></div>';	
-								echo widget_sismologia();
-									
-								
-									
+								/*echo '<div class="clearfix" ></div>';
+								//echo widget_sismologia();
+
 							echo '</div>';
 						echo '</div>';
 						/*************************************************************/
-						
-					
-						
-						
-						
-						
-						
-						
-						
 
-
-						
 					/*************************************************************/
 					echo '
 					</div>
 				</div>
 			</div>
-			
-			
+
 		</div>
 	</div>
-					
+
 ';
 
 ?>

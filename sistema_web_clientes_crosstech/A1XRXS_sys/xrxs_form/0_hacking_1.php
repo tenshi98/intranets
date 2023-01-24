@@ -5,9 +5,9 @@
 //variables
 $sesion_usuario          = 'Ninguno';
 $sesion_fecha            = fecha_actual();
-$sesion_hora             = hora_actual();		
+$sesion_hora             = hora_actual();
 $sesion_IP_Client        = obtenerIpCliente();
-$sesion_Agent_Transp     = obtenerSistOperativo().' - '.obtenerNavegador();	
+$sesion_Agent_Transp     = obtenerSistOperativo().' - '.obtenerNavegador();
 $sesion_Empresa          = DB_SOFT_NAME;
 $sesion_N_Hacks          = 5;
 $sesion_archivo          = 'Ninguno';
@@ -25,7 +25,7 @@ if(isset($form_trabajo)&&$form_trabajo!=''){ $sesion_tarea    = $form_trabajo;}
 //Verifico la existencia de la ip del atacante
 if(isset($sesion_IP_Client)&&$sesion_IP_Client!=''){
 	//obtengo la cantidad de veces de intento de hackeo
-	$n_hackeos = db_select_nrows (false, 'idHacking', 'sistema_seguridad_hacking', '', "IP_Client='".$sesion_IP_Client."' OR usuario='".$sesion_usuario."'", $dbConn, 'Ninguno', basename($_SERVER["REQUEST_URI"], ".php"), 'Ninguno');
+	$n_hackeos = db_select_nrows (false, 'idHacking', 'sistema_seguridad_hacking', '', "IP_Client='".$sesion_IP_Client."' OR usuario='".$sesion_usuario."'", $dbConn, 'Ninguno', basename($_SERVER["REQUEST_URI"], ".php"), 'n_hackeos ');
 	//si ya hay demasiados intentos de hackeo
 	if($n_hackeos>=$sesion_N_Hacks){
 		//Se borra todos los datos relacionados a las sesiones
@@ -37,11 +37,11 @@ if(isset($sesion_IP_Client)&&$sesion_IP_Client!=''){
 	//verifico el numero de intentos de hackeo y guardo el dato
 	}elseif($n_hackeos<$sesion_N_Hacks){
 		//filtros
-		if(isset($sesion_fecha) && $sesion_fecha != ''){                $a  = "'".$sesion_fecha."'" ;           }else{$a  = "''";}
-		if(isset($sesion_hora) && $sesion_hora != ''){                  $a .= ",'".$sesion_hora."'" ;           }else{$a .= ",''";}
-		if(isset($sesion_IP_Client) && $sesion_IP_Client != ''){        $a .= ",'".$sesion_IP_Client."'" ;      }else{$a .= ",''";}
-		if(isset($sesion_Agent_Transp) && $sesion_Agent_Transp != ''){  $a .= ",'".$sesion_Agent_Transp."'" ;   }else{$a .= ",''";}
-		if(isset($sesion_usuario) && $sesion_usuario != ''){            $a .= ",'".$sesion_usuario."'" ;        }else{$a .= ",''";}
+		if(isset($sesion_fecha) && $sesion_fecha!=''){                $a  = "'".$sesion_fecha."'";           }else{$a  = "''";}
+		if(isset($sesion_hora) && $sesion_hora!=''){                  $a .= ",'".$sesion_hora."'";           }else{$a .= ",''";}
+		if(isset($sesion_IP_Client) && $sesion_IP_Client!=''){        $a .= ",'".$sesion_IP_Client."'";      }else{$a .= ",''";}
+		if(isset($sesion_Agent_Transp) && $sesion_Agent_Transp!=''){  $a .= ",'".$sesion_Agent_Transp."'";   }else{$a .= ",''";}
+		if(isset($sesion_usuario) && $sesion_usuario!=''){            $a .= ",'".$sesion_usuario."'";        }else{$a .= ",''";}
 						
 		// inserto los datos de registro en la db
 		$query  = "INSERT INTO `sistema_seguridad_hacking` (Fecha, Hora, IP_Client, Agent_Transp, usuario) 
@@ -64,7 +64,7 @@ if(isset($sesion_IP_Client)&&$sesion_IP_Client!=''){
 	$sesion_texto .= ' - '.$sesion_tarea;
 			
 	//se guarda el log
-	log_response(4, $rmail, $sesion_texto);	
+	log_response(4, $rmail, $sesion_texto);
 
 //si no hay IP igual lo saco del sistema
 }else{

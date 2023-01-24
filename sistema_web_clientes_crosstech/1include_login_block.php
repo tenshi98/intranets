@@ -253,7 +253,7 @@ chatterTL
 yetiTL = new TimelineMax({paused: true, repeat: -1, repeatDelay: 0, delay: 0});
 yetiTL
 	.addCallback(function() {
-		chatterTL.play();	
+		chatterTL.play();
 	}, "0")
 	
 	.to(['#armL', '#flashlightFront'], .075, {x: 7}, "2.5")

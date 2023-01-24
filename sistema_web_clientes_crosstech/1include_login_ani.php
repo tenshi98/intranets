@@ -5,7 +5,7 @@
 			<h1 class="comingsoontxt">Sitio en mantencion desde <?php echo $Mantenciones['Hora_ini']; ?> hasta las <?php echo $Mantenciones['Hora_fin']; ?> hrs</h1>
 		</div>
 		<div class="col-md-3"></div>
-	</div>		
+	</div>	
 		<div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8 svgcenter">
@@ -37,15 +37,15 @@
                      <rect x="198.896" y="128.404" fill="#D4D6D8" width="143" height="29"/>
                      <rect x="214.896" y="160.404" fill="#D4D6D8" width="110" height="26"/>
                   </g>
-                  <polygon id="HILL1" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="276.896,201.406 
+                  <polygon id="HILL1" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="276.896,201.406
                      182.897,292.218 372.23,291.904 "/>
-                  <polygon id="HILL2" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="52.229,292.404 
+                  <polygon id="HILL2" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="52.229,292.404
                      135.563,206.782 235.563,292.404 "/>
-                  <polygon id="HILL3" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="131.563,292.361 
+                  <polygon id="HILL3" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="131.563,292.361
                      206.896,216.073 296.23,291.904 "/>
                   <g id="house3">
                      <rect x="428.896" y="238.404" fill="#FFF9EE" stroke="#414042" stroke-width="2" stroke-miterlimit="10" width="29" height="53"/>
-                     <polygon fill="#FFF9EE" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="459.063,238.885 443.396,227.404 
+                     <polygon fill="#FFF9EE" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="459.063,238.885 443.396,227.404
                         428.896,239.404 	"/>
                      <rect x="433.396" y="242.904" fill="#FCB832" stroke="#414042" stroke-miterlimit="10" width="7" height="7"/>
                      <rect x="445.396" y="242.904" fill="#FCB832" stroke="#414042" stroke-miterlimit="10" width="7" height="7"/>
@@ -69,7 +69,7 @@
                      <line fill="none" stroke="#414042" stroke-width="2" stroke-miterlimit="10" x1="376.896" y1="241.404" x2="428.896" y2="241.404"/>
                      <rect x="371.896" y="163.404" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" width="61" height="7"/>
                      <rect x="377.896" y="157.404" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" width="47" height="6"/>
-                     <polyline fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="415.896,291.404 415.896,283.404 
+                     <polyline fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="415.896,291.404 415.896,283.404
                         387.896,283.404 387.896,291.404 	"/>
                      <line fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" x1="401.896" y1="283.404" x2="401.896" y2="291.404"/>
                   </g>
@@ -147,7 +147,7 @@
                      <rect x="310.396" y="264.904" fill="#FFFFFF" stroke="#414042" stroke-miterlimit="10" width="15" height="5"/>
                      <rect x="310.396" y="272.904" fill="#FFFFFF" stroke="#414042" stroke-miterlimit="10" width="15" height="5"/>
                      <rect x="310.396" y="279.904" fill="#FFFFFF" stroke="#414042" stroke-miterlimit="10" width="15" height="5"/>
-                     <polygon fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="291.396,210.404 335.896,210.404 
+                     <polygon fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="291.396,210.404 335.896,210.404
                         335.896,196.404 292.396,196.404 	"/>
                   </g>
                   <g id="house">
@@ -161,9 +161,9 @@
                      <line fill="#FDC65E" stroke="#413F43" stroke-width="2" stroke-miterlimit="10" x1="292.896" y1="274.404" x2="292.896" y2="284.404"/>
                      <line fill="#FDC65E" stroke="#413F43" stroke-width="2" stroke-miterlimit="10" x1="284.896" y1="280.404" x2="305.896" y2="280.404"/>
                      <rect x="226.896" y="264.404" fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" width="87" height="4"/>
-                     <polygon fill="#FDC65E" stroke="#413F43" stroke-width="2" stroke-miterlimit="10" points="229.521,264.743 241.934,250.404 
+                     <polygon fill="#FDC65E" stroke="#413F43" stroke-width="2" stroke-miterlimit="10" points="229.521,264.743 241.934,250.404
                         300.896,250.404 314.146,265.029 	"/>
-                     <polygon fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="271.396,252.593 250.146,267.404 
+                     <polygon fill="#E6E7E8" stroke="#414042" stroke-width="2" stroke-miterlimit="10" points="271.396,252.593 250.146,267.404
                         291.896,267.404 	"/>
                   </g>
                   <g id="SUN" class="mgrotate">
@@ -374,7 +374,7 @@
 </div>
          
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-<script src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/js_animate.js"></script>     
-<style>.login {background: none !important;background-color: #87939d !important;}</style> 
+<script src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/js_animate.js"></script>
+<style>.login {background: none !important;background-color: #87939d !important;}</style>
  
          

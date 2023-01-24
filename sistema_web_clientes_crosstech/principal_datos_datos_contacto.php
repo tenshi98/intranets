@@ -10,7 +10,7 @@ require_once 'core/Load.Utils.Web.php';
 /**********************************************************************************************************************************/
 /*                                          Modulo de identificacion del documento                                                */
 /**********************************************************************************************************************************/
-//Cargamos la ubicacion 
+//Cargamos la ubicacion original
 $original = "principal_datos.php";
 $location = $original;
 $new_location = "principal_datos_datos_contacto.php";
@@ -20,7 +20,7 @@ $t_dashboard = '<i class="fa fa-address-card-o" aria-hidden="true"></i> Mis Dato
 /*                                          Se llaman a las partes de los formularios                                             */
 /**********************************************************************************************************************************/
 //formulario para editar
-if ( !empty($_POST['submit_edit']) )  { 
+if (!empty($_POST['submit_edit'])){
 	//Llamamos al formulario
 	$form_trabajo= 'update';
 	require_once 'A1XRXS_sys/xrxs_form/clientes_listado.php';
@@ -38,9 +38,9 @@ if (isset($_GET['edited'])){  $error['edited']  = 'sucess/Cliente editado correc
 if (isset($_GET['deleted'])){ $error['deleted'] = 'sucess/Cliente borrado correctamente';}
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);}
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Se traen todos los datos de mi Cliente
-$query = "SELECT Fono1,Fono2, Fax, email, Web, Nombre, idTipo
+$query = "SELECT Fono1,Fono2, Fax, email, Web, Nombre,idTipo
 FROM `clientes_listado`
 WHERE idCliente = '".$_SESSION['usuario']['basic_data']['idCliente']."'";
 //Consulta
@@ -58,7 +58,7 @@ if(!$resultado){
 }
 $rowdata = mysqli_fetch_assoc ($resultado);?>
 
-<div class="col-sm-12">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Cliente', $rowdata['Nombre'], 'Editar Datos de contacto');?>
 </div>
 <div class="clearfix"></div>
@@ -67,7 +67,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);?>
 /****************************************************************************/
 //mensaje en caso de no haber cambiado la contraseña
 if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['basic_data']['password']=='81dc9bdb52d04dc20036dbd8313ed055'){
-	echo '<div class="col-sm-12">';
+	echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
 	$Alert_Text  = '<strong>Cambio de contraseña: </strong> ';
 	$Alert_Text .= 'Por motivos de seguridad, se recomienda <strong>cambiar</strong> la contraseña';
 	$Alert_Text .= '<a href="principal_datos_datos_password.php" title="Cambio de contraseña" class="btn btn-primary btn-sm pull-right margin_width" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cambio de contraseña</a>';
@@ -75,7 +75,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 	echo '</div>';
 } ?>
 
-<div class="col-sm-12">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="box">
 		<header>
 			<ul class="nav nav-tabs pull-right">
@@ -91,20 +91,20 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 						<?php } ?>
 						<li class=""><a href="<?php echo 'principal_datos_datos_password.php';?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
 					</ul>
-                </li>           
-			</ul>	
+                </li>
+			</ul>
 		</header>
         <div class="table-responsive">
-			<div class="col-sm-8 fcenter" style="padding-top:40px;">
-				<form class="form-horizontal" method="post" id="form1" name="form1" novalidate>		
+			<div class="col-sm-10 col-md-9 col-lg-8 fcenter" style="padding-top:40px;">
+				<form class="form-horizontal" method="post" id="form1" name="form1" novalidate>
 			
 					<?php 
 					//Se verifican si existen los datos
-					if(isset($Fono1)) {            $x2 = $Fono1;             }else{$x2 = $rowdata['Fono1'];}
-					if(isset($Fono2)) {            $x3 = $Fono2;             }else{$x3 = $rowdata['Fono2'];}
-					if(isset($Fax)) {              $x4 = $Fax;               }else{$x4 = $rowdata['Fax'];}
-					if(isset($email)) {            $x5 = $email;             }else{$x5 = $rowdata['email'];}
-					if(isset($Web)) {              $x6 = $Web;               }else{$x6 = $rowdata['Web'];}
+					if(isset($Fono1)){            $x2 = $Fono1;             }else{$x2 = $rowdata['Fono1'];}
+					if(isset($Fono2)){            $x3 = $Fono2;             }else{$x3 = $rowdata['Fono2'];}
+					if(isset($Fax)){              $x4 = $Fax;               }else{$x4 = $rowdata['Fax'];}
+					if(isset($email)){            $x5 = $email;             }else{$x5 = $rowdata['email'];}
+					if(isset($Web)){              $x6 = $Web;               }else{$x6 = $rowdata['Web'];}
 					
 					//se dibujan los inputs
 					$Form_Inputs = new Form_Inputs();
@@ -117,13 +117,13 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 					$Form_Inputs->form_input_hidden('idCliente', simpleEncode($_SESSION['usuario']['basic_data']['idCliente'], fecha_actual()), 2);
 					?>
 
-					<div class="form-group">		
-						<input type="submit" class="btn btn-primary fright margin_width fa-input" value="&#xf0c7; Guardar Cambios" name="submit_edit"> 		
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary pull-right margin_form_btn fa-input" value="&#xf0c7; Guardar Cambios" name="submit_edit">
 					</div>
 				</form>
 				<?php widget_validator(); ?>
 			</div>
-		</div>	
+		</div>
 	</div>
 </div>
 

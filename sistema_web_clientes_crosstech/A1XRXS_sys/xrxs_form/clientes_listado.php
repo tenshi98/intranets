@@ -2,44 +2,44 @@
 /*******************************************************************************************************************/
 /*                                              Bloque de seguridClientead                                                */
 /*******************************************************************************************************************/
-if( ! defined('XMBCXRXSKGC')) {
+if( ! defined('XMBCXRXSKGC')){
     die('No tienes acceso a esta carpeta o archivo (Access Code 1009-001).');
 }
 /*******************************************************************************************************************/
 /*                                          Verifica si la Sesion esta activa                                      */
 /*******************************************************************************************************************/
-require_once '0_validate_user_1.php';	
+require_once '0_validate_user_1.php';
 /*******************************************************************************************************************/
 /*                                        Se traspasan los datos a variables                                       */
 /*******************************************************************************************************************/
 
 	//Traspaso de valores input a variables
-	if ( !empty($_POST['idCliente']) )             $idCliente               = simpleDecode($_POST['idCliente'], fecha_actual());
-	if ( !empty($_POST['idSistema']) )             $idSistema               = simpleDecode($_POST['idSistema'], fecha_actual());
-	if ( !empty($_POST['idEstado']) )              $idEstado                = $_POST['idEstado'];
-	if ( !empty($_POST['idTipo']) )                $idTipo                  = $_POST['idTipo'];
-	if ( !empty($_POST['idRubro']) )               $idRubro                 = $_POST['idRubro'];
-	if ( !empty($_POST['email']) )                 $email                   = $_POST['email'];
-	if ( !empty($_POST['Nombre']) )                $Nombre 	                = $_POST['Nombre'];
-	if ( !empty($_POST['RazonSocial']) )           $RazonSocial 	        = $_POST['RazonSocial'];
-	if ( !empty($_POST['Rut']) )                   $Rut 	                = $_POST['Rut'];
-	if ( !empty($_POST['fNacimiento']) )           $fNacimiento 	        = $_POST['fNacimiento'];
-	if ( !empty($_POST['Direccion']) )             $Direccion 	            = $_POST['Direccion'];
-	if ( !empty($_POST['Fono1']) )                 $Fono1 	                = $_POST['Fono1'];
-	if ( !empty($_POST['Fono2']) )                 $Fono2 	                = $_POST['Fono2'];
-	if ( !empty($_POST['idCiudad']) )              $idCiudad                = $_POST['idCiudad'];
-	if ( !empty($_POST['idComuna']) )              $idComuna                = $_POST['idComuna'];
-	if ( !empty($_POST['Fax']) )                   $Fax                     = $_POST['Fax'];
-	if ( !empty($_POST['PersonaContacto']) )       $PersonaContacto         = $_POST['PersonaContacto'];
-	if ( !empty($_POST['PersonaContacto_Fono']) )  $PersonaContacto_Fono    = $_POST['PersonaContacto_Fono'];
-	if ( !empty($_POST['PersonaContacto_email']) ) $PersonaContacto_email   = $_POST['PersonaContacto_email'];
-	if ( !empty($_POST['Web']) )                   $Web                     = $_POST['Web'];
-	if ( !empty($_POST['Giro']) )                  $Giro                    = $_POST['Giro'];
-	if ( !empty($_POST['password']) )              $password                = $_POST['password'];
-	
-	if ( !empty($_POST['repassword']) )            $repassword              = $_POST['repassword'];
-	if ( !empty($_POST['oldpassword']) )           $oldpassword             = $_POST['oldpassword'];
-	
+	if (!empty($_POST['idCliente']))             $idCliente               = simpleDecode($_POST['idCliente'], fecha_actual());
+	if (!empty($_POST['idSistema']))             $idSistema               = simpleDecode($_POST['idSistema'], fecha_actual());
+	if (!empty($_POST['idEstado']))              $idEstado                = $_POST['idEstado'];
+	if (!empty($_POST['idTipo']))                $idTipo                  = $_POST['idTipo'];
+	if (!empty($_POST['idRubro']))               $idRubro                 = $_POST['idRubro'];
+	if (!empty($_POST['email']))                 $email                   = $_POST['email'];
+	if (!empty($_POST['Nombre']))                $Nombre 	              = $_POST['Nombre'];
+	if (!empty($_POST['RazonSocial']))           $RazonSocial 	          = $_POST['RazonSocial'];
+	if (!empty($_POST['Rut']))                   $Rut 	                  = $_POST['Rut'];
+	if (!empty($_POST['fNacimiento']))           $fNacimiento 	          = $_POST['fNacimiento'];
+	if (!empty($_POST['Direccion']))             $Direccion 	          = $_POST['Direccion'];
+	if (!empty($_POST['Fono1']))                 $Fono1 	              = $_POST['Fono1'];
+	if (!empty($_POST['Fono2']))                 $Fono2 	              = $_POST['Fono2'];
+	if (!empty($_POST['idCiudad']))              $idCiudad                = $_POST['idCiudad'];
+	if (!empty($_POST['idComuna']))              $idComuna                = $_POST['idComuna'];
+	if (!empty($_POST['Fax']))                   $Fax                     = $_POST['Fax'];
+	if (!empty($_POST['PersonaContacto']))       $PersonaContacto         = $_POST['PersonaContacto'];
+	if (!empty($_POST['PersonaContacto_Fono']))  $PersonaContacto_Fono    = $_POST['PersonaContacto_Fono'];
+	if (!empty($_POST['PersonaContacto_email'])) $PersonaContacto_email   = $_POST['PersonaContacto_email'];
+	if (!empty($_POST['Web']))                   $Web                     = $_POST['Web'];
+	if (!empty($_POST['Giro']))                  $Giro                    = $_POST['Giro'];
+	if (!empty($_POST['password']))              $password                = $_POST['password'];
+
+	if (!empty($_POST['repassword']))            $repassword              = $_POST['repassword'];
+	if (!empty($_POST['oldpassword']))           $oldpassword             = $_POST['oldpassword'];
+
 /*******************************************************************************************************************/
 /*                                      Verificacion de los datos obligatorios                                     */
 /*******************************************************************************************************************/
@@ -73,55 +73,55 @@ require_once '0_validate_user_1.php';
 			case 'Web':                    if(empty($Web)){                                  $error['Web']                     = 'error/No ha ingresado la pagina web';}break;
 			case 'Giro':                   if(empty($Giro)){                                 $error['Giro']                    = 'error/No ha ingresado el Giro de la empresa';}break;
 			case 'password':               if(empty($password)&&$form_trabajo!='getpass'){   $error['password']                = 'error/No ha ingresado el password';}break;
-			
+
 			case 'repassword':             if(empty($repassword)){                           $error['repassword']              = 'error/No ha ingresado la repeticion del password';}break;
 			case 'oldpassword':            if(empty($oldpassword)){                          $error['oldpassword']             = 'error/No ha ingresado el password antiguo';}break;
-			
+
 		}
 	}
 /*******************************************************************************************************************/
 /*                                        Verificacion de los datos ingresados                                     */
-/*******************************************************************************************************************/	
+/*******************************************************************************************************************/
 	//Verifica si el mail corresponde
-	if(isset($email)&&!validarEmail($email)){                                 $error['email']                  = 'error/El Email ingresado no es valido'; }	
-	if(isset($Fono1)&&!validarNumero($Fono1)) {                               $error['Fono1']                  = 'error/Ingrese un numero telefonico valido'; }
-	if(isset($Fono2)&&!validarNumero($Fono2)) {                               $error['Fono2']                  = 'error/Ingrese un numero telefonico valido'; }
-	if(isset($Rut)&&!validarRut($Rut)){                                       $error['Rut']                    = 'error/El Rut ingresado no es valido'; }
-	if(isset($PersonaContacto_email)&&!validarEmail($PersonaContacto_email)){ $error['email']                  = 'error/El Email ingresado no es valido'; }
-	if(isset($PersonaContacto_Fono)&&!validarNumero($PersonaContacto_Fono)) { $error['PersonaContacto_Fono']   = 'error/Ingrese un numero telefonico valido'; }
+	if(isset($email)&&!validarEmail($email)){                                 $error['email']                  = 'error/El Email ingresado no es valido';}
+	if(isset($Fono1)&&!validarNumero($Fono1)){                                $error['Fono1']                  = 'error/Ingrese un numero telefonico valido';}
+	if(isset($Fono2)&&!validarNumero($Fono2)){                                $error['Fono2']                  = 'error/Ingrese un numero telefonico valido';}
+	if(isset($Rut)&&!validarRut($Rut)){                                       $error['Rut']                    = 'error/El Rut ingresado no es valido';}
+	if(isset($PersonaContacto_email)&&!validarEmail($PersonaContacto_email)){ $error['email']                  = 'error/El Email ingresado no es valido';}
+	if(isset($PersonaContacto_Fono)&&!validarNumero($PersonaContacto_Fono)){  $error['PersonaContacto_Fono']   = 'error/Ingrese un numero telefonico valido';}
 	if(isset($password)&&isset($repassword)){
-		if ( $password <> $repassword )                  $error['password']  = 'error/Las contraseñas ingresadas no coinciden'; 
+		if ( $password <> $repassword )                  $error['password']  = 'error/Las contraseñas ingresadas no coinciden';
 	}
 	if(isset($password)){
 		if (strpos($password, " ")){                     $error['Password1'] = 'error/La contraseña contiene espacios vacios';}
 	}
 /*******************************************************************************************************************/
 /*                                        Verificacion de los datos ingresados                                     */
-/*******************************************************************************************************************/	
-if(isset($email)&&contar_palabras_censuradas($email)!=0){                                 $error['email']                  = 'error/Edita el email, contiene palabras no permitidas'; }	
-if(isset($Nombre)&&contar_palabras_censuradas($Nombre)!=0){                               $error['Nombre']                 = 'error/Edita el nombre, contiene palabras no permitidas'; }	
-if(isset($RazonSocial)&&contar_palabras_censuradas($RazonSocial)!=0){                     $error['RazonSocial']            = 'error/Edita la razonSocial, contiene palabras no permitidas'; }	
-if(isset($Direccion)&&contar_palabras_censuradas($Direccion)!=0){                         $error['Direccion']              = 'error/Edita la direccion, contiene palabras no permitidas'; }	
-if(isset($Fono1)&&contar_palabras_censuradas($Fono1)!=0){                                 $error['Fono1']                  = 'error/Edita el fono1, contiene palabras no permitidas'; }	
-if(isset($Fono2)&&contar_palabras_censuradas($Fono2)!=0){                                 $error['Fono2']                  = 'error/Edita el fono2, contiene palabras no permitidas'; }	
-if(isset($Fax)&&contar_palabras_censuradas($Fax)!=0){                                     $error['Fax']                    = 'error/Edita el fax, contiene palabras no permitidas'; }	
-if(isset($PersonaContacto)&&contar_palabras_censuradas($PersonaContacto)!=0){             $error['PersonaContacto']        = 'error/Edita la persona de contacto, contiene palabras no permitidas'; }	
-if(isset($PersonaContacto_Fono)&&contar_palabras_censuradas($PersonaContacto_Fono)!=0){   $error['PersonaContacto_Fono']   = 'error/Edita el fono de persona de contacto, contiene palabras no permitidas'; }	
-if(isset($PersonaContacto_email)&&contar_palabras_censuradas($PersonaContacto_email)!=0){ $error['PersonaContacto_email']  = 'error/Edita el email de persona de contacto, contiene palabras no permitidas'; }	
-if(isset($Web)&&contar_palabras_censuradas($Web)!=0){                                     $error['Web']                    = 'error/Edita la web, contiene palabras no permitidas'; }	
-if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                                   $error['Giro']                   = 'error/Edita el giro, contiene palabras no permitidas'; }	
-	
+/*******************************************************************************************************************/
+if(isset($email)&&contar_palabras_censuradas($email)!=0){                                 $error['email']                  = 'error/Edita el email, contiene palabras no permitidas';}
+if(isset($Nombre)&&contar_palabras_censuradas($Nombre)!=0){                               $error['Nombre']                 = 'error/Edita el Nombre,contiene palabras no permitidas';}
+if(isset($RazonSocial)&&contar_palabras_censuradas($RazonSocial)!=0){                     $error['RazonSocial']            = 'error/Edita la razonSocial, contiene palabras no permitidas';}
+if(isset($Direccion)&&contar_palabras_censuradas($Direccion)!=0){                         $error['Direccion']              = 'error/Edita la direccion, contiene palabras no permitidas';}
+if(isset($Fono1)&&contar_palabras_censuradas($Fono1)!=0){                                 $error['Fono1']                  = 'error/Edita el fono1, contiene palabras no permitidas';}
+if(isset($Fono2)&&contar_palabras_censuradas($Fono2)!=0){                                 $error['Fono2']                  = 'error/Edita el fono2, contiene palabras no permitidas';}
+if(isset($Fax)&&contar_palabras_censuradas($Fax)!=0){                                     $error['Fax']                    = 'error/Edita el fax, contiene palabras no permitidas';}
+if(isset($PersonaContacto)&&contar_palabras_censuradas($PersonaContacto)!=0){             $error['PersonaContacto']        = 'error/Edita la persona de contacto, contiene palabras no permitidas';}
+if(isset($PersonaContacto_Fono)&&contar_palabras_censuradas($PersonaContacto_Fono)!=0){   $error['PersonaContacto_Fono']   = 'error/Edita el fono de persona de contacto, contiene palabras no permitidas';}
+if(isset($PersonaContacto_email)&&contar_palabras_censuradas($PersonaContacto_email)!=0){ $error['PersonaContacto_email']  = 'error/Edita el email de persona de contacto, contiene palabras no permitidas';}
+if(isset($Web)&&contar_palabras_censuradas($Web)!=0){                                     $error['Web']                    = 'error/Edita la web, contiene palabras no permitidas';}
+if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                                   $error['Giro']                   = 'error/Edita el giro, contiene palabras no permitidas';}
+
 /*******************************************************************************************************************/
 /*                                            Se ejecutan las instrucciones                                        */
 /*******************************************************************************************************************/
 	//ejecuto segun la funcion
 	switch ($form_trabajo) {
-/*******************************************************************************************************************/		
-		case 'update':	
-			
+/*******************************************************************************************************************/
+		case 'update':
+
 			//Se elimina la restriccion del sql 5.7
 			mysqli_query($dbConn, "SET SESSION sql_mode = ''");
-			
+
 			/*******************************************************************/
 			//variables
 			$ndata_1 = 0;
@@ -148,23 +148,23 @@ if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                         
 			if($ndata_4 == 0) { $error['ndata_4'] = 'error/Las contraseñas ingresadas no coinciden';}
 			/*******************************************************************/
 			//Consulto la latitud y la longitud
-			if(isset($idCiudad) && $idCiudad != ''&&isset($idComuna) && $idComuna != ''&&isset($Direccion) && $Direccion != ''){
+			if(isset($idCiudad) && $idCiudad != ''&&isset($idComuna) && $idComuna != ''&&isset($Direccion) && $Direccion!=''){
 				//variable con la direccion
 				$address = '';
-				if(isset($idCiudad) && $idCiudad != ''){
+				if(isset($idCiudad) && $idCiudad!=''){
 					$rowdata = db_select_data (false, 'Nombre', 'core_ubicacion_ciudad', '', 'idCiudad = "'.$idCiudad.'"', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 					$address .= $rowdata['Nombre'].', ';
 				}
-				if(isset($idComuna) && $idComuna != ''){
+				if(isset($idComuna) && $idComuna!=''){
 					$rowdata = db_select_data (false, 'Nombre', 'core_ubicacion_comunas', '', 'idComuna = "'.$idComuna.'"', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 					$address .= $rowdata['Nombre'].', ';
 				}
-				if(isset($Direccion) && $Direccion != ''){
+				if(isset($Direccion) && $Direccion!=''){
 					$address .= $Direccion;
 				}
 				if($address!=''){
 					$geocodeData = getGeocodeData($address, $_SESSION['usuario']['basic_data']['Config_IDGoogle']);
-					if($geocodeData) {         
+					if($geocodeData) {
 						$GeoLatitud  = $geocodeData[0];
 						$GeoLongitud = $geocodeData[1];
 					} else {
@@ -176,98 +176,87 @@ if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                         
 			}else{
 				//$error['ndata_4'] = 'error/Sin direccion ingresada';
 			}
-			
-			// si no hay errores ejecuto el codigo	
-			if ( empty($error) ) {
+
+			// si no hay errores ejecuto el codigo
+			if(empty($error)){
 				//Filtros
-				$a = "idCliente='".$idCliente."'" ;
-				if(isset($idSistema) && $idSistema != ''){                           $a .= ",idSistema='".$idSistema."'" ;}
-				if(isset($idEstado) && $idEstado != ''){                             $a .= ",idEstado='".$idEstado."'" ;}
-				if(isset($idTipo) && $idTipo != ''){                                 $a .= ",idTipo='".$idTipo."'" ;}
-				if(isset($idRubro) && $idRubro != ''){                               $a .= ",idRubro='".$idRubro."'" ;}
-				if(isset($email) && $email != ''){                                   $a .= ",email='".$email."'" ;}
-				if(isset($Nombre) && $Nombre != ''){                                 $a .= ",Nombre='".$Nombre."'" ;}
-				if(isset($RazonSocial) && $RazonSocial != ''){                       $a .= ",RazonSocial='".$RazonSocial."'" ;}
-				if(isset($Rut) && $Rut != ''){                                       $a .= ",Rut='".$Rut."'" ;}
-				if(isset($fNacimiento) && $fNacimiento != ''){                       $a .= ",fNacimiento='".$fNacimiento."'" ;}
-				if(isset($Direccion) && $Direccion != ''){                           $a .= ",Direccion='".$Direccion."'" ;}
-				if(isset($Fono1) && $Fono1 != ''){                                   $a .= ",Fono1='".$Fono1."'" ;}
-				if(isset($Fono2) && $Fono2 != ''){                                   $a .= ",Fono2='".$Fono2."'" ;}
-				if(isset($idCiudad) && $idCiudad!= ''){                              $a .= ",idCiudad='".$idCiudad."'" ;}
-				if(isset($idComuna) && $idComuna!= ''){                              $a .= ",idComuna='".$idComuna."'" ;}
-				if(isset($Fax) && $Fax!= ''){                                        $a .= ",Fax='".$Fax."'" ;}
-				if(isset($PersonaContacto) && $PersonaContacto!= ''){                $a .= ",PersonaContacto='".$PersonaContacto."'" ;}
-				if(isset($PersonaContacto_Fono) && $PersonaContacto_Fono!= ''){      $a .= ",PersonaContacto_Fono='".$PersonaContacto_Fono."'" ;}
-				if(isset($PersonaContacto_email) && $PersonaContacto_email!= ''){    $a .= ",PersonaContacto_email='".$PersonaContacto_email."'" ;}
-				if(isset($Web) && $Web!= ''){                                        $a .= ",Web='".$Web."'" ;}
-				if(isset($Giro) && $Giro!= ''){                                      $a .= ",Giro='".$Giro."'" ;}
-				if(isset($password) && $password!= ''){                              $a .= ",password='".md5($password)."'" ;}
-				
+				$SIS_data = "idCliente='".$idCliente."'";
+				if(isset($idSistema) && $idSistema!=''){                             $SIS_data .= ",idSistema='".$idSistema."'";}
+				if(isset($idEstado) && $idEstado!=''){                               $SIS_data .= ",idEstado='".$idEstado."'";}
+				if(isset($idTipo) && $idTipo!=''){                                   $SIS_data .= ",idTipo='".$idTipo."'";}
+				if(isset($idRubro) && $idRubro!=''){                                 $SIS_data .= ",idRubro='".$idRubro."'";}
+				if(isset($email) && $email!=''){                                     $SIS_data .= ",email='".$email."'";}
+				if(isset($Nombre) && $Nombre!=''){                                   $SIS_data .= ",Nombre='".$Nombre."'";}
+				if(isset($RazonSocial) && $RazonSocial!=''){                         $SIS_data .= ",RazonSocial='".$RazonSocial."'";}
+				if(isset($Rut) && $Rut!=''){                                         $SIS_data .= ",Rut='".$Rut."'";}
+				if(isset($fNacimiento) && $fNacimiento!=''){                         $SIS_data .= ",fNacimiento='".$fNacimiento."'";}
+				if(isset($Direccion) && $Direccion!=''){                             $SIS_data .= ",Direccion='".$Direccion."'";}
+				if(isset($Fono1) && $Fono1!=''){                                     $SIS_data .= ",Fono1='".$Fono1."'";}
+				if(isset($Fono2) && $Fono2!=''){                                     $SIS_data .= ",Fono2='".$Fono2."'";}
+				if(isset($idCiudad) && $idCiudad!= ''){                              $SIS_data .= ",idCiudad='".$idCiudad."'";}
+				if(isset($idComuna) && $idComuna!= ''){                              $SIS_data .= ",idComuna='".$idComuna."'";}
+				if(isset($Fax) && $Fax!= ''){                                        $SIS_data .= ",Fax='".$Fax."'";}
+				if(isset($PersonaContacto) && $PersonaContacto!= ''){                $SIS_data .= ",PersonaContacto='".$PersonaContacto."'";}
+				if(isset($PersonaContacto_Fono) && $PersonaContacto_Fono!= ''){      $SIS_data .= ",PersonaContacto_Fono='".$PersonaContacto_Fono."'";}
+				if(isset($PersonaContacto_email) && $PersonaContacto_email!= ''){    $SIS_data .= ",PersonaContacto_email='".$PersonaContacto_email."'";}
+				if(isset($Web) && $Web!= ''){                                        $SIS_data .= ",Web='".$Web."'";}
+				if(isset($Giro) && $Giro!= ''){                                      $SIS_data .= ",Giro='".$Giro."'";}
+				if(isset($password) && $password!= ''){                              $SIS_data .= ",password='".md5($password)."'";}
+
 				//se actualizan los datos
-				$resultado = db_update_data (false, $a, 'clientes_listado', 'idCliente = "'.$idCliente.'"', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
+				$resultado = db_update_data (false, $SIS_data, 'clientes_listado', 'idCliente = "'.$idCliente.'"', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 				//Si ejecuto correctamente la consulta
 				if($resultado==true){
-					
+
 					/**********************************************************************/
 					//Datos propios
 					//si confirma ubicacion o deja de ser nuevo
-					if(isset($Nombre) && $Nombre != ''){   $_SESSION['usuario']['basic_data']['Nombre']      = $Nombre;}
-					if(isset($Rut) && $Rut != ''){         $_SESSION['usuario']['basic_data']['Rut']         = $Rut;}
-					
+					if(isset($Nombre) && $Nombre!=''){   $_SESSION['usuario']['basic_data']['Nombre'] = $Nombre;}
+					if(isset($Rut) && $Rut!=''){         $_SESSION['usuario']['basic_data']['Rut']    = $Rut;}
+
 					//redirijo
 					header( 'Location: '.$location.'?edited=true' );
 					die;
-				//si da error, guardar en el log de errores una copia
-				}else{
-					//Genero numero aleatorio
-					$vardata = genera_password(8,'alfanumerico');
-					
-					//Guardo el error en una variable temporal
-					$_SESSION['ErrorListing'][$vardata]['code']         = mysqli_errno($dbConn);
-					$_SESSION['ErrorListing'][$vardata]['description']  = mysqli_error($dbConn);
-					$_SESSION['ErrorListing'][$vardata]['query']        = $query;
-					
 				}
-				
+
 			}
-		
-	
-		break;	
-						
-/*******************************************************************************************************************/		
-		case 'login': 
-			
+
+		break;
+
+/*******************************************************************************************************************/
+		case 'login':
+
 			//Se elimina la restriccion del sql 5.7
 			mysqli_query($dbConn, "SET SESSION sql_mode = ''");
-			
+
 			//Elimino cualquier dato de un usuario anterior
 			unset($_SESSION['usuario']);
-			
+
 			//Variables
 			$fecha          = fecha_actual();
 			$hora           = hora_actual();
 			$Time           = time();
 			$IP_Client      = obtenerIpCliente();
 			$Agent_Transp   = obtenerSistOperativo().' - '.obtenerNavegador();
-			$email          = '';
-				
+			//$email          = '';
+
 			//Saneado de datos ingresados
 			$password = preg_replace("/[^a-zA-Z0-9_\-]+ñÑáéíóúÁÉÍÓÚ-_?¿°()=,.<>:;*@/","",$password);
-				
+
 			//Se verifica si se trata de hacer fuerza bruta en el ingreso
 			if (checkbrute($Rut, $email, $IP_Client, 'clientes_checkbrute', $dbConn) == true) {
-				$error['checkbrute']  = 'error/Demasiados accesos fallidos, usuario bloqueado por 2 horas'; 
+				$error['checkbrute']  = 'error/Demasiados accesos fallidos, usuario bloqueado por 2 horas';
 			}
-			
+
 			//si no hay errores
-			if ( empty($error) ) {
-						
+			if(empty($error)){
+
 				//Busco al usuario en el sistema
 				$SIS_query = '
-				clientes_listado.idCliente, 
-				clientes_listado.password, 
-				clientes_listado.Rut, 
-				clientes_listado.Nombre, 
+				clientes_listado.idCliente,
+				clientes_listado.password,
+				clientes_listado.Rut,
+				clientes_listado.Nombre,
 				clientes_listado.idEstado,
 				clientes_listado.idSistema,
 				core_sistemas.Config_idTheme,
@@ -289,102 +278,106 @@ if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                         
 				LEFT JOIN `core_ubicacion_ciudad`     ON core_ubicacion_ciudad.idCiudad   = clientes_listado.idCiudad
 				LEFT JOIN `core_ubicacion_comunas`    ON core_ubicacion_comunas.idComuna  = clientes_listado.idComuna';
 				$SIS_where = 'clientes_listado.Rut = "'.$Rut.'" AND clientes_listado.password = "'.md5($password).'"';
-				$rowUser = db_select_data (false, $SIS_query, 'clientes_listado', $SIS_join, $SIS_where, $dbConn, 'Login-form', $original, $form_trabajo);
-
+				$rowUser = db_select_data (false, $SIS_query, 'clientes_listado', $SIS_join, $SIS_where, $dbConn, 'rowUser', $original, $form_trabajo);
 
 				//Se verifca si los datos ingresados son de un usuario
 				if (isset($rowUser['idCliente'])&&$rowUser['idCliente']!='') {
-					
+
 					//Verifico que el usuario identificado este activo
 					if($rowUser['idEstado']==1){
-						
+
 						/***************************************************************/
 						//Actualizo la tabla de los usuarios
 						$a = 'Ultimo_acceso="'.$fecha.'", IP_Client="'.$IP_Client.'", Agent_Transp="'.$Agent_Transp.'"';
-						$resultado = db_update_data (false, $a, 'clientes_listado', 'idCliente = "'.$rowUser['idCliente'].'"', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
-						
+						$resultado = db_update_data (false, $a, 'clientes_listado', 'idCliente = "'.$rowUser['idCliente'].'"', $dbConn, 'Ultimo_acceso', $original, $form_trabajo);
+
 						//busca si la ip del usuario ya existe
-						$n_ip = db_select_nrows (false, 'idIpUsuario', 'clientes_listado_ip', '', "IP_Client='".$IP_Client."' AND idCliente='".$rowUser['idCliente']."'", $dbConn, 'Login-form', $original, $form_trabajo);
+						$n_ip = db_select_nrows (false, 'idIpUsuario', 'clientes_listado_ip', '', "IP_Client='".$IP_Client."' AND idCliente='".$rowUser['idCliente']."'", $dbConn, 'clientes_listado_ip', $original, $form_trabajo);
 						//si la ip no existe la guarda
 						if(isset($n_ip)&&$n_ip==0){
-							$query  = "INSERT INTO `clientes_listado_ip` (idCliente,IP_Client, Fecha, Hora) VALUES (".$rowUser['idCliente'].",'".$IP_Client."','".$fecha."','".$hora."' )";
-							$resultado = mysqli_query($dbConn, $query);
+							if(isset($rowUser['idCliente']) && $rowUser['idCliente']!=''){  $SIS_data  = "'".$rowUser['idCliente']."'";  }else{$SIS_data  = "''";}
+							if(isset($IP_Client) && $IP_Client!=''){                        $SIS_data .= ",'".$IP_Client."'";            }else{$SIS_data .= ",''";}
+							if(isset($fecha) && $fecha!=''){                                $SIS_data .= ",'".$fecha."'";                }else{$SIS_data .= ",''";}
+							if(isset($hora) && $hora!=''){                                  $SIS_data .= ",'".$hora."'";                 }else{$SIS_data .= ",''";}
+
+							$SIS_columns = 'idCliente,IP_Client, Fecha, Hora';
+							$ultimo_id = db_insert_data (false, $SIS_columns, $SIS_data, 'clientes_listado_ip', $dbConn, 'clientes_listado_ip', $original, $form_trabajo);
+
 						}
-						
+
 						/**************************************************************/
 						//Inserto la fecha con el ingreso
-						if(isset($rowUser['idCliente']) && $rowUser['idCliente'] != ''){  $a  = "'".$rowUser['idCliente']."'" ;  }else{$a  = "''";}
-						if(isset($fecha) && $fecha != ''){                                $a .= ",'".$fecha."'" ;                }else{$a .= ",''";}
-						if(isset($hora) && $hora != ''){                                  $a .= ",'".$hora."'" ;                 }else{$a .= ",''";}
-						if(isset($IP_Client) && $IP_Client != ''){                        $a .= ",'".$IP_Client."'" ;            }else{$a .= ",''";}
-						if(isset($Agent_Transp) && $Agent_Transp != ''){                  $a .= ",'".$Agent_Transp."'" ;         }else{$a .= ",''";}
-										
+						if(isset($rowUser['idCliente']) && $rowUser['idCliente']!=''){  $SIS_data  = "'".$rowUser['idCliente']."'";  }else{$SIS_data  = "''";}
+						if(isset($fecha) && $fecha!=''){                                $SIS_data .= ",'".$fecha."'";                }else{$SIS_data .= ",''";}
+						if(isset($hora) && $hora!=''){                                  $SIS_data .= ",'".$hora."'";                 }else{$SIS_data .= ",''";}
+						if(isset($IP_Client) && $IP_Client!=''){                        $SIS_data .= ",'".$IP_Client."'";            }else{$SIS_data .= ",''";}
+						if(isset($Agent_Transp) && $Agent_Transp!=''){                  $SIS_data .= ",'".$Agent_Transp."'";         }else{$SIS_data .= ",''";}
+
 						// inserto los datos de registro en la db
-						$query  = "INSERT INTO `clientes_accesos` (idCliente,Fecha, Hora, IP_Client, Agent_Transp) 
-						VALUES (".$a.")";
-						//Consulta
-						$resultado = mysqli_query ($dbConn, $query);
-					
-						//Se crean las variables con todos los datos
-						$_SESSION['usuario']['basic_data']['idCliente']          = $rowUser['idCliente'];
-						$_SESSION['usuario']['basic_data']['password']           = $rowUser['password'];
-						$_SESSION['usuario']['basic_data']['Nombre']             = $rowUser['Nombre'];
-						$_SESSION['usuario']['basic_data']['Rut']                = $rowUser['Rut'];
-						$_SESSION['usuario']['basic_data']['idSistema']          = $rowUser['idSistema'];
-						$_SESSION['usuario']['basic_data']['Config_idTheme']     = $rowUser['Config_idTheme'];
-						$_SESSION['usuario']['basic_data']['Config_imgLogo']     = $rowUser['Config_imgLogo'];
-						$_SESSION['usuario']['basic_data']['Config_IDGoogle']    = $rowUser['Config_IDGoogle'];
-						$_SESSION['usuario']['basic_data']['Region']             = $rowUser['nombre_region'];
-						$_SESSION['usuario']['basic_data']['Pronostico']         = $rowUser['nombre_pronostico'];
-						$_SESSION['usuario']['basic_data']['Comuna']             = $rowUser['nombre_comuna'];
-						$_SESSION['usuario']['basic_data']['Social_idUso']       = $rowUser['Social_idUso'];
-						$_SESSION['usuario']['basic_data']['Social_facebook']    = $rowUser['Social_facebook'];
-						$_SESSION['usuario']['basic_data']['Social_twitter']     = $rowUser['Social_twitter'];
-						$_SESSION['usuario']['basic_data']['Social_instagram']   = $rowUser['Social_instagram'];
-						$_SESSION['usuario']['basic_data']['Social_linkedin']    = $rowUser['Social_linkedin'];
-						$_SESSION['usuario']['basic_data']['Social_rss']         = $rowUser['Social_rss'];
-						$_SESSION['usuario']['basic_data']['Social_youtube']     = $rowUser['Social_youtube'];
-						$_SESSION['usuario']['basic_data']['Social_tumblr']      = $rowUser['Social_tumblr'];
-					
-						/****************************************************************/
-						//Redirijo a la pagina principal si ya tiene todo configurado
-						header( 'Location: principal.php' );
-						die;
-						
-					//Si no esta activo envio error	
+						$SIS_columns = 'idCliente,Fecha, Hora, IP_Client, Agent_Transp';
+						$ultimo_id = db_insert_data (false, $SIS_columns, $SIS_data, 'clientes_accesos', $dbConn, 'clientes_accesos', $original, $form_trabajo);
+
+						//Si ejecuto correctamente la consulta
+						if($ultimo_id!=0){
+							//Se crean las variables con todos los datos
+							$_SESSION['usuario']['basic_data']['idCliente']          = $rowUser['idCliente'];
+							$_SESSION['usuario']['basic_data']['password']           = $rowUser['password'];
+							$_SESSION['usuario']['basic_data']['Nombre']             = $rowUser['Nombre'];
+							$_SESSION['usuario']['basic_data']['Rut']                = $rowUser['Rut'];
+							$_SESSION['usuario']['basic_data']['idSistema']          = $rowUser['idSistema'];
+							$_SESSION['usuario']['basic_data']['Config_idTheme']     = $rowUser['Config_idTheme'];
+							$_SESSION['usuario']['basic_data']['Config_imgLogo']     = $rowUser['Config_imgLogo'];
+							$_SESSION['usuario']['basic_data']['Config_IDGoogle']    = $rowUser['Config_IDGoogle'];
+							$_SESSION['usuario']['basic_data']['Region']             = $rowUser['nombre_region'];
+							$_SESSION['usuario']['basic_data']['Pronostico']         = $rowUser['nombre_pronostico'];
+							$_SESSION['usuario']['basic_data']['Comuna']             = $rowUser['nombre_comuna'];
+							$_SESSION['usuario']['basic_data']['Social_idUso']       = $rowUser['Social_idUso'];
+							$_SESSION['usuario']['basic_data']['Social_facebook']    = $rowUser['Social_facebook'];
+							$_SESSION['usuario']['basic_data']['Social_twitter']     = $rowUser['Social_twitter'];
+							$_SESSION['usuario']['basic_data']['Social_instagram']   = $rowUser['Social_instagram'];
+							$_SESSION['usuario']['basic_data']['Social_linkedin']    = $rowUser['Social_linkedin'];
+							$_SESSION['usuario']['basic_data']['Social_rss']         = $rowUser['Social_rss'];
+							$_SESSION['usuario']['basic_data']['Social_youtube']     = $rowUser['Social_youtube'];
+							$_SESSION['usuario']['basic_data']['Social_tumblr']      = $rowUser['Social_tumblr'];
+
+							/****************************************************************/
+							//Redirijo a la pagina principal si ya tiene todo configurado
+							header( 'Location: principal.php' );
+							die;
+						}
+
+					//Si no esta activo envio error
 					}else{
 						$error['idCliente']   = 'error/Su usuario esta desactivado, Contactese con el administrador';
 					}
-				
-				//Si no se encuentra ningun usuario se envia un error	
+
+				//Si no se encuentra ningun usuario se envia un error
 				}else{
 					$error['idCliente']   = 'error/El Rut de usuario o contraseña no coinciden';
-					
+
 					//filtros
-					if(isset($fecha) && $fecha != ''){                $a  = "'".$fecha."'" ;         }else{$a  = "''";}
-					if(isset($hora) && $hora != ''){                  $a .= ",'".$hora."'" ;         }else{$a .= ",''";}
-					if(isset($Rut) && $Rut != ''){                    $a .= ",'".$Rut."'" ;          }else{$a .= ",''";}
-					if(isset($email) && $email != ''){                $a .= ",'".$email."'" ;        }else{$a .= ",''";}
-					if(isset($IP_Client) && $IP_Client != ''){        $a .= ",'".$IP_Client."'" ;    }else{$a .= ",''";}
-					if(isset($Agent_Transp) && $Agent_Transp != ''){  $a .= ",'".$Agent_Transp."'" ; }else{$a .= ",''";}
-					if(isset($Time) && $Time != ''){                  $a .= ",'".$Time."'" ;         }else{$a .= ",''";}
-									
+					if(isset($fecha) && $fecha!=''){                $SIS_data  = "'".$fecha."'";         }else{$SIS_data  = "''";}
+					if(isset($hora) && $hora!=''){                  $SIS_data .= ",'".$hora."'";         }else{$SIS_data .= ",''";}
+					if(isset($Rut) && $Rut!=''){                    $SIS_data .= ",'".$Rut."'";          }else{$SIS_data .= ",''";}
+					if(isset($email) && $email!=''){                $SIS_data .= ",'".$email."'";        }else{$SIS_data .= ",''";}
+					if(isset($IP_Client) && $IP_Client!=''){        $SIS_data .= ",'".$IP_Client."'";    }else{$SIS_data .= ",''";}
+					if(isset($Agent_Transp) && $Agent_Transp!=''){  $SIS_data .= ",'".$Agent_Transp."'"; }else{$SIS_data .= ",''";}
+					if(isset($Time) && $Time!=''){                  $SIS_data .= ",'".$Time."'";         }else{$SIS_data .= ",''";}
+
 					// inserto los datos de registro en la db
-					$query  = "INSERT INTO `clientes_checkbrute` (Fecha, Hora, usuario, email, IP_Client, Agent_Transp, Time) 
-					VALUES (".$a.")";
-					//Consulta
-					$resultado = mysqli_query ($dbConn, $query);
-					
+					$SIS_columns = 'Fecha, Hora, usuario, email, IP_Client, Agent_Transp, Time';
+					$ultimo_id = db_insert_data (false, $SIS_columns, $SIS_data, 'clientes_checkbrute', $dbConn, 'clientes_checkbrute', $original, $form_trabajo);
+
 				}
-						
-			} 
+
+			}
 		break;
-/*******************************************************************************************************************/		
+/*******************************************************************************************************************/
 		case 'getpass':
-			
+
 			//Se elimina la restriccion del sql 5.7
 			mysqli_query($dbConn, "SET SESSION sql_mode = ''");
-			
+
 			//Variables
 			$fecha          = fecha_actual();
 			$hora           = hora_actual();
@@ -393,93 +386,99 @@ if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                         
 			$Agent_Transp   = obtenerSistOperativo().' - '.obtenerNavegador();
 			$Rut            = '';
 			$password       = '';
-				
+
 			//Saneado de datos ingresados
 			$email = preg_replace("/[^a-zA-Z0-9_\-]+ñÑáéíóúÁÉÍÓÚ-_?¿°()=,.<>:;*@/","",$email);
-				
+
 			//Se verifica si se trata de hacer fuerza bruta en el ingreso
 			if (checkbrute($Rut, $email, $IP_Client, 'clientes_checkbrute', $dbConn) == true) {
-				$error['checkbrute']  = 'error/Demasiados accesos fallidos, correo bloqueado por 2 horas'; 
+				$error['checkbrute']  = 'error/Demasiados accesos fallidos, correo bloqueado por 2 horas';
 			}
 			//se verifica que se haya ingresado el correo
 			if(!isset($email) or $email==''){
-				$error['email']  = 'error/No ha ingresado un correo'; 
+				$error['email']  = 'error/No ha ingresado un correo';
 			}
-			
-	
-			// si no hay errores ejecuto el codigo	
-			if ( empty($error) ) {
-				
+
+			// si no hay errores ejecuto el codigo
+			if(empty($error)){
+
 				//traigo los datos almacenados
 				$SIS_query = '
+				clientes_listado.idCliente,
 				clientes_listado.email,
+				clientes_listado.Nombre,
 				core_sistemas.Nombre AS RazonSocial,
-				core_sistemas.email_principal, 
-				core_sistemas.Config_Gmail_Usuario AS Gmail_Usuario, 
+				core_sistemas.email_principal,
+				core_sistemas.Config_Gmail_Usuario AS Gmail_Usuario,
 				core_sistemas.Config_Gmail_Password AS Gmail_Password';
 				$SIS_join = 'LEFT JOIN `core_sistemas` ON core_sistemas.idSistema = clientes_listado.idSistema';
 				$SIS_where = 'clientes_listado.email="'.$email.'"';
-				$rowusr            = db_select_data (false, $SIS_query, 'clientes_listado', $SIS_join, $SIS_where, $dbConn, 'Login-form', $original, $form_trabajo);
-				$cuenta_registros  = db_select_nrows (false, $SIS_query, 'clientes_listado', $SIS_join, $SIS_where, $dbConn, 'Login-form', $original, $form_trabajo);
+				$cuenta_registros  = db_select_nrows (false, $SIS_query, 'clientes_listado', $SIS_join, $SIS_where, $dbConn, 'cuenta_registros', $original, $form_trabajo);
 
 				//verifico si los datos ingresados son iguales a los almacenados
-				if(isset($cuenta_registros)&&$cuenta_registros!=''&&$cuenta_registros!=0){  
-					
+				if(isset($cuenta_registros)&&$cuenta_registros!=''&&$cuenta_registros!=0){
+
+					/*******************************************************/
+					//traigo los datos almacenados
+					$rowUsr = db_select_data (false,  $SIS_query, 'clientes_listado', $SIS_join, $SIS_where, $dbConn, 'rowUsr', $original, $form_trabajo);
+
+					/*******************************************************/
 					//Generacion de nueva clave
-					$num_caracteres = "10"; //cantidad de caracteres de la clave
-					$clave          = substr(md5(rand()),0,$num_caracteres); //generador aleatorio de claves 
-					$nueva_clave    = md5($clave);//se codifica la clave 
-						
+					$num_caracteres = "10";                                  //cantidad de caracteres de la clave
+					$clave          = substr(md5(rand()),0,$num_caracteres); //generador aleatorio de claves
+					$nueva_clave    = md5($clave);                           //se codifica la clave
+
+					/*******************************************************/
 					//Actualizacion de la clave en la base de datos
-					$a = 'password="'.$nueva_clave.'"';
-					$result = db_update_data (false, $a, 'clientes_listado', 'email = "'.$email.'"', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
-				
+					$SIS_data  = 'password="'.$nueva_clave.'"';
+					$resultado = db_update_data (false, $SIS_data, 'clientes_listado', 'idCliente = "'.$rowUsr['idCliente'].'"', $dbConn, 'clientes_listado', $original, $form_trabajo);
+
+					/*******************************************************/
+					//Cuerpo del correo
+					$Body = '<p>Se ha generado una nueva contraseña para el usuario '.$rowUsr['email'].', su nueva contraseña es: '.$nueva_clave.'</p>';
+
+					/*******************************************************/
 					//Envio de correo
-					$texto = '<p>Se ha generado una nueva contraseña para el usuario '.$email.', su nueva contraseña es: '.$nueva_clave.'</p>';
-					$rmail = tareas_envio_correo($rowusr['email_principal'], $rowusr['RazonSocial'], 
-												 $email, 'Receptor', 
-												 '', '', 
-												 'Cambio de password', 
-												 $texto,'', 
+					$rmail = tareas_envio_correo($rowusr['email_principal'], $rowusr['RazonSocial'],
+												 $rowUsr['email'], $rowUsr['Nombre'],
+												 '', '',
+												 'Cambio de password',
+												 $Body,'',
 												 '',
-												 1, 
-												 $rowusr['Gmail_Usuario'], 
+												 1,
+												 $rowusr['Gmail_Usuario'],
 												 $rowusr['Gmail_Password']);
                     //se guarda el log
-					log_response(1, $rmail, $email.' (Asunto:Cambio de password)');                     	
+					log_response(1, $rmail, $rowUsr['email'].' (Asunto:Cambio de password)');
 					//Envio del mensaje
 					if ($rmail!=1) {
 						$error['email'] = 'error/'.$rmail;
 					} else {
 						$error['email'] = 'sucess/La nueva contraseña fue enviada a tu correo';
 					}
-				
-				//Si no se encuentra ningun usuario se envia un error	
-				}else{	
-					$error['email'] 	  = 'error/El email ingresado no existe';
-					
-					//filtros
-					if(isset($fecha) && $fecha != ''){                $a  = "'".$fecha."'" ;         }else{$a  = "''";}
-					if(isset($hora) && $hora != ''){                  $a .= ",'".$hora."'" ;         }else{$a .= ",''";}
-					if(isset($Rut) && $Rut != ''){                    $a .= ",'".$Rut."'" ;          }else{$a .= ",''";}
-					if(isset($email) && $email != ''){                $a .= ",'".$email."'" ;        }else{$a .= ",''";}
-					if(isset($IP_Client) && $IP_Client != ''){        $a .= ",'".$IP_Client."'" ;    }else{$a .= ",''";}
-					if(isset($Agent_Transp) && $Agent_Transp != ''){  $a .= ",'".$Agent_Transp."'" ; }else{$a .= ",''";}
-					if(isset($Time) && $Time != ''){                  $a .= ",'".$Time."'" ;         }else{$a .= ",''";}
-									
-					// inserto los datos de registro en la db
-					$query  = "INSERT INTO `clientes_checkbrute` (Fecha, Hora, usuario, email, IP_Client, Agent_Transp, Time) 
-					VALUES (".$a.")";
-					//Consulta
-					$resultado = mysqli_query ($dbConn, $query);
-					
-				}
-			
 
-					
+				//Si no se encuentra ningun usuario se envia un error
+				}else{
+					$error['email'] 	  = 'error/El email ingresado no existe';
+
+					//filtros
+					if(isset($fecha) && $fecha!=''){                $SIS_data  = "'".$fecha."'";         }else{$SIS_data  = "''";}
+					if(isset($hora) && $hora!=''){                  $SIS_data .= ",'".$hora."'";         }else{$SIS_data .= ",''";}
+					if(isset($Rut) && $Rut!=''){                    $SIS_data .= ",'".$Rut."'";          }else{$SIS_data .= ",''";}
+					if(isset($email) && $email!=''){                $SIS_data .= ",'".$email."'";        }else{$SIS_data .= ",''";}
+					if(isset($IP_Client) && $IP_Client!=''){        $SIS_data .= ",'".$IP_Client."'";    }else{$SIS_data .= ",''";}
+					if(isset($Agent_Transp) && $Agent_Transp!=''){  $SIS_data .= ",'".$Agent_Transp."'"; }else{$SIS_data .= ",''";}
+					if(isset($Time) && $Time!=''){                  $SIS_data .= ",'".$Time."'";         }else{$SIS_data .= ",''";}
+
+					// inserto los datos de registro en la db
+					$SIS_columns = 'Fecha, Hora, usuario, email, IP_Client, Agent_Transp, Time';
+					$ultimo_id = db_insert_data (false, $SIS_columns, $SIS_data, 'clientes_checkbrute', $dbConn, 'clientes_checkbrute', $original, $form_trabajo);
+
+				}
+
 			}
 
-		break;			
+		break;
 /*******************************************************************************************************************/
 	}
 ?>
