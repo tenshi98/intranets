@@ -34,27 +34,27 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 <style>
 	.my-custom-scrollbar {position: relative;height: 550px;overflow: auto;}
 	.table-wrapper-scroll-y {display: block;}
-</style>	
+</style>
 
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	
+
 	<div class="row">
 		<div class="cover profile">
 			<?php //include '1include_principal_interfaz_portada.php'; ?>
 		</div>
 		<div class="box profile_content" style="margin-top:0px;">
 			<?php include '1include_principal_interfaz_menu.php'; ?>
-			
+
 			<div class="tab-content">
-				
+
 				<?php
 				//contenido en tabs
 				include '1include_principal_interfaz_tab_0.php';
 				include '1include_principal_interfaz_tab_1.php';
-				
+
 				?>
-				
+
 			</div>
 		</div>
 	</div>
@@ -77,7 +77,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 <?php widget_whatsappFloatBtn('+56943497697', 'Necesito un poco de informacion'); ?>
 
 
-<?php widget_modal(80, 95); ?>
+
 <?php
 /**********************************************************************************************************************************/
 /*                                             Se llama al pie del documento html                                                 */
