@@ -81,7 +81,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 	
 	<div class="row invoice-info">
 		
-		<div class="col-sm-6 invoice-col">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 invoice-col">
 			Datos del Ticket
 			<address>
 				<strong>Estado Ticket: </strong><?php echo $rowdata['EstadoTicket']; ?><br/>
@@ -90,7 +90,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 				<strong>Prioridad Ticket: </strong><?php echo $rowdata['PrioridadTicket']; ?><br/>
 			</address>
 		</div>
-		<div class="col-sm-6 invoice-col">
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 invoice-col">
 			Usuarios
 			<address>
 				<strong>Cliente Creacion: </strong><?php echo $rowdata['Cliente']; ?><br/>

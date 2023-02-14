@@ -4,7 +4,7 @@
 echo '
 <div class="tab-pane fade active in" id="Menu_tab_0">
 
-	<div class="col-sm-12 admin-grid">';
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 admin-grid">';
 
 			/*************************************************************/
 			//Panel de notificaciones
@@ -19,7 +19,7 @@ echo '
 					<div class="row">';
 						/*************************************************************/
 						//Lado izquierdo
-						//echo '<div class="col-sm-9">';
+						//echo '<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">';
 						echo '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">';
 							/******************************************************/
 							//Verifico que esten abiertas

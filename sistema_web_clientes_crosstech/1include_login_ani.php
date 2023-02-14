@@ -1,14 +1,14 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-3"></div>
-		<div class="col-md-6 ">
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 			<h1 class="comingsoontxt">Sitio en mantencion desde <?php echo $Mantenciones['Hora_ini']; ?> hasta las <?php echo $Mantenciones['Hora_fin']; ?> hrs</h1>
 		</div>
-		<div class="col-md-3"></div>
+		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
 	</div>	
 		<div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 svgcenter">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"></div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 svgcenter">
                <svg version="1.1" class="svgcenter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                   width="100%" viewBox="0 0 526.473 295" enable-background="new 0 0 526.473 295"
                   xml:space="preserve">
@@ -368,7 +368,7 @@
                   <line fill="none" stroke="#414042" stroke-width="2" stroke-miterlimit="10" x1="21.896" y1="292.404" x2="514.896" y2="292.404"/>
                </svg>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"></div>
         </div>
          
 </div>
