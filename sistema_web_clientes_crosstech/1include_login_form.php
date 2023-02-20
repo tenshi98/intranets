@@ -17,7 +17,7 @@
 			<form class="" method="post"  name="form1" novalidate>
 				<h1 class="login_text1">Iniciar sesión</h1>
 				<p class="text-muted text-center">Ingrese su Rut de usuario y contraseña para acceder</p>
-				<?php 
+				<?php
 				//Se verifican si existen los datos
 				if(isset($Rut)){        $x1  = $Rut;       }else{$x1  = '';}
 				if(isset($password)){   $x2  = $password;  }else{$x2  = '';}
@@ -37,7 +37,7 @@
 			<form class="" method="post"  name="form2" novalidate>
 				<h1 class="login_text1">¿Olvidaste tu contraseña?</h1>
 				<p class="text-muted text-center">Ingresa tu Email para recuperar tu contraseña.Revisa la bandeja de entrada o spam de tu correo.</p>
-				<?php 
+				<?php
 				//Se verifican si existen los datos
 				if(isset($email)){    $x1  = $email;   }else{$x1  = '';}
 
@@ -47,7 +47,7 @@
 				$Form_Inputs->input_hidden('fkinput2', '', 1);
 				?>
 				<br>
-				
+
 				<input type="submit" name="submit_pass" class="btn btn-lg btn-danger btn-block fa-input" value="&#xf003; Recuperar contraseña" />
 			</form>
 		</div>
