@@ -9,7 +9,7 @@
 			</h1>
 		</div>
 	</div>
-<?php }else{?>
+<?php }else{ ?>
 	<div class="logo_empresa">
 		<div class="content_gearbox pull-left">
 			<div class="gearbox">
