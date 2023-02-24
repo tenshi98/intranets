@@ -69,7 +69,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 ?>
 
 <section class="invoice">
-	
+
 	<div class="row">
 		<div class="col-xs-12">
 			<h2 class="page-header">
@@ -107,7 +107,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 			<p class="text-muted well well-sm no-shadow" ><?php echo $rowdata['Descripcion'];?></p>
 		</div>
 	</div>
-	
+
 	<?php if(isset($rowdata['DescripcionCierre'])&&$rowdata['DescripcionCierre']!=''){?>
 		<div class="row">
 			<div class="col-xs-12">
@@ -116,7 +116,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 			</div>
 		</div>
 	<?php } ?>
-	
+
 	<?php if(isset($rowdata['DescripcionCancelacion'])&&$rowdata['DescripcionCancelacion']!=''){?>
 		<div class="row">
 			<div class="col-xs-12">

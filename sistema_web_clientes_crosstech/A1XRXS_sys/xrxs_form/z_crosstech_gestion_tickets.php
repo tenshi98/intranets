@@ -261,7 +261,7 @@ require_once '0_validate_user_1.php';
 				}else{
 					//Genero numero aleatorio
 					$vardata = genera_password(8,'alfanumerico');
-					
+
 					//Guardo el error en una variable temporal
 					$_SESSION['ErrorListing'][$vardata]['code']         = mysqli_errno($dbConn);
 					$_SESSION['ErrorListing'][$vardata]['description']  = mysqli_error($dbConn);
@@ -353,7 +353,7 @@ require_once '0_validate_user_1.php';
 					$EmpresaEmail             = $rowTicket['EmpresaEmail'];
 					$Gmail_Usuario            = $rowTicket['Gmail_Usuario'];
 					$Gmail_Password           = $rowTicket['Gmail_Password'];
-					
+
 					//solo se envian los tickets
 					if(isset($idTipoTicket) && $idTipoTicket == 1){
 						
@@ -492,7 +492,7 @@ require_once '0_validate_user_1.php';
 				}else{
 					//Genero numero aleatorio
 					$vardata = genera_password(8,'alfanumerico');
-					
+
 					//Guardo el error en una variable temporal
 					$_SESSION['ErrorListing'][$vardata]['code']         = mysqli_errno($dbConn);
 					$_SESSION['ErrorListing'][$vardata]['description']  = mysqli_error($dbConn);

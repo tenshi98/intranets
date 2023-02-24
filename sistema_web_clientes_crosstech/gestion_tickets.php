@@ -81,7 +81,7 @@ if(!$resultado){
 }
 $rowdata = mysqli_fetch_assoc ($resultado);
 ?>
- 
+
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
 	<div class="box dark">
 		<header>
@@ -90,7 +90,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 		</header>
 		<div class="body">
 			<form class="form-horizontal" method="post" id="form1" name="form1" novalidate>
-			
+
 				<?php
 				//Se verifican si existen los datos
 				if(isset($idArea)){         $x1  = $idArea;         }else{$x1  = $rowdata['idArea'];}
@@ -104,11 +104,11 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 				$Form_Inputs->form_select('Prioridad Ticket','idPrioridad', $x2, 2, 'idPrioridad', 'Nombre', 'core_ot_prioridad', 0, '', $dbConn);
 				$Form_Inputs->form_input_text('Titulo', 'Titulo', $x3, 2);
 				$Form_Inputs->form_textarea('Descripcion','Descripcion', $x4, 2);
-				
+
 				$Form_Inputs->form_input_hidden('idSistema', $_SESSION['usuario']['basic_data']['idSistema'], 2);
 				$Form_Inputs->form_input_hidden('idCliente', $_SESSION['usuario']['basic_data']['idCliente'], 2);
 				$Form_Inputs->form_input_hidden('idTicket', $_GET['id'], 2);
-				
+
 				?>
 
 				<div class="form-group">
@@ -147,14 +147,13 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 				$Form_Inputs->form_select('Prioridad Ticket','idPrioridad', $x2, 2, 'idPrioridad', 'Nombre', 'core_ot_prioridad', 0, '', $dbConn);
 				$Form_Inputs->form_input_text('Titulo', 'Titulo', $x3, 2);
 				$Form_Inputs->form_textarea('Descripcion','Descripcion', $x4, 2);
-				
-				
+
 				$Form_Inputs->form_input_hidden('idSistema', $_SESSION['usuario']['basic_data']['idSistema'], 2);
 				$Form_Inputs->form_input_hidden('idCliente', $_SESSION['usuario']['basic_data']['idCliente'], 2);
 				$Form_Inputs->form_input_hidden('idEstado', 1, 2);
 				$Form_Inputs->form_input_hidden('FechaCreacion', fecha_actual(), 2);
 				$Form_Inputs->form_input_hidden('idTipoTicket', 1, 2);
-				
+
 				?>
 								
 				<div class="form-group">
@@ -292,7 +291,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 			<li class="btn btn-danger"><a href="<?php echo $original.'?pagina=1'; ?>" style="color:#fff;"><i class="fa fa-trash-o" aria-hidden="true"></i> Limpiar</a></li>
 		<?php } ?>
 	</ul>
-	
+
 	<a href="<?php echo $location; ?>&new=true" class="btn btn-default pull-right margin_width fmrbtn" ><i class="fa fa-plus" aria-hidden="true"></i> Crear Ticket</a>
 
 </div>
@@ -318,10 +317,10 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 				$Form_Inputs->form_select('Prioridad Ticket','idPrioridad', $x4, 1, 'idPrioridad', 'Nombre', 'core_ot_prioridad', 0, '', $dbConn);
 				$Form_Inputs->form_input_text('Titulo', 'Titulo', $x5, 1);
 				$Form_Inputs->form_date('Fecha Creacion','FechaCreacion', $x6, 1);
-				
+
 				$Form_Inputs->form_input_hidden('pagina', 1, 1);
 				?>
-				
+
 				<div class="form-group">
 					<input type="submit" class="btn btn-primary pull-right margin_form_btn fa-input" value="&#xf002; Filtrar" name="filtro_form">
 					<a href="<?php echo $original.'?pagina=1'; ?>" class="btn btn-danger pull-right margin_form_btn"><i class="fa fa-trash-o" aria-hidden="true"></i> Limpiar</a>

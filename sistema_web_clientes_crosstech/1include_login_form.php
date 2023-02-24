@@ -8,7 +8,7 @@
 
 					
 <div class="form-signin">
-	
+
 	<img src="img/login_icon.png" alt="icon" height="160" width="160" class="img-responsive center-block"> 
 	<h3 class="register-heading"><?php echo DB_SOFT_NAME ?></h3>
 
@@ -26,7 +26,7 @@
 				$Form_Inputs = new Inputs();
 				$Form_Inputs->input_login_rut('Rut', 'Rut', $x1, 2);
 				$Form_Inputs->input_login_pass('Contraseña', 'password', $x2);
-				
+
 				$Form_Inputs->input_hidden('fkinput1', '', 1);
 				?>
 
@@ -43,7 +43,7 @@
 
 				//se dibujan los inputs
 				$Form_Inputs->input_login_mail('mimail@midominio.cl', 'email', $x1);
-				
+
 				$Form_Inputs->input_hidden('fkinput2', '', 1);
 				?>
 				<br>
