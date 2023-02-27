@@ -1,7 +1,7 @@
 <?php
 /**************************************************************************/
 echo '<div class="tab-pane fade" id="Menu_tab_1">';
-	
+
 	//verifico la existencia del rut
 	if(isset($_SESSION['usuario']['basic_data']['Rut'])&&$_SESSION['usuario']['basic_data']['Rut']!=''){
 		$Rut = $_SESSION['usuario']['basic_data']['Rut'];

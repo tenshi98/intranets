@@ -5,7 +5,7 @@
 			<h1 class="comingsoontxt">Sitio en mantencion desde <?php echo $Mantenciones['Hora_ini']; ?> hasta las <?php echo $Mantenciones['Hora_fin']; ?> hrs</h1>
 		</div>
 		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
-	</div>	
+	</div>
 		<div class="row">
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"></div>
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 svgcenter">

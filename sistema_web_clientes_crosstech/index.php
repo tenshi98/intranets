@@ -50,6 +50,7 @@ if (!empty($_POST['submit_pass'])){
 unset($_SESSION['form_require']);
 //se carga dato previo
 $_SESSION['form_require'] = 'required';
+
 ?>
 <!DOCTYPE html>
 <html lang="es-ES">
@@ -59,13 +60,13 @@ $_SESSION['form_require'] = 'required';
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport"              content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type"    content="text/html; charset=UTF-8">
-		
+
 		<!-- Informacion del sitio-->
 		<title>Login</title>
 		<meta name="description"           content="">
 		<meta name="author"                content="">
 		<meta name="keywords"              content="">
-		
+
 		<!-- WEB FONT -->
 		<?php
 		//verifica la capa de desarrollo
@@ -75,7 +76,7 @@ $_SESSION['form_require'] = 'required';
 		if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) ){
 			echo '<link rel="stylesheet" href="'.DB_SITE_REPO.'/LIB_assets/lib/font-awesome/css/font-awesome.min.css">';
 			//echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
-			
+
 		////////////////////////////////////////////////////////////////////////////////
 		//si estoy en ambiente de produccion
 		}else{
@@ -83,7 +84,7 @@ $_SESSION['form_require'] = 'required';
 			echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
 		}
 		?>
-		
+
 		<!-- CSS Base -->
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/bootstrap3/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/font-awesome-animation/font-awesome-animation.min.css">
@@ -125,7 +126,7 @@ $_SESSION['form_require'] = 'required';
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/country_picker/js/bootstrap-select.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/plotly_js/dist/plotly.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/plotly_js/dist/plotly-locale-es-ar.js"></script>
-		
+
 		<!-- Favicons-->
 		<?php
 		//Favicon Personalizado
@@ -147,7 +148,7 @@ $_SESSION['form_require'] = 'required';
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-114x114-precomposed.png">
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-144x144-precomposed.png">
 		<?php } ?>
-		
+
 		<!-- Correcciones CSS -->
 		<style>
 			.register-heading {margin-top: 0;}

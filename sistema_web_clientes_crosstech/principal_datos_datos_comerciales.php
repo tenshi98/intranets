@@ -56,10 +56,10 @@ if(!$resultado){
 	$_SESSION['ErrorListing'][$vardata]['query']        = $query;
 					
 }
-$rowdata = mysqli_fetch_assoc ($resultado);?>
+$rowdata = mysqli_fetch_assoc ($resultado); ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Cliente', $rowdata['Nombre'], 'Editar Datos Comerciales');?>
+	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Cliente', $rowdata['Nombre'], 'Editar Datos Comerciales'); ?>
 </div>
 <div class="clearfix"></div>
 
@@ -79,17 +79,17 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 	<div class="box">
 		<header>
 			<ul class="nav nav-tabs pull-right">
-				<li class=""><a href="<?php echo 'principal_datos.php';?>" ><i class="fa fa-bars" aria-hidden="true"></i> Resumen</a></li>
-				<li class=""><a href="<?php echo 'principal_datos_datos.php';?>" ><i class="fa fa-list-alt" aria-hidden="true"></i> Datos Basicos</a></li>
-				<li class=""><a href="<?php echo 'principal_datos_datos_contacto.php';?>" ><i class="fa fa-address-book-o" aria-hidden="true"></i> Datos Contacto</a></li>
+				<li class=""><a href="<?php echo 'principal_datos.php'; ?>" ><i class="fa fa-bars" aria-hidden="true"></i> Resumen</a></li>
+				<li class=""><a href="<?php echo 'principal_datos_datos.php'; ?>" ><i class="fa fa-list-alt" aria-hidden="true"></i> Datos Basicos</a></li>
+				<li class=""><a href="<?php echo 'principal_datos_datos_contacto.php'; ?>" ><i class="fa fa-address-book-o" aria-hidden="true"></i> Datos Contacto</a></li>
 				<li class="dropdown">
 					<a href="#" data-toggle="dropdown"><i class="fa fa-plus" aria-hidden="true"></i> Ver mas <i class="fa fa-angle-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu" role="menu">
-						<li class=""><a href="<?php echo 'principal_datos_datos_persona_contacto.php';?>" ><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Persona Contacto</a></li>
+						<li class=""><a href="<?php echo 'principal_datos_datos_persona_contacto.php'; ?>" ><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Persona Contacto</a></li>
 						<?php if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
-							<li class="active"><a href="<?php echo 'principal_datos_datos_comerciales.php';?>" ><i class="fa fa-usd" aria-hidden="true"></i> Datos Comerciales</a></li>
+							<li class="active"><a href="<?php echo 'principal_datos_datos_comerciales.php'; ?>" ><i class="fa fa-usd" aria-hidden="true"></i> Datos Comerciales</a></li>
 						<?php } ?>
-						<li class=""><a href="<?php echo 'principal_datos_datos_password.php';?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
+						<li class=""><a href="<?php echo 'principal_datos_datos_password.php'; ?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
 					</ul>
                 </li>
 			</ul>
@@ -97,15 +97,14 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
         <div class="table-responsive">
 			<div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter" style="padding-top:40px;padding-bottom:240px;">
 				<form class="form-horizontal" method="post" id="form1" name="form1" novalidate>
-			
-					<?php 
+
+					<?php
 					//Se verifican si existen los datos
 					if(isset($Rut)){              $x1  = $Rut;               }else{$x1  = $rowdata['Rut'];}
 					if(isset($RazonSocial)){      $x2  = $RazonSocial;       }else{$x2  = $rowdata['RazonSocial'];}
 					if(isset($Giro)){             $x3  = $Giro;              }else{$x3  = $rowdata['Giro'];}
 					if(isset($idRubro)){          $x4  = $idRubro;           }else{$x4  = $rowdata['idRubro'];}
-					
-					
+
 					//se dibujan los inputs
 					$Form_Inputs = new Form_Inputs();
 					$Form_Inputs->form_input_rut('Rut', 'Rut', $x1, 2);
@@ -127,10 +126,10 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 	</div>
 </div>
 
-
 <?php
 /**********************************************************************************************************************************/
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
+
 ?>

@@ -4,7 +4,7 @@
 			<img src="<?php echo DB_SITE_ALT_1.'/upload/'.$_SESSION['usuario']['basic_data']['Config_imgLogo']; ?>" alt="">
 		</div>
 		<div class="texto pull-left">
-			<h1><?php if(isset($_SESSION['usuario']['basic_data']['Nombre'])&&$_SESSION['usuario']['basic_data']['Nombre']!=''){echo $_SESSION['usuario']['basic_data']['Nombre'].' - ' ;}?> <?php echo DB_SOFT_NAME ?><br/>
+			<h1><?php if(isset($_SESSION['usuario']['basic_data']['Nombre'])&&$_SESSION['usuario']['basic_data']['Nombre']!=''){echo $_SESSION['usuario']['basic_data']['Nombre'].' - ' ;} ?> <?php echo DB_SOFT_NAME ?><br/>
 			<span><?php echo DB_SOFT_SLOGAN ?></span>
 			</h1>
 		</div>
@@ -28,7 +28,7 @@
 						<div class="bar"></div>
 					</div>
 				</div>
-							
+
 				<div class="gear four large">
 					<div class="gear-inner">
 						<div class="bar"></div>
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="texto pull-left">
-			<h1><?php if(isset($_SESSION['usuario']['basic_data']['Nombre'])&&$_SESSION['usuario']['basic_data']['Nombre']!=''){echo $_SESSION['usuario']['basic_data']['Nombre'].' - ' ;}?> <?php echo DB_SOFT_NAME ?><br/>
+			<h1><?php if(isset($_SESSION['usuario']['basic_data']['Nombre'])&&$_SESSION['usuario']['basic_data']['Nombre']!=''){echo $_SESSION['usuario']['basic_data']['Nombre'].' - ' ;} ?> <?php echo DB_SOFT_NAME ?><br/>
 			<span><?php echo DB_SOFT_SLOGAN ?></span>
 			</h1>
 		</div>

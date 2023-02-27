@@ -12,11 +12,11 @@ require_once 'core/Load.Utils.Views.php';
 /**********************************************************************************************************************************/
 //Se verifica si existe el directorio y el nombre del archivo a descargar
 if(isset($_GET['dir'])&&$_GET['dir']!=''&&isset($_GET['file'])&&$_GET['file']!=''){
-	
+
 	//se decodifica los datos
 	$Directorio = simpleDecode($_GET['dir'], fecha_actual());	
 	$Archivo    = simpleDecode($_GET['file'], fecha_actual());
-	
+
 	//enlace
 	$file = $Directorio."/".$Archivo;
 

@@ -77,7 +77,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 <style>.tab-content {min-height: 250px !important;}</style>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Cliente', $rowdata['Nombre'], 'Resumen');?>
+	<?php echo widget_title('bg-aqua', 'fa-cog', 100, 'Cliente', $rowdata['Nombre'], 'Resumen'); ?>
 </div>
 <div class="clearfix"></div>
 
@@ -97,17 +97,17 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 	<div class="box">
 		<header>
 			<ul class="nav nav-tabs pull-right">
-				<li class="active"><a href="<?php echo 'principal_datos.php';?>" ><i class="fa fa-bars" aria-hidden="true"></i> Resumen</a></li>
-				<li class=""><a href="<?php echo 'principal_datos_datos.php';?>" ><i class="fa fa-list-alt" aria-hidden="true"></i> Datos Basicos</a></li>
-				<li class=""><a href="<?php echo 'principal_datos_datos_contacto.php';?>" ><i class="fa fa-address-book-o" aria-hidden="true"></i> Datos Contacto</a></li>
+				<li class="active"><a href="<?php echo 'principal_datos.php'; ?>" ><i class="fa fa-bars" aria-hidden="true"></i> Resumen</a></li>
+				<li class=""><a href="<?php echo 'principal_datos_datos.php'; ?>" ><i class="fa fa-list-alt" aria-hidden="true"></i> Datos Basicos</a></li>
+				<li class=""><a href="<?php echo 'principal_datos_datos_contacto.php'; ?>" ><i class="fa fa-address-book-o" aria-hidden="true"></i> Datos Contacto</a></li>
 				<li class="dropdown">
 					<a href="#" data-toggle="dropdown"><i class="fa fa-plus" aria-hidden="true"></i> Ver mas <i class="fa fa-angle-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu" role="menu">
-						<li class=""><a href="<?php echo 'principal_datos_datos_persona_contacto.php';?>" ><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Persona Contacto</a></li>
+						<li class=""><a href="<?php echo 'principal_datos_datos_persona_contacto.php'; ?>" ><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Persona Contacto</a></li>
 						<?php if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
-							<li class=""><a href="<?php echo 'principal_datos_datos_comerciales.php';?>" ><i class="fa fa-usd" aria-hidden="true"></i> Datos Comerciales</a></li>
+							<li class=""><a href="<?php echo 'principal_datos_datos_comerciales.php'; ?>" ><i class="fa fa-usd" aria-hidden="true"></i> Datos Comerciales</a></li>
 						<?php } ?>
-						<li class=""><a href="<?php echo 'principal_datos_datos_password.php';?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
+						<li class=""><a href="<?php echo 'principal_datos_datos_password.php'; ?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
 					</ul>
                 </li>
 			</ul>
@@ -121,11 +121,11 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 							<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos Basicos</h2>
 							<p class="text-muted word_break">
 								<strong>Tipo de Cliente : </strong><?php echo $rowdata['tipoCliente']; ?><br/>
-								<?php 
+								<?php
 								//Si el cliente es una empresa
 								if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
 									<strong>Nombre Fantasia: </strong><?php echo $rowdata['Nombre']; ?><br/>
-								<?php 
+								<?php
 								//si es una persona
 								}else{?>
 									<strong>Nombre: </strong><?php echo $rowdata['Nombre']; ?><br/>
@@ -136,8 +136,8 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 								<strong>Comuna : </strong><?php echo $rowdata['nombre_comuna']; ?><br/>
 								<strong>Direccion : </strong><?php echo $rowdata['Direccion']; ?>
 							</p>
-									
-							<?php 
+
+							<?php
 							//Si el cliente es una empresa
 							if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
 								<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos Comerciales</h2>
@@ -148,7 +148,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 									<strong>Rubro : </strong><?php echo $rowdata['Rubro']; ?><br/>
 								</p>
 							<?php } ?>
-										
+
 							<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos de Contacto</h2>
 							<p class="text-muted">
 								<strong>Telefono Fijo : </strong><?php echo formatPhone($rowdata['Fono1']); ?><br/>
@@ -157,7 +157,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 								<strong>Email : </strong><a href="mailto:<?php echo $rowdata['email']; ?>"><?php echo $rowdata['email']; ?></a><br/>
 								<strong>Web : </strong><a target="_blank" rel="noopener noreferrer" href="https://<?php echo $rowdata['Web']; ?>"><?php echo $rowdata['Web']; ?></a>
 							</p>
-									
+
 							<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Persona de Contacto</h2>
 							<p class="text-muted">
 								<strong>Persona de Contacto : </strong><?php echo $rowdata['PersonaContacto']; ?><br/>
@@ -186,7 +186,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 					</div>
 				</div>
 				<div class="clearfix"></div>
-			
+
 			</div>
         </div>
 	</div>
@@ -196,4 +196,5 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
+
 ?>

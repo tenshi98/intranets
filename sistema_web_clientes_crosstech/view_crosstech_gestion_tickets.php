@@ -54,7 +54,7 @@ WHERE crosstech_gestion_tickets.idTicket =  ".$_GET['view'];
 $resultado = mysqli_query ($dbConn, $query);
 //Si ejecuto correctamente la consulta
 if(!$resultado){
-	
+
 	//variables
 	$NombreUsr   = $_SESSION['usuario']['basic_data']['Nombre'];
 	$Transaccion = basename($_SERVER["REQUEST_URI"], ".php");
@@ -73,14 +73,14 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 	<div class="row">
 		<div class="col-xs-12">
 			<h2 class="page-header">
-				<i class="fa fa-globe" aria-hidden="true"> <?php echo $rowdata['Titulo'];?></i>.
+				<i class="fa fa-globe" aria-hidden="true"> <?php echo $rowdata['Titulo']; ?></i>.
 				<small class="pull-right">Ticket N°<?php echo n_doc($rowdata['idTicket'], 8); ?></small>
 			</h2>
 		</div>
 	</div>
 
 	<div class="row invoice-info">
-		
+
 		<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 invoice-col">
 			Datos del Ticket
 			<address>
@@ -103,16 +103,16 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 
 	<div class="row">
 		<div class="col-xs-12">
-			<p class="lead"><a name="Ancla_obs"></a>Problema (<?php echo fecha_estandar($rowdata['FechaCreacion']);?>)</p>
-			<p class="text-muted well well-sm no-shadow" ><?php echo $rowdata['Descripcion'];?></p>
+			<p class="lead"><a name="Ancla_obs"></a>Problema (<?php echo fecha_estandar($rowdata['FechaCreacion']); ?>)</p>
+			<p class="text-muted well well-sm no-shadow" ><?php echo $rowdata['Descripcion']; ?></p>
 		</div>
 	</div>
 
 	<?php if(isset($rowdata['DescripcionCierre'])&&$rowdata['DescripcionCierre']!=''){?>
 		<div class="row">
 			<div class="col-xs-12">
-				<p class="lead"><a name="Ancla_obs"></a>Observacion Solucion (<?php echo fecha_estandar($rowdata['FechaCierre']);?>)</p>
-				<p class="text-muted well well-sm no-shadow" ><?php echo $rowdata['DescripcionCierre'];?></p>
+				<p class="lead"><a name="Ancla_obs"></a>Observacion Solucion (<?php echo fecha_estandar($rowdata['FechaCierre']); ?>)</p>
+				<p class="text-muted well well-sm no-shadow" ><?php echo $rowdata['DescripcionCierre']; ?></p>
 			</div>
 		</div>
 	<?php } ?>
@@ -120,8 +120,8 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 	<?php if(isset($rowdata['DescripcionCancelacion'])&&$rowdata['DescripcionCancelacion']!=''){?>
 		<div class="row">
 			<div class="col-xs-12">
-				<p class="lead"><a name="Ancla_obs"></a>Observacion Cancelacion (<?php echo fecha_estandar($rowdata['FechaCancelacion']);?>)</p>
-				<p class="text-muted well well-sm no-shadow" ><?php echo $rowdata['DescripcionCancelacion'];?></p>
+				<p class="lead"><a name="Ancla_obs"></a>Observacion Cancelacion (<?php echo fecha_estandar($rowdata['FechaCancelacion']); ?>)</p>
+				<p class="text-muted well well-sm no-shadow" ><?php echo $rowdata['DescripcionCancelacion']; ?></p>
 			</div>
 		</div>
 	<?php } ?>
@@ -141,7 +141,7 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 		</div>
 	<?php 
 	//para las versiones nuevas que indican donde volver
-	}else{ 
+	}else{
 		$string = basename($_SERVER["REQUEST_URI"], ".php");
 		$array  = explode("&return=", $string, 3);
 		$volver = $array[1];
@@ -151,7 +151,7 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 			<a href="<?php echo $volver; ?>" class="btn btn-danger pull-right"><i class="fa fa-arrow-left" aria-hidden="true"></i> Volver</a>
 			<div class="clearfix"></div>
 		</div>
-		
+
 	<?php }
 } ?>
 
@@ -160,4 +160,5 @@ if(isset($_GET['return'])&&$_GET['return']!=''){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Views.php';
+
 ?>

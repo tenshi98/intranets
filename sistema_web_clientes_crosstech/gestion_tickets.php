@@ -80,6 +80,7 @@ if(!$resultado){
 					
 }
 $rowdata = mysqli_fetch_assoc ($resultado);
+
 ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
@@ -155,7 +156,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 				$Form_Inputs->form_input_hidden('idTipoTicket', 1, 2);
 
 				?>
-								
+
 				<div class="form-group">
 					<input type="submit" class="btn btn-primary pull-right margin_form_btn fa-input" value="&#xf0c7; Guardar Cambios" name="submit">
 					<a href="<?php echo $location; ?>" class="btn btn-danger pull-right margin_form_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> Cancelar y Volver</a>
@@ -282,6 +283,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 	$usrfil .= " AND usuarios_sistemas.idSistema = ".$_SESSION['usuario']['basic_data']['idSistema'];
 }
 ?>
+
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
 
 	<ul class="btn-group btn-breadcrumb pull-left">
@@ -404,7 +406,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 						<tr class="odd">
 							<td><?php echo n_doc($usuarios['idTicket'], 8); ?></td>
 							<td>
-								<?php 
+								<?php
 								//variable con el color
 								$est_color = '';
 								switch ($usuarios['idEstado']) {
@@ -426,7 +428,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 									<a href="<?php echo $location.'&id='.$usuarios['idTicket']; ?>" title="Editar Informacion" class="btn btn-success btn-sm tooltip"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 									<?php /* 
 										$ubicacion = $location.'&del='.simpleEncode($usuarios['idTicket'], fecha_actual());
-										$dialogo   = '¿Realmente deseas eliminar el ticket N°'. n_doc($usuarios['idTicket'], 8).'?';?>
+										$dialogo   = '¿Realmente deseas eliminar el ticket N°'. n_doc($usuarios['idTicket'], 8).'?'; ?>
 										<a onClick="dialogBox('<?php echo $ubicacion ?>', '<?php echo $dialogo ?>')" title="Borrar Informacion" class="btn btn-metis-1 btn-sm tooltip"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 									<?php */ ?>
 								</div>
@@ -444,7 +446,6 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 	</div>
 </div>
 
-
 <?php } ?>
 
 <?php
@@ -452,4 +453,5 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
+
 ?>

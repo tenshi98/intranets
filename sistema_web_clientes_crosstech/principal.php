@@ -36,7 +36,6 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 	.table-wrapper-scroll-y {display: block;}
 </style>
 
-
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 	<div class="row">
@@ -58,7 +57,6 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 			</div>
 		</div>
 	</div>
-
 
 </div>
 
@@ -83,4 +81,5 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 /*                                             Se llama al pie del documento html                                                 */
 /**********************************************************************************************************************************/
 require_once 'core/Web.Footer.Main.php';
+
 ?>

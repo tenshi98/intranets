@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport"              content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type"    content="text/html; charset=UTF-8">
-		
+
 		<!-- Informacion del sitio-->
 		<?php 
 		//Se verifican las variables para mostrar el titulo e la pagina
@@ -22,7 +22,7 @@
 		<meta name="description"           content="">
 		<meta name="author"                content="">
 		<meta name="keywords"              content="">
-		
+
 		<!-- WEB FONT -->
 		<?php
 		//verifica la capa de desarrollo
@@ -32,7 +32,7 @@
 		if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) ){
 			echo '<link rel="stylesheet" href="'.DB_SITE_REPO.'/LIB_assets/lib/font-awesome/css/font-awesome.min.css">';
 			//echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
-			
+
 		////////////////////////////////////////////////////////////////////////////////
 		//si estoy en ambiente de produccion
 		}else{
@@ -40,7 +40,7 @@
 			echo '<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">';
 		}
 		?>
-		
+
 		<!-- CSS Base -->
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/bootstrap3/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/font-awesome-animation/font-awesome-animation.min.css">
@@ -64,7 +64,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/chosen/chosen.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/modal/colorbox.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo DB_SITE_REPO ?>/LIBS_js/tooltipster/css/tooltipster.bundle.min.css">
-		
+
 		<!-- Javascript -->
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/Legacy/gestion_modular/js/main.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/js/form_functions.min.js"></script>
@@ -84,7 +84,7 @@
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/country_picker/js/bootstrap-select.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/plotly_js/dist/plotly.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/plotly_js/dist/plotly-locale-es-ar.js"></script>
-		
+
 		<!-- Favicons-->
 		<?php
 		//Favicon Personalizado
@@ -106,14 +106,14 @@
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-114x114-precomposed.png">
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/apple-touch-icon-144x144-precomposed.png">
 		<?php } ?>
-		
+
 		<!-- Correcciones CSS -->
 		<style>
 			body {background-color: #FFF !important;}
 			.outer {padding: 0px;}
 			.inner {padding-right: 0px;padding-left: 0px;}
 		</style>
-		
+
 	</head>
 	<body class="sidebar-left-hidden">
 		<div id="loader-wrapper">
@@ -152,12 +152,12 @@
 								<span class="icon-bar"></span>
 							</button>
 							<a href="principal.php" class="navbar-brand">
-								<?php require_once 'Web.Body.Nav.Logo.php';?>
+								<?php require_once 'Web.Body.Nav.Logo.php'; ?>
 							</a>
 						</header>
-						<?php require_once 'Web.Body.Nav.Actions.php';?>
+						<?php require_once 'Web.Body.Nav.Actions.php'; ?>
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
-							<?php require_once 'Web.Body.Nav.Menu_top.php';?>
+							<?php require_once 'Web.Body.Nav.Menu_top.php'; ?>
 						</div>
 					</div>
 				</nav>

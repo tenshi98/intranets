@@ -3,9 +3,9 @@
 			</div>
 		</div>
 		<footer id="footer">
-			<p><?php echo ano_actual();?> &copy; <?php echo DB_EMPRESA_NAME ?> Todos los derechos reservados.</p>
+			<p><?php echo ano_actual(); ?> &copy; <?php echo DB_EMPRESA_NAME ?> Todos los derechos reservados.</p>
 		</footer>
-		
+
 		<!-- Animacion carga pagina -->
 		<script>
 			//ocultar el loader
@@ -31,7 +31,7 @@
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/bootstrap_colorpicker/dist/js/bootstrap-colorpicker-plus.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/modal/jquery.colorbox.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIBS_js/tooltipster/js/tooltipster.bundle.min.js"></script>
-		
+
 		<script>
 			$(document).ready(function(){
 				//Examples of how to assign the Colorbox event to elements
@@ -58,7 +58,7 @@
 				});
 			});
 		</script>
-		
+
 		<?php
 		/******************************************************************************************************/
 		//cuadro mensajes

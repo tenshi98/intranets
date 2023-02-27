@@ -9,7 +9,7 @@
 					
 <div class="form-signin">
 
-	<img src="img/login_icon.png" alt="icon" height="160" width="160" class="img-responsive center-block"> 
+	<img src="img/login_icon.png" alt="icon" height="160" width="160" class="img-responsive center-block">
 	<h3 class="register-heading"><?php echo DB_SOFT_NAME ?></h3>
 
 	<div class="tab-content" style="min-height: 200px !important;">
