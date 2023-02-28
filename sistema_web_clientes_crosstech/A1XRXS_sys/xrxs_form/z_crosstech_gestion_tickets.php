@@ -216,7 +216,7 @@ require_once '0_validate_user_1.php';
 								if(isset($Creacion_fecha) && $Creacion_fecha!=''){               $a .= ",'".$Creacion_fecha."'";         }else{$a .= ",''";}
 								if(isset($Estado) && $Estado!=''){                               $a .= ",'".$Estado."'";                 }else{$a .= ",''";}
 								$a .= ",'".hora_actual()."'";
-								
+
 								// inserto los datos de registro en la db
 								$query  = "INSERT INTO `principal_notificaciones_ver` (idSistema,idUsuario,Notificacion, Fecha, idEstado, Hora) 
 								VALUES (".$a.")";
@@ -266,7 +266,6 @@ require_once '0_validate_user_1.php';
 					$_SESSION['ErrorListing'][$vardata]['code']         = mysqli_errno($dbConn);
 					$_SESSION['ErrorListing'][$vardata]['description']  = mysqli_error($dbConn);
 					$_SESSION['ErrorListing'][$vardata]['query']        = $query;
-					
 				}
 			}
 
@@ -439,7 +438,7 @@ require_once '0_validate_user_1.php';
 								if(isset($Creacion_fecha) && $Creacion_fecha!=''){               $a .= ",'".$Creacion_fecha."'";         }else{$a .= ",''";}
 								if(isset($Estado) && $Estado!=''){                               $a .= ",'".$Estado."'";                 }else{$a .= ",''";}
 								$a .= ",'".hora_actual()."'";
-								
+
 								// inserto los datos de registro en la db
 								$query  = "INSERT INTO `principal_notificaciones_ver` (idSistema,idUsuario,Notificacion, Fecha, idEstado, Hora) 
 								VALUES (".$a.")";
@@ -497,7 +496,6 @@ require_once '0_validate_user_1.php';
 					$_SESSION['ErrorListing'][$vardata]['code']         = mysqli_errno($dbConn);
 					$_SESSION['ErrorListing'][$vardata]['description']  = mysqli_error($dbConn);
 					$_SESSION['ErrorListing'][$vardata]['query']        = $query;
-					
 				}
 			}
 
