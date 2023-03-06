@@ -9,4 +9,5 @@ if( in_array( $_SERVER['REMOTE_ADDR'], $whitelist) ){
 	//redirijo
 	header("location:https://www.google.com");
 }
+
 ?>

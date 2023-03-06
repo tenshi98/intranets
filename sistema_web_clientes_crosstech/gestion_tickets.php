@@ -124,7 +124,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 </div>
 
 <?php //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-} elseif(!empty($_GET['new'])){?>
+} elseif(!empty($_GET['new'])){ ?>
 
 <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8 fcenter">
 	<div class="box dark">
@@ -282,6 +282,7 @@ $usrfil = 'usuarios_listado.idEstado=1 AND usuarios_listado.idTipoUsuario!=1';
 if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 	$usrfil .= " AND usuarios_sistemas.idSistema = ".$_SESSION['usuario']['basic_data']['idSistema'];
 }
+
 ?>
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 breadcrumb-bar">
@@ -289,7 +290,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 	<ul class="btn-group btn-breadcrumb pull-left">
 		<li class="btn btn-default tooltip" role="button" data-toggle="collapse" href="#collapseForm" aria-expanded="false" aria-controls="collapseForm" title="Presionar para desplegar Formulario de Busqueda" style="font-size: 14px;"><i class="fa fa-search faa-vertical animated" aria-hidden="true"></i></li>
 		<li class="btn btn-default"><?php echo $bread_order; ?></li>
-		<?php if(isset($_GET['filtro_form'])&&$_GET['filtro_form']!=''){?>
+		<?php if(isset($_GET['filtro_form'])&&$_GET['filtro_form']!=''){ ?>
 			<li class="btn btn-danger"><a href="<?php echo $original.'?pagina=1'; ?>" style="color:#fff;"><i class="fa fa-trash-o" aria-hidden="true"></i> Limpiar</a></li>
 		<?php } ?>
 	</ul>
@@ -421,7 +422,7 @@ if($_SESSION['usuario']['basic_data']['idTipoUsuario']!=1){
 							<td><?php echo $usuarios['TipoTicket']; ?></td>
 							<td><?php echo $usuarios['PrioridadTicket']; ?></td>
 							<td><?php echo $usuarios['Titulo']; ?></td>
-							<td><?php echo fecha_estandar($usuarios['FechaCreacion']); ?></td>	
+							<td><?php echo fecha_estandar($usuarios['FechaCreacion']); ?></td>
 							<td>
 								<div class="btn-group" style="width: 105px;" >
 									<a href="<?php echo 'view_crosstech_gestion_tickets.php?view='.$usuarios['idTicket']; ?>" title="Ver Informacion" class="iframe btn btn-primary btn-sm tooltip"><i class="fa fa-list" aria-hidden="true"></i></a>

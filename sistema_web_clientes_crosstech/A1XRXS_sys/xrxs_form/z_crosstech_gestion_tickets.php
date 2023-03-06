@@ -396,7 +396,7 @@ require_once '0_validate_user_1.php';
 						$BodyMail_bottom .= '<br/>';
 						$BodyMail_bottom .= '<p style="text-align: left;font-size: 14px;">Este correo se ha enviado automáticamente, no responder.</p>';
 						$BodyMail_bottom .= '</div>';
-							
+
 						//resto de datos
 						$Notificacion  = '<div class= "btn-group" ><a href= "view_crosstech_gestion_tickets.php?view='.$ultimo_id.'" title= "Ver Informacion" class= "iframe btn btn-primary btn-sm tooltip"><i class= "fa fa-list"></i></a></div>';
 						$Notificacion .= ' '.$Mensaje;
@@ -551,4 +551,5 @@ require_once '0_validate_user_1.php';
 
 /*******************************************************************************************************************/
 	}
+
 ?>

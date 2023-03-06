@@ -104,7 +104,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 					<a href="#" data-toggle="dropdown"><i class="fa fa-plus" aria-hidden="true"></i> Ver mas <i class="fa fa-angle-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu" role="menu">
 						<li class=""><a href="<?php echo 'principal_datos_datos_persona_contacto.php'; ?>" ><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Persona Contacto</a></li>
-						<?php if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
+						<?php if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){ ?>
 							<li class=""><a href="<?php echo 'principal_datos_datos_comerciales.php'; ?>" ><i class="fa fa-usd" aria-hidden="true"></i> Datos Comerciales</a></li>
 						<?php } ?>
 						<li class=""><a href="<?php echo 'principal_datos_datos_password.php'; ?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
@@ -123,11 +123,11 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 								<strong>Tipo de Cliente : </strong><?php echo $rowdata['tipoCliente']; ?><br/>
 								<?php
 								//Si el cliente es una empresa
-								if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
+								if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){ ?>
 									<strong>Nombre Fantasia: </strong><?php echo $rowdata['Nombre']; ?><br/>
 								<?php
 								//si es una persona
-								}else{?>
+								}else{ ?>
 									<strong>Nombre: </strong><?php echo $rowdata['Nombre']; ?><br/>
 									<strong>Rut : </strong><?php echo $rowdata['Rut']; ?><br/>
 								<?php } ?>
@@ -139,7 +139,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 
 							<?php
 							//Si el cliente es una empresa
-							if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
+							if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){ ?>
 								<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos Comerciales</h2>
 								<p class="text-muted">
 									<strong>Rut : </strong><?php echo $rowdata['Rut']; ?><br/>

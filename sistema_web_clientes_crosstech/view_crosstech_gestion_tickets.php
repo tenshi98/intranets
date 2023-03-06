@@ -108,7 +108,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 		</div>
 	</div>
 
-	<?php if(isset($rowdata['DescripcionCierre'])&&$rowdata['DescripcionCierre']!=''){?>
+	<?php if(isset($rowdata['DescripcionCierre'])&&$rowdata['DescripcionCierre']!=''){ ?>
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="lead"><a name="Ancla_obs"></a>Observacion Solucion (<?php echo fecha_estandar($rowdata['FechaCierre']); ?>)</p>
@@ -117,7 +117,7 @@ $rowdata = mysqli_fetch_assoc ($resultado);
 		</div>
 	<?php } ?>
 
-	<?php if(isset($rowdata['DescripcionCancelacion'])&&$rowdata['DescripcionCancelacion']!=''){?>
+	<?php if(isset($rowdata['DescripcionCancelacion'])&&$rowdata['DescripcionCancelacion']!=''){ ?>
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="lead"><a name="Ancla_obs"></a>Observacion Cancelacion (<?php echo fecha_estandar($rowdata['FechaCancelacion']); ?>)</p>

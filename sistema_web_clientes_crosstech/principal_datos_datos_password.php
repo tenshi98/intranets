@@ -85,7 +85,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 					<a href="#" data-toggle="dropdown"><i class="fa fa-plus" aria-hidden="true"></i> Ver mas <i class="fa fa-angle-down" aria-hidden="true"></i></a>
 					<ul class="dropdown-menu" role="menu">
 						<li class=""><a href="<?php echo 'principal_datos_datos_persona_contacto.php'; ?>" ><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Persona Contacto</a></li>
-						<?php if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){?>
+						<?php if(isset($rowdata['idTipo'])&&$rowdata['idTipo']==1){ ?>
 							<li class=""><a href="<?php echo 'principal_datos_datos_comerciales.php'; ?>" ><i class="fa fa-usd" aria-hidden="true"></i> Datos Comerciales</a></li>
 						<?php } ?>
 						<li class="active"><a href="<?php echo 'principal_datos_datos_password.php'; ?>" ><i class="fa fa-key" aria-hidden="true"></i> Password</a></li>
