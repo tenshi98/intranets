@@ -59,7 +59,7 @@ require_once '0_validate_user_1.php';
 			case 'email':                  if(empty($email)){                                $error['email']                   = 'error/No ha ingresado el email';}break;
 			case 'Nombre':                 if(empty($Nombre)){                               $error['Nombre']                  = 'error/No ha ingresado el Nombre de Fantasia';}break;
 			case 'RazonSocial':            if(empty($RazonSocial)){                          $error['RazonSocial']             = 'error/No ha ingresado la Razon Social';}break;
-			case 'Rut':                    if(empty($Rut)&&$form_trabajo!='getpass'){        $error['Rut']                     = 'error/No ha ingresado el Rut';}break;	
+			case 'Rut':                    if(empty($Rut)&&$form_trabajo!='getpass'){        $error['Rut']                     = 'error/No ha ingresado el Rut';}break;
 			case 'fNacimiento':            if(empty($fNacimiento)){                          $error['fNacimiento']             = 'error/No ha ingresado la fecha de nacimiento';}break;
 			case 'Direccion':              if(empty($Direccion)){                            $error['Direccion']               = 'error/No ha ingresado la direccion';}break;
 			case 'Fono1':                  if(empty($Fono1)){                                $error['Fono1']                   = 'error/No ha ingresado el telefono';}break;

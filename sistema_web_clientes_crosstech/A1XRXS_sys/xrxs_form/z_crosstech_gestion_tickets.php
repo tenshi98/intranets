@@ -112,7 +112,7 @@ require_once '0_validate_user_1.php';
 
 						//recibo el último id generado por mi sesion
 						$ultimo_id = mysqli_insert_id($dbConn);
-						
+
 						/*********************************************************************/
 						//receptores
 						$SIS_query = 'crosstech_gestion_tickets_area_correos.idUsuario,
@@ -141,7 +141,7 @@ require_once '0_validate_user_1.php';
 
 						//Cliente
 						$rowCliente = db_select_data (false, 'Nombre,RazonSocial,email', 'clientes_listado', '', 'idCliente='.$idCliente, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
-						
+
 						/*********************************************************************/
 						//Se crea el cuerpodel correo al cliente
 						$BodyMail_Cliente  = '<div style="background-color: #D9D9D9; padding: 10px;">';
@@ -162,7 +162,7 @@ require_once '0_validate_user_1.php';
 						$BodyMail_Cliente .= '<p style="text-align: left;font-size: 14px;">Este correo se ha enviado automáticamente, no responder.</p>';
 						$BodyMail_Cliente .= '</div>';
 
-						//Se crea el cuerpodel correo al usuario			
+						//Se crea el cuerpo del correo al usuario
 						$BodyMail_Usuario  = '<div style="background-color: #D9D9D9; padding: 10px;">';
 						$BodyMail_Usuario .= '<img src="http://clientes.crosstech.cl/img/login_logo.png" style="width: 60%;display:block;margin-left: auto;margin-right: auto;margin-top:30px;margin-bottom:30px;">';
 						$BodyMail_Usuario .= '<h3 style="text-align: center;font-size: 30px;">';
@@ -186,7 +186,7 @@ require_once '0_validate_user_1.php';
 						$Notificacion  .= ' Nuevo Ticket N°'.n_doc($ultimo_id, 8).' de '.$rowCliente['Nombre'].' generado';
 						$Creacion_fecha = fecha_actual();
 						$Estado         = '1';
-						
+
 						/*********************************************************************/
 						//Se envia mensaje al cliente
 						if(isset($rowEmpresa['EmpresaEmail'])&&$rowEmpresa['EmpresaEmail']!=''&&isset($rowCliente['email'])&&$rowCliente['email']!=''){
@@ -200,15 +200,15 @@ require_once '0_validate_user_1.php';
 														$rowEmpresa['Gmail_Usuario'], 
 														$rowEmpresa['Gmail_Password']);
 							//se guarda el log
-							log_response(1, $rmail, $rowCliente['email'].' (Asunto:Confirmación de emisión de ticket N°'.n_doc($ultimo_id, 8).')');							
-								
+							log_response(1, $rmail, $rowCliente['email'].' (Asunto:Confirmación de emisión de ticket N°'.n_doc($ultimo_id, 8).')');
+
 						}
 
 						/*********************************************************************/
 						//Se envia mensaje a los usuarios relacionados al area
 						if(isset($arrUsuario)){	
 							foreach($arrUsuario as $usuario) {
-								
+
 								/***********************************************/
 								if(isset($idSistema) && $idSistema!=''){       $a  = "'".$idSistema."'";               }else{$a  = "''";}
 								if(isset($usuario['idUsuario']) && $usuario['idUsuario']!=''){   $a .= ",'".$usuario['idUsuario']."'";   }else{$a .= ",''";}
@@ -247,7 +247,7 @@ require_once '0_validate_user_1.php';
 																$rowEmpresa['Gmail_Usuario'], 
 																$rowEmpresa['Gmail_Password']);
 									//se guarda el log
-									log_response(1, $rmail, $usuario['UsuarioEmail'].' (Asunto:Nuevo Ticket N°'.n_doc($ultimo_id, 8).' de '.$rowCliente['Nombre'].' generado)');							
+									log_response(1, $rmail, $usuario['UsuarioEmail'].' (Asunto:Nuevo Ticket N°'.n_doc($ultimo_id, 8).' de '.$rowCliente['Nombre'].' generado)');
 								}
 							}
 						}
@@ -303,16 +303,16 @@ require_once '0_validate_user_1.php';
 					/*********************************************************************/
 					//Ticket
 					$SIS_query = '
-					crosstech_gestion_tickets.idTipoTicket, 
-					crosstech_gestion_tickets.idArea, 
-					crosstech_gestion_tickets.idSistema, 
-					crosstech_gestion_tickets.idEstado, 
-					crosstech_gestion_tickets.idCliente, 
-					crosstech_gestion_tickets.FechaCreacion, 
-					crosstech_gestion_tickets.Titulo, 
-					crosstech_gestion_tickets.FechaCierre, 
-					crosstech_gestion_tickets.DescripcionCierre, 
-					crosstech_gestion_tickets.FechaCancelacion, 
+					crosstech_gestion_tickets.idTipoTicket,
+					crosstech_gestion_tickets.idArea,
+					crosstech_gestion_tickets.idSistema,
+					crosstech_gestion_tickets.idEstado,
+					crosstech_gestion_tickets.idCliente,
+					crosstech_gestion_tickets.FechaCreacion,
+					crosstech_gestion_tickets.Titulo,
+					crosstech_gestion_tickets.FechaCierre,
+					crosstech_gestion_tickets.DescripcionCierre,
+					crosstech_gestion_tickets.FechaCancelacion,
 					crosstech_gestion_tickets.DescripcionCancelacion,
 					core_ot_prioridad.Nombre AS Prioridad,
 					crosstech_gestion_tickets_area.Nombre AS Area,
@@ -330,7 +330,7 @@ require_once '0_validate_user_1.php';
 					LEFT JOIN `core_sistemas`                  ON core_sistemas.idSistema               = crosstech_gestion_tickets.idSistema';
 					$SIS_where = 'crosstech_gestion_tickets.idTicket='.$idTicket;
 					$rowTicket = db_select_data (false, $SIS_query, 'crosstech_gestion_tickets', $SIS_join, $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
-					
+
 					/****************************************/
 					//variables
 					$idTipoTicket             = $rowTicket['idTipoTicket'];
@@ -355,7 +355,7 @@ require_once '0_validate_user_1.php';
 
 					//solo se envian los tickets
 					if(isset($idTipoTicket) && $idTipoTicket == 1){
-						
+
 						/****************************************/
 						//receptores
 						$SIS_query = 'crosstech_gestion_tickets_area_correos.idUsuario,
@@ -367,12 +367,12 @@ require_once '0_validate_user_1.php';
 						$arrUsuario = array();
 						$arrUsuario = db_select_array (false, $SIS_query, 'crosstech_gestion_tickets_area_correos', $SIS_join, $SIS_where, $SIS_order, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 
-						//datos	
+						//datos
 						switch ($idEstado) {
 							case 1: $Mensaje = 'Ticket N°'.n_doc($idTicket, 8).' Modificado'; $Detalles = '';                  $fMod = fecha_actual();     break;//Abierto
 							case 2: $Mensaje = 'Ticket N°'.n_doc($idTicket, 8).' Cerrado';    $Detalles = $DescripcionCierre;       $fMod = $FechaCierre;       break;//Ejecutado
 							case 3: $Mensaje = 'Ticket N°'.n_doc($idTicket, 8).' Cancelado';  $Detalles = $DescripcionCancelacion;  $fMod = $FechaCancelacion;  break;//Cancelado
-						
+
 						}
 
 						/*********************************************************************/
@@ -402,8 +402,7 @@ require_once '0_validate_user_1.php';
 						$Notificacion .= ' '.$Mensaje;
 						$Creacion_fecha = fecha_actual();
 						$Estado         = '1';
-								
-							
+
 						/*********************************************************************/
 						//Se envia mensaje al cliente
 						if(isset($EmpresaEmail)&&$EmpresaEmail!=''&&isset($ClienteEmail)&&$ClienteEmail!=''){
@@ -422,15 +421,15 @@ require_once '0_validate_user_1.php';
 														$Gmail_Usuario, 
 														$Gmail_Password);
 							//se guarda el log
-							log_response(1, $rmail, $ClienteEmail.' (Asunto:'.$Mensaje.')');							
-								
+							log_response(1, $rmail, $ClienteEmail.' (Asunto:'.$Mensaje.')');
+
 						}
 
 						/*********************************************************************/
 						//Se envia mensaje a los usuarios relacionados al area
 						if(isset($arrUsuario)){	
 							foreach($arrUsuario as $usuario) {
-								
+
 								/***********************************************/
 								if(isset($idSistema) && $idSistema!=''){       $a  = "'".$idSistema."'";               }else{$a  = "''";}
 								if(isset($usuario['idUsuario']) && $usuario['idUsuario']!=''){   $a .= ",'".$usuario['idUsuario']."'";   }else{$a .= ",''";}
@@ -474,13 +473,10 @@ require_once '0_validate_user_1.php';
 																$Gmail_Usuario, 
 																$Gmail_Password);
 									//se guarda el log
-									log_response(1, $rmail, $usuario['UsuarioEmail'].' (Asunto:'.$Mensaje.')');							
+									log_response(1, $rmail, $usuario['UsuarioEmail'].' (Asunto:'.$Mensaje.')');
 								}
 							}
 						}
-						
-						
-						
 					}
 
 					//se redirecciona

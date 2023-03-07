@@ -207,7 +207,7 @@ $z = "WHERE crosstech_gestion_tickets.idTicket!=0";
 $z.= " AND crosstech_gestion_tickets.idSistema=".$_SESSION['usuario']['basic_data']['idSistema'];
 //solo mostrar los tickets propios
 $z.= " AND crosstech_gestion_tickets.idCliente=".$_SESSION['usuario']['basic_data']['idCliente'];
-						
+
 /**********************************************************/
 //Se aplican los filtros
 if(isset($_GET['idEstado']) && $_GET['idEstado']!=''){       $z .= " AND crosstech_gestion_tickets.idEstado=".$_GET['idEstado'];}
