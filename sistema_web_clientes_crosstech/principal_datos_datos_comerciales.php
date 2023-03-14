@@ -111,8 +111,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 					$Form_Inputs->form_input_text('Razon Social', 'RazonSocial', $x2, 2);
 					$Form_Inputs->form_input_icon('Giro de la empresa', 'Giro', $x3, 1,'fa fa-industry');
 					$Form_Inputs->form_select_filter('Rubro','idRubro', $x4, 1, 'idRubro', 'Codigo,Nombre', 'core_rubros', 0, '',$dbConn);
-					
-					
+
 					$Form_Inputs->form_input_hidden('idCliente', simpleEncode($_SESSION['usuario']['basic_data']['idCliente'], fecha_actual()), 2);
 					?>
 

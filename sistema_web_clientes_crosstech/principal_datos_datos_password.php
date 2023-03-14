@@ -108,8 +108,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 					$Form_Inputs->form_input_password('Password Antigua', 'oldpassword', $x1, 2);
 					$Form_Inputs->form_input_password('Nueva Password', 'password', $x2, 2);
 					$Form_Inputs->form_input_password('Repetir Password', 'repassword', $x3, 2);
-					
-					
+
 					$Form_Inputs->form_input_hidden('idCliente', simpleEncode($_SESSION['usuario']['basic_data']['idCliente'], fecha_actual()), 2);
 					?>
 
