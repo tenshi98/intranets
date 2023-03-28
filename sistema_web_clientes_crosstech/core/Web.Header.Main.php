@@ -8,7 +8,7 @@
 		<meta http-equiv="Content-Type"    content="text/html; charset=UTF-8">
 
 		<!-- Informacion del sitio-->
-		<?php 
+		<?php
 		//Se verifican las variables para mostrar el titulo e la pagina
 		if (isset($_SESSION['usuario']['basic_data']['RazonSocial'])&&$_SESSION['usuario']['basic_data']['RazonSocial']!=''){
 			if (isset($_SESSION['usuario']['Permisos'][$original]['TransaccionNombre'])&&$_SESSION['usuario']['Permisos'][$original]['TransaccionNombre']!=''){
@@ -96,7 +96,7 @@
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"   href="img/mifavicon-72x72.png">
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/mifavicon-114x114.png">
 			<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/mifavicon-144x144.png">
-		<?php 
+		<?php
 		//Favicon predefinido
 		}else{ ?>
 			<link rel="icon"             type="image/png"                    href="<?php echo DB_SITE_REPO ?>/LIB_assets/img/favicons/favicon.png" >
