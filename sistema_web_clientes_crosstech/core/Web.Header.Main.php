@@ -15,7 +15,7 @@
 				echo '<title>'.TituloMenu($_SESSION['usuario']['Permisos'][$original]['TransaccionNombre']).' - '.$_SESSION['usuario']['basic_data']['RazonSocial'].'</title>';
 			}else{
 				echo '<title>'.$_SESSION['usuario']['basic_data']['RazonSocial'].'</title>';
-			} 
+			}
 		}else{
 			echo '<title>'.DB_SOFT_NAME.'</title>';
 		} ?>
