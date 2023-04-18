@@ -95,6 +95,16 @@ require_once '0_validate_user_1.php';
 	if(isset($password)){
 		if (strpos($password, " ")){                     $error['Password1'] = 'error/La contraseña contiene espacios vacios';}
 	}
+
+/*******************************************************************************************************************/
+/*                                          Verificacion de datos erroneos                                         */
+/*******************************************************************************************************************/
+	if(isset($Nombre) && $Nombre!=''){                 $Nombre         = EstandarizarInput($Nombre);}
+	if(isset($RazonSocial) && $RazonSocial!=''){       $RazonSocial    = EstandarizarInput($RazonSocial);}
+	if(isset($Direccion) && $Direccion!=''){           $Direccion      = EstandarizarInput($Direccion);}
+	if(isset($Giro) && $Giro!=''){                     $Giro           = EstandarizarInput($Giro);}
+	if(isset($email) && $email!=''){                   $email          = EstandarizarInput($email);}
+	if(isset($password) && $password!=''){             $password       = EstandarizarInput($password);}
 /*******************************************************************************************************************/
 /*                                        Verificacion de los datos ingresados                                     */
 /*******************************************************************************************************************/
