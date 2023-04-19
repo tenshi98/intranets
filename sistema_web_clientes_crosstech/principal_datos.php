@@ -23,8 +23,8 @@ require_once 'core/Web.Header.Main.php';
 /*                                                   ejecucion de logica                                                          */
 /**********************************************************************************************************************************/
 //Listado de errores no manejables
-if (isset($_GET['created'])){ $error['created'] = 'sucess/Perfil creado correctamente';}
-if (isset($_GET['edited'])){  $error['edited']  = 'sucess/Perfil editado correctamente';}
+if (isset($_GET['created'])){ $error['created'] = 'sucess/Perfil Creado correctamente';}
+if (isset($_GET['edited'])){  $error['edited']  = 'sucess/Perfil Modificado correctamente';}
 if (isset($_GET['deleted'])){ $error['deleted'] = 'sucess/Perfil Borrado correctamente';}
 //Manejador de errores
 if(isset($error)&&$error!=''){echo notifications_list($error);}
