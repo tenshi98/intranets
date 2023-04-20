@@ -127,8 +127,8 @@ require_once '0_validate_user_1.php';
 						//datos empresa
 						$SIS_query = '
 						core_sistemas.Nombre AS EmpresaNombre,
-						core_sistemas.email_principal AS EmpresaEmail, 
-						core_sistemas.Config_Gmail_Usuario AS Gmail_Usuario, 
+						core_sistemas.email_principal AS EmpresaEmail,
+						core_sistemas.Config_Gmail_Usuario AS Gmail_Usuario,
 						core_sistemas.Config_Gmail_Password AS Gmail_Password';
 						$SIS_where = 'core_sistemas.idSistema ='.$idSistema;
 						$rowEmpresa = db_select_data (false, $SIS_query, 'core_sistemas','', $SIS_where, $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
