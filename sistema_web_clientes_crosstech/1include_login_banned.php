@@ -1427,8 +1427,6 @@
 
 </svg>
 
-
-
 <style>
 .login {background-color: #f4f3f5 !important;}
 body{

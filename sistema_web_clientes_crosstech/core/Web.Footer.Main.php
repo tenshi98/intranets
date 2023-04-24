@@ -19,7 +19,7 @@
 			//se toma raiz
 			var domain_val = "<?php echo DB_SITE_REPO ?>";
 		</script>
-				
+
 		<!--Otros archivos javascript -->
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/bootstrap3/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="<?php echo DB_SITE_REPO ?>/LIB_assets/lib/screenfull/screenfull.js"></script>

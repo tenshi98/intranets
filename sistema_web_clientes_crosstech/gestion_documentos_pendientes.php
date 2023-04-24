@@ -51,7 +51,6 @@ $z2.=" AND bodegas_insumos_facturacion.Pago_fecha<='".fecha_actual()."'";
 $z3.=" AND bodegas_productos_facturacion.Pago_fecha<='".fecha_actual()."'";
 $z4.=" AND bodegas_servicios_facturacion.Pago_fecha<='".fecha_actual()."'";
 
-
 /*if(isset($_GET['idDocumentos'])&&$_GET['idDocumentos']!=''){
 	$z1.=" AND bodegas_arriendos_facturacion.idDocumentos=".$_GET['idDocumentos'];
 	$z2.=" AND bodegas_insumos_facturacion.idDocumentos=".$_GET['idDocumentos'];
@@ -213,8 +212,6 @@ array_push( $arrTipo4,$row );
 }
 
 ?>
-
-
 
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="box">
