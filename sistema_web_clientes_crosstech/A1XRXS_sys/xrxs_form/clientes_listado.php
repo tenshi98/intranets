@@ -103,7 +103,7 @@ require_once '0_validate_user_1.php';
 	if(isset($RazonSocial) && $RazonSocial!=''){       $RazonSocial    = EstandarizarInput($RazonSocial);}
 	if(isset($Direccion) && $Direccion!=''){           $Direccion      = EstandarizarInput($Direccion);}
 	if(isset($Giro) && $Giro!=''){                     $Giro           = EstandarizarInput($Giro);}
-	if(isset($email) && $email!=''){                   $email          = EstandarizarInput($email);}
+	//if(isset($email) && $email!=''){                   $email          = EstandarizarInput($email);}
 	if(isset($password) && $password!=''){             $password       = EstandarizarInput($password);}
 /*******************************************************************************************************************/
 /*                                        Verificacion de los datos ingresados                                     */
