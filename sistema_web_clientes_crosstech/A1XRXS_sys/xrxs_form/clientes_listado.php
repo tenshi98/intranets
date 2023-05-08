@@ -80,7 +80,37 @@ require_once '0_validate_user_1.php';
 		}
 	}
 /*******************************************************************************************************************/
+/*                                          Verificacion de datos erroneos                                         */
+/*******************************************************************************************************************/
+	if(isset($Nombre) && $Nombre!=''){                 $Nombre         = EstandarizarInput($Nombre);}
+	if(isset($RazonSocial) && $RazonSocial!=''){       $RazonSocial    = EstandarizarInput($RazonSocial);}
+	if(isset($Direccion) && $Direccion!=''){           $Direccion      = EstandarizarInput($Direccion);}
+	if(isset($Giro) && $Giro!=''){                     $Giro           = EstandarizarInput($Giro);}
+	//if(isset($email) && $email!=''){                   $email          = EstandarizarInput($email);}
+	if(isset($password) && $password!=''){             $password       = EstandarizarInput($password);}
+	if(isset($repassword) && $repassword!=''){         $repassword     = EstandarizarInput($repassword);}
+	if(isset($oldpassword) && $oldpassword!=''){       $oldpassword    = EstandarizarInput($oldpassword);}
+/*******************************************************************************************************************/
 /*                                        Verificacion de los datos ingresados                                     */
+/*******************************************************************************************************************/
+	if(isset($email)&&contar_palabras_censuradas($email)!=0){                                 $error['email']                  = 'error/Edita el email, contiene palabras no permitidas';}
+	if(isset($Nombre)&&contar_palabras_censuradas($Nombre)!=0){                               $error['Nombre']                 = 'error/Edita el Nombre,contiene palabras no permitidas';}
+	if(isset($RazonSocial)&&contar_palabras_censuradas($RazonSocial)!=0){                     $error['RazonSocial']            = 'error/Edita la razonSocial, contiene palabras no permitidas';}
+	if(isset($Direccion)&&contar_palabras_censuradas($Direccion)!=0){                         $error['Direccion']              = 'error/Edita la direccion, contiene palabras no permitidas';}
+	if(isset($Fono1)&&contar_palabras_censuradas($Fono1)!=0){                                 $error['Fono1']                  = 'error/Edita el fono1, contiene palabras no permitidas';}
+	if(isset($Fono2)&&contar_palabras_censuradas($Fono2)!=0){                                 $error['Fono2']                  = 'error/Edita el fono2, contiene palabras no permitidas';}
+	if(isset($Fax)&&contar_palabras_censuradas($Fax)!=0){                                     $error['Fax']                    = 'error/Edita el fax, contiene palabras no permitidas';}
+	if(isset($PersonaContacto)&&contar_palabras_censuradas($PersonaContacto)!=0){             $error['PersonaContacto']        = 'error/Edita la persona de contacto, contiene palabras no permitidas';}
+	if(isset($PersonaContacto_Fono)&&contar_palabras_censuradas($PersonaContacto_Fono)!=0){   $error['PersonaContacto_Fono']   = 'error/Edita el fono de persona de contacto, contiene palabras no permitidas';}
+	if(isset($PersonaContacto_email)&&contar_palabras_censuradas($PersonaContacto_email)!=0){ $error['PersonaContacto_email']  = 'error/Edita el email de persona de contacto, contiene palabras no permitidas';}
+	if(isset($Web)&&contar_palabras_censuradas($Web)!=0){                                     $error['Web']                    = 'error/Edita la web, contiene palabras no permitidas';}
+	if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                                   $error['Giro']                   = 'error/Edita el giro, contiene palabras no permitidas';}
+	if(isset($password)&&contar_palabras_censuradas($password)!=0){                           $error['password']               = 'error/Edita password, contiene palabras no permitidas';}
+	if(isset($repassword)&&contar_palabras_censuradas($repassword)!=0){                       $error['repassword']             = 'error/Edita repassword, contiene palabras no permitidas';}
+	if(isset($oldpassword)&&contar_palabras_censuradas($oldpassword)!=0){                     $error['oldpassword']            = 'error/Edita oldpassword, contiene palabras no permitidas';}
+
+/*******************************************************************************************************************/
+/*                                        Validacion de los datos ingresados                                       */
 /*******************************************************************************************************************/
 	//Verifica si el mail corresponde
 	if(isset($email)&&!validarEmail($email)){                                 $error['email']                  = 'error/El Email ingresado no es valido';}
@@ -90,36 +120,12 @@ require_once '0_validate_user_1.php';
 	if(isset($PersonaContacto_email)&&!validarEmail($PersonaContacto_email)){ $error['email']                  = 'error/El Email ingresado no es valido';}
 	if(isset($PersonaContacto_Fono)&&!validarNumero($PersonaContacto_Fono)){  $error['PersonaContacto_Fono']   = 'error/Ingrese un numero telefonico valido';}
 	if(isset($password)&&isset($repassword)){
-		if ( $password <> $repassword )                  $error['password']  = 'error/Las contraseñas ingresadas no coinciden';
+		if ( $password <> $repassword )           $error['password'] = 'error/Las contraseñas ingresadas no coinciden';
 	}
 	if(isset($password)){
-		if (strpos($password, " ")){                     $error['Password1'] = 'error/La contraseña contiene espacios vacios';}
+		if (strpos($password, " ")){              $error['Password1'] = 'error/La contraseña contiene espacios vacios';}
+		//if (strtolower($password) != $password){  $error['Password2'] = 'error/La contraseña de usuario contiene mayusculas';}
 	}
-
-/*******************************************************************************************************************/
-/*                                          Verificacion de datos erroneos                                         */
-/*******************************************************************************************************************/
-	if(isset($Nombre) && $Nombre!=''){                 $Nombre         = EstandarizarInput($Nombre);}
-	if(isset($RazonSocial) && $RazonSocial!=''){       $RazonSocial    = EstandarizarInput($RazonSocial);}
-	if(isset($Direccion) && $Direccion!=''){           $Direccion      = EstandarizarInput($Direccion);}
-	if(isset($Giro) && $Giro!=''){                     $Giro           = EstandarizarInput($Giro);}
-	//if(isset($email) && $email!=''){                   $email          = EstandarizarInput($email);}
-	if(isset($password) && $password!=''){             $password       = EstandarizarInput($password);}
-/*******************************************************************************************************************/
-/*                                        Verificacion de los datos ingresados                                     */
-/*******************************************************************************************************************/
-if(isset($email)&&contar_palabras_censuradas($email)!=0){                                 $error['email']                  = 'error/Edita el email, contiene palabras no permitidas';}
-if(isset($Nombre)&&contar_palabras_censuradas($Nombre)!=0){                               $error['Nombre']                 = 'error/Edita el Nombre,contiene palabras no permitidas';}
-if(isset($RazonSocial)&&contar_palabras_censuradas($RazonSocial)!=0){                     $error['RazonSocial']            = 'error/Edita la razonSocial, contiene palabras no permitidas';}
-if(isset($Direccion)&&contar_palabras_censuradas($Direccion)!=0){                         $error['Direccion']              = 'error/Edita la direccion, contiene palabras no permitidas';}
-if(isset($Fono1)&&contar_palabras_censuradas($Fono1)!=0){                                 $error['Fono1']                  = 'error/Edita el fono1, contiene palabras no permitidas';}
-if(isset($Fono2)&&contar_palabras_censuradas($Fono2)!=0){                                 $error['Fono2']                  = 'error/Edita el fono2, contiene palabras no permitidas';}
-if(isset($Fax)&&contar_palabras_censuradas($Fax)!=0){                                     $error['Fax']                    = 'error/Edita el fax, contiene palabras no permitidas';}
-if(isset($PersonaContacto)&&contar_palabras_censuradas($PersonaContacto)!=0){             $error['PersonaContacto']        = 'error/Edita la persona de contacto, contiene palabras no permitidas';}
-if(isset($PersonaContacto_Fono)&&contar_palabras_censuradas($PersonaContacto_Fono)!=0){   $error['PersonaContacto_Fono']   = 'error/Edita el fono de persona de contacto, contiene palabras no permitidas';}
-if(isset($PersonaContacto_email)&&contar_palabras_censuradas($PersonaContacto_email)!=0){ $error['PersonaContacto_email']  = 'error/Edita el email de persona de contacto, contiene palabras no permitidas';}
-if(isset($Web)&&contar_palabras_censuradas($Web)!=0){                                     $error['Web']                    = 'error/Edita la web, contiene palabras no permitidas';}
-if(isset($Giro)&&contar_palabras_censuradas($Giro)!=0){                                   $error['Giro']                   = 'error/Edita el giro, contiene palabras no permitidas';}
 
 /*******************************************************************************************************************/
 /*                                            Se ejecutan las instrucciones                                        */
