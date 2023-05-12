@@ -106,7 +106,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 
 					//se dibujan los inputs
 					$Form_Inputs = new Form_Inputs();
-					$Form_Inputs->form_post_data(2, 'En caso de que nadie pueda contactar contigo directamente, asigna a alguien cercano a ti para que esta pueda recibir los mensajes por ti.');
+					$Form_Inputs->form_post_data(2,3,0, 'En caso de que nadie pueda contactar contigo directamente, asigna a alguien cercano a ti para que esta pueda recibir los mensajes por ti.');
 					$Form_Inputs->form_input_icon('Persona de Contacto', 'PersonaContacto', $x1, 1,'fa fa-user-secret');
 					$Form_Inputs->form_input_phone('Telefono', 'PersonaContacto_Fono', $x2, 1);
 					$Form_Inputs->form_input_icon('Email', 'PersonaContacto_email', $x3, 1,'fa fa-envelope-o');
