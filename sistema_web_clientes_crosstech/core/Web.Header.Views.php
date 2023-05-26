@@ -7,7 +7,7 @@
 		<meta name="viewport"              content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type"    content="text/html; charset=UTF-8">
 
-		<!-- Informacion del sitio-->
+		<!-- Información del sitio-->
 		<title>Maqueta</title>
 		<meta name="description"           content="">
 		<meta name="author"                content="">

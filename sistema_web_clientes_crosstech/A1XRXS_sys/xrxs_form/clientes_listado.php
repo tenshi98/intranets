@@ -58,10 +58,10 @@ require_once '0_validate_user_1.php';
 			case 'idRubro':                if(empty($idRubro)){                              $error['idRubro']                 = 'error/No ha seleccionado el rubro';}break;
 			case 'email':                  if(empty($email)){                                $error['email']                   = 'error/No ha ingresado el email';}break;
 			case 'Nombre':                 if(empty($Nombre)){                               $error['Nombre']                  = 'error/No ha ingresado el Nombre de Fantasia';}break;
-			case 'RazonSocial':            if(empty($RazonSocial)){                          $error['RazonSocial']             = 'error/No ha ingresado la Razon Social';}break;
+			case 'RazonSocial':            if(empty($RazonSocial)){                          $error['RazonSocial']             = 'error/No ha ingresado la Razón Social';}break;
 			case 'Rut':                    if(empty($Rut)&&$form_trabajo!='getpass'){        $error['Rut']                     = 'error/No ha ingresado el Rut';}break;
 			case 'fNacimiento':            if(empty($fNacimiento)){                          $error['fNacimiento']             = 'error/No ha ingresado la fecha de nacimiento';}break;
-			case 'Direccion':              if(empty($Direccion)){                            $error['Direccion']               = 'error/No ha ingresado la direccion';}break;
+			case 'Direccion':              if(empty($Direccion)){                            $error['Direccion']               = 'error/No ha ingresado la dirección';}break;
 			case 'Fono1':                  if(empty($Fono1)){                                $error['Fono1']                   = 'error/No ha ingresado el telefono';}break;
 			case 'Fono2':                  if(empty($Fono2)){                                $error['Fono2']                   = 'error/No ha ingresado el telefono';}break;
 			case 'idCiudad':               if(empty($idCiudad)){                             $error['idCiudad']                = 'error/No ha seleccionado la ciudad';}break;
@@ -96,7 +96,7 @@ require_once '0_validate_user_1.php';
 	if(isset($email)&&contar_palabras_censuradas($email)!=0){                                 $error['email']                  = 'error/Edita el email, contiene palabras no permitidas';}
 	if(isset($Nombre)&&contar_palabras_censuradas($Nombre)!=0){                               $error['Nombre']                 = 'error/Edita el Nombre,contiene palabras no permitidas';}
 	if(isset($RazonSocial)&&contar_palabras_censuradas($RazonSocial)!=0){                     $error['RazonSocial']            = 'error/Edita la razonSocial, contiene palabras no permitidas';}
-	if(isset($Direccion)&&contar_palabras_censuradas($Direccion)!=0){                         $error['Direccion']              = 'error/Edita la direccion, contiene palabras no permitidas';}
+	if(isset($Direccion)&&contar_palabras_censuradas($Direccion)!=0){                         $error['Direccion']              = 'error/Edita la dirección, contiene palabras no permitidas';}
 	if(isset($Fono1)&&contar_palabras_censuradas($Fono1)!=0){                                 $error['Fono1']                  = 'error/Edita el fono1, contiene palabras no permitidas';}
 	if(isset($Fono2)&&contar_palabras_censuradas($Fono2)!=0){                                 $error['Fono2']                  = 'error/Edita el fono2, contiene palabras no permitidas';}
 	if(isset($Fax)&&contar_palabras_censuradas($Fax)!=0){                                     $error['Fax']                    = 'error/Edita el fax, contiene palabras no permitidas';}
@@ -165,7 +165,7 @@ require_once '0_validate_user_1.php';
 			/*******************************************************************/
 			//Consulto la latitud y la longitud
 			if(isset($idCiudad) && $idCiudad != ''&&isset($idComuna) && $idComuna != ''&&isset($Direccion) && $Direccion!=''){
-				//variable con la direccion
+				//variable con la dirección
 				$address = '';
 				if(isset($idCiudad) && $idCiudad!=''){
 					$rowdata = db_select_data (false, 'Nombre', 'core_ubicacion_ciudad', '', 'idCiudad = "'.$idCiudad.'"', $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
@@ -184,13 +184,13 @@ require_once '0_validate_user_1.php';
 						$GeoLatitud  = $geocodeData[0];
 						$GeoLongitud = $geocodeData[1];
 					} else {
-						$error['ndata_4'] = 'error/Detalles de la direccion incorrectos!';
+						$error['ndata_4'] = 'error/Detalles de la dirección incorrectos!';
 					}
 				}else{
-					$error['ndata_4'] = 'error/Sin direccion ingresada';
+					$error['ndata_4'] = 'error/Sin dirección ingresada';
 				}
 			}else{
-				//$error['ndata_4'] = 'error/Sin direccion ingresada';
+				//$error['ndata_4'] = 'error/Sin dirección ingresada';
 			}
 
 			// si no hay errores ejecuto el codigo

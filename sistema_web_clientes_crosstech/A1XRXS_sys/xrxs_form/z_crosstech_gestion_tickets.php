@@ -49,7 +49,7 @@ require_once '0_validate_user_1.php';
 			case 'Descripcion':             if(empty($Descripcion)){              $error['Descripcion']              = 'error/No ha ingresado la descripcion del ticket';}break;
 			case 'idEstado':                if(empty($idEstado)){                 $error['idEstado']                 = 'error/No ha seleccionado el estado';}break;
 			case 'idPrioridad':             if(empty($idPrioridad)){              $error['idPrioridad']              = 'error/No ha seleccionado la prioridad';}break;
-			case 'FechaCreacion':           if(empty($FechaCreacion)){            $error['FechaCreacion']            = 'error/No ha ingresado la fecha de creacion';}break;
+			case 'FechaCreacion':           if(empty($FechaCreacion)){            $error['FechaCreacion']            = 'error/No ha ingresado la fecha de creación';}break;
 			case 'FechaCierre':             if(empty($FechaCierre)){              $error['FechaCierre']              = 'error/No ha ingresado la fecha de cierre';}break;
 			case 'idUsuarioAsignado':       if(empty($idUsuarioAsignado)){        $error['idUsuarioAsignado']        = 'error/No ha seleccionado el usuario asignado';}break;
 			case 'idArea':                  if(empty($idArea)){                   $error['idArea']                   = 'error/No ha seleccionado el area';}break;
@@ -182,7 +182,7 @@ require_once '0_validate_user_1.php';
 						$BodyMail_Usuario .= '<p style="text-align: left;font-size: 14px;">Este correo se ha enviado automáticamente, no responder.</p>';
 						$BodyMail_Usuario .= '</div>';
 						//resto de datos
-						$Notificacion   = '<div class= "btn-group" ><a href= "view_crosstech_gestion_tickets.php?view='.$ultimo_id.'" title= "Ver Informacion" class= "iframe btn btn-primary btn-sm tooltip"><i class= "fa fa-list"></i></a></div>';
+						$Notificacion   = '<div class= "btn-group" ><a href= "view_crosstech_gestion_tickets.php?view='.$ultimo_id.'" title= "Ver Información" class= "iframe btn btn-primary btn-sm tooltip"><i class= "fa fa-list"></i></a></div>';
 						$Notificacion  .= ' Nuevo Ticket N°'.n_doc($ultimo_id, 8).' de '.$rowCliente['Nombre'].' generado';
 						$Creacion_fecha = fecha_actual();
 						$Estado         = '1';
@@ -398,7 +398,7 @@ require_once '0_validate_user_1.php';
 						$BodyMail_bottom .= '</div>';
 
 						//resto de datos
-						$Notificacion  = '<div class= "btn-group" ><a href= "view_crosstech_gestion_tickets.php?view='.$ultimo_id.'" title= "Ver Informacion" class= "iframe btn btn-primary btn-sm tooltip"><i class= "fa fa-list"></i></a></div>';
+						$Notificacion  = '<div class= "btn-group" ><a href= "view_crosstech_gestion_tickets.php?view='.$ultimo_id.'" title= "Ver Información" class= "iframe btn btn-primary btn-sm tooltip"><i class= "fa fa-list"></i></a></div>';
 						$Notificacion .= ' '.$Mensaje;
 						$Creacion_fecha = fecha_actual();
 						$Estado         = '1';
@@ -518,12 +518,12 @@ require_once '0_validate_user_1.php';
 
 			//se verifica si es un numero lo que se recibe
 			if (!validarNumero($indice)&&$indice!=''){
-				$error['validarNumero'] = 'error/El valor ingresado en $indice ('.$indice.') en la opcion DEL  no es un numero';
+				$error['validarNumero'] = 'error/El valor ingresado en $indice ('.$indice.') en la opción DEL  no es un numero';
 				$errorn++;
 			}
 			//Verifica si el numero recibido es un entero
 			if (!validaEntero($indice)&&$indice!=''){
-				$error['validaEntero'] = 'error/El valor ingresado en $indice ('.$indice.') en la opcion DEL  no es un numero entero';
+				$error['validaEntero'] = 'error/El valor ingresado en $indice ('.$indice.') en la opción DEL  no es un numero entero';
 				$errorn++;
 			}
 

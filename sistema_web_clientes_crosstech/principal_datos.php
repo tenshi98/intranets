@@ -132,9 +132,9 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 									<strong>Rut : </strong><?php echo $rowdata['Rut']; ?><br/>
 								<?php } ?>
 								<strong>Fecha de Ingreso Sistema : </strong><?php echo Fecha_completa($rowdata['fNacimiento']); ?><br/>
-								<strong>Region : </strong><?php echo $rowdata['nombre_region']; ?><br/>
+								<strong>Región : </strong><?php echo $rowdata['nombre_region']; ?><br/>
 								<strong>Comuna : </strong><?php echo $rowdata['nombre_comuna']; ?><br/>
-								<strong>Direccion : </strong><?php echo $rowdata['Direccion']; ?>
+								<strong>Dirección : </strong><?php echo $rowdata['Direccion']; ?>
 							</p>
 
 							<?php
@@ -143,7 +143,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 								<h2 class="text-primary"><i class="fa fa-list" aria-hidden="true"></i> Datos Comerciales</h2>
 								<p class="text-muted">
 									<strong>Rut : </strong><?php echo $rowdata['Rut']; ?><br/>
-									<strong>Razon Social : </strong><?php echo $rowdata['RazonSocial']; ?><br/>
+									<strong>Razón Social : </strong><?php echo $rowdata['RazonSocial']; ?><br/>
 									<strong>Giro de la empresa: </strong><?php echo $rowdata['Giro']; ?><br/>
 									<strong>Rubro : </strong><?php echo $rowdata['Rubro']; ?><br/>
 								</p>
@@ -170,16 +170,16 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 					<div class="row">
 						<?php
-						//Se arma la direccion
+						//Se arma la dirección
 						$direccion = "";
 						if(isset($rowdata["Direccion"])&&$rowdata["Direccion"]!=''){           $direccion .= $rowdata["Direccion"];}
 						if(isset($rowdata["nombre_comuna"])&&$rowdata["nombre_comuna"]!=''){   $direccion .= ', '.$rowdata["nombre_comuna"];}
 						if(isset($rowdata["nombre_region"])&&$rowdata["nombre_region"]!=''){   $direccion .= ', '.$rowdata["nombre_region"];}
-						//se despliega mensaje en caso de no existir direccion
+						//se despliega mensaje en caso de no existir dirección
 						if($direccion!=''){
 							echo mapa_from_direccion($direccion, $direccion, $_SESSION['usuario']['basic_data']['Config_IDGoogle'], 20, 2);
 						}else{
-							$Alert_Text = 'No tiene una direccion definida';
+							$Alert_Text = 'No tiene una dirección definida';
 							alert_post_data(4,2,2, $Alert_Text);
 						}
 						?>

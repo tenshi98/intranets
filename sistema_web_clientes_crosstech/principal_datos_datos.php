@@ -120,10 +120,10 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 						$Form_Inputs->form_input_rut('Rut', 'Rut', $x3, 2);
 					} 
 					//$Form_Inputs->form_date('F Ingreso Sistema','fNacimiento', $x4, 1);
-					$Form_Inputs->form_select_depend1('Region','idCiudad', $x5, 2, 'idCiudad', 'Nombre', 'core_ubicacion_ciudad', 0, 0,
+					$Form_Inputs->form_select_depend1('Región','idCiudad', $x5, 2, 'idCiudad', 'Nombre', 'core_ubicacion_ciudad', 0, 0,
 											'Comuna','idComuna', $x6, 2, 'idComuna', 'Nombre', 'core_ubicacion_comunas', 0, 0,
 											 $dbConn, 'form1');
-					$Form_Inputs->form_input_icon('Direccion', 'Direccion', $x7, 2,'fa fa-map');	 
+					$Form_Inputs->form_input_icon('Dirección', 'Direccion', $x7, 2,'fa fa-map');	 
 					
 	
 					$Form_Inputs->form_input_hidden('idCliente', simpleEncode($_SESSION['usuario']['basic_data']['idCliente'], fecha_actual()), 2);

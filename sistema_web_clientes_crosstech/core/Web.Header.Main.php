@@ -7,7 +7,7 @@
 		<meta name="viewport"              content="width=device-width, initial-scale=1, user-scalable=no">
 		<meta http-equiv="Content-Type"    content="text/html; charset=UTF-8">
 
-		<!-- Informacion del sitio-->
+		<!-- Información del sitio-->
 		<?php
 		//Se verifican las variables para mostrar el titulo e la pagina
 		if (isset($_SESSION['usuario']['basic_data']['RazonSocial'])&&$_SESSION['usuario']['basic_data']['RazonSocial']!=''){
