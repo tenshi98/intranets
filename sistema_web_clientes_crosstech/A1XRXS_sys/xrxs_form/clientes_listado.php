@@ -227,7 +227,7 @@ require_once '0_validate_user_1.php';
 					/**********************************************************************/
 					//Datos propios
 					//si confirma ubicacion o deja de ser nuevo
-					if(isset($Nombre) && $Nombre!=''){   $_SESSION['usuario']['basic_data']['Nombre'] = $Nombre;}
+					if(isset($Nombre) && $Nombre!=''){   $_SESSION['usuario']['basic_data']['Nombre'] = DeSanitizar($Nombre);}
 					if(isset($Rut) && $Rut!=''){         $_SESSION['usuario']['basic_data']['Rut']    = $Rut;}
 
 					//redirijo
@@ -338,15 +338,15 @@ require_once '0_validate_user_1.php';
 							//Se crean las variables con todos los datos
 							$_SESSION['usuario']['basic_data']['idCliente']          = $rowUser['idCliente'];
 							$_SESSION['usuario']['basic_data']['password']           = $rowUser['password'];
-							$_SESSION['usuario']['basic_data']['Nombre']             = $rowUser['Nombre'];
+							$_SESSION['usuario']['basic_data']['Nombre']             = DeSanitizar($rowUser['Nombre']);
 							$_SESSION['usuario']['basic_data']['Rut']                = $rowUser['Rut'];
 							$_SESSION['usuario']['basic_data']['idSistema']          = $rowUser['idSistema'];
 							$_SESSION['usuario']['basic_data']['Config_idTheme']     = $rowUser['Config_idTheme'];
 							$_SESSION['usuario']['basic_data']['Config_imgLogo']     = $rowUser['Config_imgLogo'];
 							$_SESSION['usuario']['basic_data']['Config_IDGoogle']    = $rowUser['Config_IDGoogle'];
-							$_SESSION['usuario']['basic_data']['Region']             = $rowUser['nombre_region'];
+							$_SESSION['usuario']['basic_data']['Region']             = DeSanitizar($rowUser['nombre_region']);
 							$_SESSION['usuario']['basic_data']['Pronostico']         = $rowUser['nombre_pronostico'];
-							$_SESSION['usuario']['basic_data']['Comuna']             = $rowUser['nombre_comuna'];
+							$_SESSION['usuario']['basic_data']['Comuna']             = DeSanitizar($rowUser['nombre_comuna']);
 							$_SESSION['usuario']['basic_data']['Social_idUso']       = $rowUser['Social_idUso'];
 							$_SESSION['usuario']['basic_data']['Social_facebook']    = $rowUser['Social_facebook'];
 							$_SESSION['usuario']['basic_data']['Social_twitter']     = $rowUser['Social_twitter'];
