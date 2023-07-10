@@ -384,6 +384,9 @@ require_once '0_validate_user_1.php';
 					$SIS_columns = 'Fecha, Hora, usuario, email, IP_Client, Agent_Transp, Time';
 					$ultimo_id = db_insert_data (false, $SIS_columns, $SIS_data, 'clientes_checkbrute', $dbConn, 'clientes_checkbrute', $original, $form_trabajo);
 
+					//Cuento los accesos erroneos
+					$NAccesos = db_select_nrows (false, 'idAcceso', 'clientes_checkbrute', '', "(usuario='".$Rut."' OR email='".$email."' OR IP_Client='".$IP_Client."') AND Fecha='".fecha_actual()."'", $dbConn, 'productores_checkbrute', $original, $form_trabajo);
+
 				}
 
 			}
