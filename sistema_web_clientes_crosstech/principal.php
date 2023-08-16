@@ -27,7 +27,7 @@ if(isset($_SESSION['usuario']['basic_data']['password'])&&$_SESSION['usuario']['
 	$Alert_Text  = '<strong>Cambio de contraseña: </strong> ';
 	$Alert_Text .= 'Por motivos de seguridad, se recomienda <strong>cambiar</strong> la contraseña';
 	$Alert_Text .= '<a href="principal_datos_datos_password.php" title="Cambio de contraseña" class="btn btn-primary btn-sm pull-right margin_width" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Cambio de contraseña</a>';
-	alert_post_data(2,1,2, $Alert_Text);
+	alert_post_data(2,1,2,0, $Alert_Text);
 	echo '</div>';
 } ?>
 

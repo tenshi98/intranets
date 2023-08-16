@@ -22,7 +22,7 @@ echo '<div class="tab-pane fade" id="Menu_tab_1">';
 	//si no existe mando error	
 	}else{
 		$Alert_Text = 'No tiene un rut guardado, favor de poner su rut en los datos basicos';
-		alert_post_data(4,2,2, $Alert_Text);
+		alert_post_data(4,2,2,0, $Alert_Text);
 	}
 	
 	
