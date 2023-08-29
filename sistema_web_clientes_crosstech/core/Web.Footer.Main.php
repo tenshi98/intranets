@@ -37,11 +37,11 @@
 				//Examples of how to assign the Colorbox event to elements
 				$(".iframe").colorbox({iframe:true, width:"80%", height:"95%"});
 				$(".callbacks").colorbox({
-					onOpen:function(){ alert('onOpen: colorbox is about to open');},
-					onLoad:function(){ alert('onLoad: colorbox has started to load the targeted content');},
-					onComplete:function(){ alert('onComplete: colorbox has displayed the loaded content');},
-					onCleanup:function(){ alert('onCleanup: colorbox has begun the close process');},
-					onClosed:function(){ alert('onClosed: colorbox has completely closed');}
+					onOpen:function(){ Swal.fire({icon: 'error',title: 'Oops...',text: 'onOpen: colorbox is about to open.'});},
+					onLoad:function(){ Swal.fire({icon: 'error',title: 'Oops...',text: 'onLoad: colorbox has started to load the targeted content.'});},
+					onComplete:function(){ Swal.fire({icon: 'error',title: 'Oops...',text: 'onComplete: colorbox has displayed the loaded content.'});},
+					onCleanup:function(){ Swal.fire({icon: 'error',title: 'Oops...',text: 'onCleanup: colorbox has begun the close process.'});},
+					onClosed:function(){ Swal.fire({icon: 'error',title: 'Oops...',text: 'onClosed: colorbox has completely closed.'});}
 				});
 
 				//Example of preserving a JavaScript event for inline calls.
