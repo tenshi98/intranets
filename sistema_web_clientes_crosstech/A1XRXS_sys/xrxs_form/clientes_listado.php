@@ -119,7 +119,7 @@ require_once '0_validate_user_1.php';
 	if(isset($Rut)&&!validarRut($Rut)){                                       $error['Rut']                    = 'error/El Rut ingresado no es valido';}
 	if(isset($PersonaContacto_email)&&!validarEmail($PersonaContacto_email)){ $error['email']                  = 'error/El Email ingresado no es valido';}
 	if(isset($PersonaContacto_Fono)&&!validarNumero($PersonaContacto_Fono)){  $error['PersonaContacto_Fono']   = 'error/Ingrese un numero telefonico valido';}
-	if(isset($password)&&isset($repassword)){
+	if(isset($password, $repassword)){
 		if ( $password <> $repassword )           $error['password'] = 'error/Las contraseñas ingresadas no coinciden';
 	}
 	if(isset($password)){
@@ -145,16 +145,16 @@ require_once '0_validate_user_1.php';
 			$ndata_3 = 0;
 			$ndata_4 = 1;
 			//Se verifica si el dato existe
-			if(isset($Nombre)&&isset($idSistema)&&isset($idCliente)){
+			if(isset($Nombre, $idSistema, $idCliente)){
 				$ndata_1 = db_select_nrows (false, 'Nombre', 'seg_vecinal_clientes_listado', '', "Nombre='".$Nombre."' AND idSistema='".$idSistema."' AND idCliente!='".$idCliente."'", $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 			}
-			if(isset($Rut)&&isset($idSistema)&&isset($idCliente)){
+			if(isset($Rut, $idSistema, $idCliente)){
 				$ndata_2 = db_select_nrows (false, 'Rut', 'seg_vecinal_clientes_listado', '', "Rut='".$Rut."' AND idSistema='".$idSistema."' AND idCliente!='".$idCliente."'", $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 			}
-			if(isset($email)&&isset($idSistema)&&isset($idCliente)){
+			if(isset($email, $idSistema, $idCliente)){
 				$ndata_3 = db_select_nrows (false, 'email', 'seg_vecinal_clientes_listado', '', "email='".$email."' AND idSistema='".$idSistema."' AND idCliente!='".$idCliente."'", $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 			}
-			if(isset($oldpassword)&&isset($idCliente)){
+			if(isset($oldpassword, $idCliente)){
 				$ndata_4 = db_select_nrows (false, 'password', 'seg_vecinal_clientes_listado', '', "idCliente='".$idCliente."' AND password='".md5($oldpassword)."'", $dbConn, $_SESSION['usuario']['basic_data']['Nombre'], $original, $form_trabajo);
 			}
 			//generacion de errores
@@ -164,7 +164,7 @@ require_once '0_validate_user_1.php';
 			if($ndata_4 == 0) { $error['ndata_4'] = 'error/Las contraseñas ingresadas no coinciden';}
 			/*******************************************************************/
 			//Consulto la latitud y la longitud
-			if(isset($idCiudad) && $idCiudad != ''&&isset($idComuna) && $idComuna != ''&&isset($Direccion) && $Direccion!=''){
+			if(isset($idCiudad, $idComuna, $Direccion) && $idCiudad != '' && $idComuna != '' && $Direccion!=''){
 				//variable con la dirección
 				$address = '';
 				if(isset($idCiudad) && $idCiudad!=''){

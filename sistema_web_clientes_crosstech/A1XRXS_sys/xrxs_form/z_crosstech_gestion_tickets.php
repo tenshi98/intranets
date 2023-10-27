@@ -189,7 +189,7 @@ require_once '0_validate_user_1.php';
 
 						/*********************************************************************/
 						//Se envia mensaje al cliente
-						if(isset($rowEmpresa['EmpresaEmail'])&&$rowEmpresa['EmpresaEmail']!=''&&isset($rowCliente['email'])&&$rowCliente['email']!=''){
+						if(isset($rowEmpresa['EmpresaEmail'], $rowCliente['email'])&&$rowEmpresa['EmpresaEmail']!=''&&$rowCliente['email']!=''){
 							$rmail = tareas_envio_correo($rowEmpresa['EmpresaEmail'], $rowEmpresa['EmpresaNombre'], 
 														$rowCliente['email'], $rowCliente['Nombre'], 
 														'', '', 
@@ -405,7 +405,7 @@ require_once '0_validate_user_1.php';
 
 						/*********************************************************************/
 						//Se envia mensaje al cliente
-						if(isset($EmpresaEmail)&&$EmpresaEmail!=''&&isset($ClienteEmail)&&$ClienteEmail!=''){
+						if(isset($EmpresaEmail, $ClienteEmail)&&$EmpresaEmail!=''&&$ClienteEmail!=''){
 							//construccion del cuerpo
 							$BodyMail  = $BodyMail_top;
 							$BodyMail .= $BodyMail_cliente;
