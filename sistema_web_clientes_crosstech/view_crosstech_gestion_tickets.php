@@ -1,4 +1,11 @@
-<?php session_start();
+<?php
+/**********************************************************************************************************************************/
+/*                                                   Se define la Sesion                                                          */
+/**********************************************************************************************************************************/
+$timeout = 604800;                               //Se setea la expiracion a una semana
+ini_set( "session.gc_maxlifetime", $timeout );   //Establecer la vida útil máxima de la sesión
+ini_set( "session.cookie_lifetime", $timeout );  //Establecer la duración de las cookies de la sesión
+session_start();                                 //Iniciar una nueva sesión
 /**********************************************************************************************************************************/
 /*                                           Se define la variable de seguridad                                                   */
 /**********************************************************************************************************************************/
